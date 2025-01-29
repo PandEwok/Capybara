@@ -68,3 +68,28 @@ FloatRect Player::getHitBox() {
 	Vector2f boundsSize = sprite->getGlobalBounds().getSize();
 	return FloatRect(boundsPos.x + boundsSize.x / 9.f * 4.f, boundsPos.y + boundsSize.y / 7.f * 3.3f, boundsSize.x / 9.f, boundsSize.y / 7.f * 1.5f);
 }
+
+Enemy::Enemy(Vector2f textureSize, float speed, int hp) : Entity(textureSize), speed(speed), hp(hp) {}
+
+float Enemy::getSpeed() const {
+	return speed;
+}
+
+void Enemy::setSpeed(float newSpeed) {
+	speed = newSpeed;
+}
+
+int Enemy::getHp() const {
+	return hp;
+}
+
+void Enemy::decreaseHp(int value) {
+	hp -= value;
+	if (hp < 0) {
+		hp = 0;
+	}
+}
+
+bool Enemy::isDead() const {
+	return hp <= 0;
+}

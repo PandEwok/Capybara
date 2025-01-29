@@ -36,4 +36,23 @@ public:
 	int getKeyState();
 	void setKeyState(int newValue);
 	FloatRect getHitBox();
+
+
+};
+
+class Enemy : public Entity {
+protected:
+	float speed;
+	int hp;
+public:
+	Enemy(Vector2f textureSize, float speed, int hp);
+
+	virtual void update(float deltaTime) = 0; 
+
+	float getSpeed() const;
+	void setSpeed(float newSpeed);
+
+	int getHp() const;
+	void decreaseHp(int value = 1);
+	bool isDead() const;
 };
