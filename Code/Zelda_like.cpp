@@ -1,0 +1,118 @@
+// Zelda_like.cpp : Ce fichier contient la fonction 'main'. L'exécution du programme commence et se termine à cet endroit.
+//
+
+#include "Global.hpp"
+#include "Entity.hpp"
+#include "Tile.hpp"
+#include "GameUpdate.hpp"
+#include "UserInput.hpp"
+#include  "Collisions.hpp"
+#include "Map.hpp"
+
+using namespace std;
+
+int main()
+{
+    srand(time(0));
+    /*Image icon; icon.loadFromFile("icon.png");
+    window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());*/
+
+    loadTextures();
+
+    Event event;
+    Clock mainClock;
+    Game game;
+    
+    map1.loadExterior(tileMap, player);
+
+    thread uInputThread(userInput);
+    uInputThread.detach();
+    thread collisionThread(collisionsProcess);
+    collisionThread.detach();
+
+    while (isGameRunning) {
+        while (window.pollEvent(event)) {
+            if (event.type == Event::KeyPressed and Keyboard::isKeyPressed(Keyboard::Escape)) {
+                cout << "close\n";
+                /*isPauseMenu = true;*/
+                isGameRunning = false;
+            }
+            else if (event.type == Event::Closed) { isGameRunning = false; }
+            else if (event.type == Event::KeyPressed and Keyboard::isKeyPressed(Keyboard::Scancode::H)) {
+                showHitbox = showHitbox == false;
+            }
+        }
+        mainView.setCenter(player.getSprite()->getPosition());
+        window.setView(mainView);
+
+        timeSinceLastFrame = mainClock.restart();
+        game.update();
+
+        window.clear();
+
+        for (shared_ptr<Tile> tile : tileMap) {
+            if (tile) {
+                if (tile->getLayer() == 0) {
+                    window.draw(*tile->getSprite());
+                }
+            }
+        }
+        for (shared_ptr<Tile> tile : tileMap) {
+            if (tile) {
+                if (tile->getLayer() == 1) {
+                    window.draw(*tile->getSprite());
+                }
+            }
+        }
+        for (shared_ptr<Tile> tile : tileMap) {
+            if (tile) {
+                if (tile->getLayer() == 2 and tile->getSprite()->getPosition().y <= player.getSprite()->getPosition().y) {
+                    window.draw(*tile->getSprite());
+                }
+            }
+        }
+        for (shared_ptr<Money> money : moneyList) {
+            if (money) {
+                window.draw(*money->getSprite());
+            }
+        }
+
+        window.draw(*player.getSprite());
+
+        for (shared_ptr<Tile> tile : tileMap) {
+            if (tile) {
+                if (tile->getLayer() == 2 and tile->getSprite()->getPosition().y > player.getSprite()->getPosition().y) {
+                    window.draw(*tile->getSprite());
+                }
+            }
+        }
+
+        // hitbox display
+        if (showHitbox) {
+            RectangleShape hb(player.getHitBox().getSize());
+            hb.setPosition(player.getHitBox().getPosition());
+            hb.setFillColor(Color(0, 180, 255, 150));
+            window.draw(hb);
+
+            RectangleShape point(Vector2f(1, 1));
+            point.setFillColor(Color(255, 0, 0));
+            point.setPosition(player.getSprite()->getPosition() + Vector2f(0, 14));
+            window.draw(point);
+            point.setPosition(player.getSprite()->getPosition() + Vector2f(0, 8));
+            window.draw(point);
+            point.setPosition(player.getSprite()->getPosition() + Vector2f(8, 11));
+            window.draw(point);
+            point.setPosition(player.getSprite()->getPosition() + Vector2f(-8, 11));
+            window.draw(point);
+
+            RectangleShape attRange(player.getActionRange().getSize());
+            attRange.setPosition(player.getActionRange().getPosition());
+            attRange.setFillColor(Color(220, 80, 255, 150));
+            window.draw(attRange);
+        }
+
+        window.draw(*hpBar);
+
+        window.display();
+    }
+}
