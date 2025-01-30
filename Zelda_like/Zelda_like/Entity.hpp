@@ -1,15 +1,21 @@
 #pragma once
 
 #include "Global.hpp"
+#include <memory>
+#include <SFML/Graphics.hpp>
+
+using namespace std;
+
 
 class Entity {
 protected:
-	shared_ptr<Sprite> sprite = make_shared<Sprite>();
-public:
-	Entity(Vector2f textureSize);
-	shared_ptr<Sprite> getSprite();
-};
+    shared_ptr<Sprite> sprite = make_shared<Sprite>();
 
+public:
+    Entity(Vector2f textureSize);
+    virtual void draw() = 0;
+    shared_ptr<Sprite> getSprite();
+};
 class Player : public Entity {
 protected:
 	float speed = 250.f;
@@ -54,4 +60,5 @@ public:
 	int getHp() const;
 	void decreaseHp(int value = 1);
 	bool isDead() const;
+    Vector2f getPosition() const;
 };

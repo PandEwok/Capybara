@@ -1,50 +1,50 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Capybara\\Zelda_like\\",
+  "WorkspaceRootPath": "C:\\Users\\trestoux\\Documents\\GitHub\\Capybara\\Zelda_like\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{336F1C5D-A952-4EE7-A351-739AC7162AF8}|Zelda_like\\Zelda_like.vcxproj|D:\\Capybara\\Zelda_like\\Zelda_like\\GameUpdate.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{336F1C5D-A952-4EE7-A351-739AC7162AF8}|Zelda_like\\Zelda_like.vcxproj|solutionrelative:Zelda_like\\GameUpdate.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\trestoux\\Documents\\GitHub\\Capybara\\Zelda_like\\Zelda_like\\GameUpdate.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Zelda_like\\GameUpdate.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{336F1C5D-A952-4EE7-A351-739AC7162AF8}|Zelda_like\\Zelda_like.vcxproj|D:\\Capybara\\Zelda_like\\Zelda_like\\GameUpdate.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{336F1C5D-A952-4EE7-A351-739AC7162AF8}|Zelda_like\\Zelda_like.vcxproj|solutionrelative:Zelda_like\\GameUpdate.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\trestoux\\Documents\\GitHub\\Capybara\\Zelda_like\\Zelda_like\\Tile.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Zelda_like\\Tile.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{336F1C5D-A952-4EE7-A351-739AC7162AF8}|Zelda_like\\Zelda_like.vcxproj|D:\\Capybara\\Zelda_like\\Zelda_like\\Entity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{336F1C5D-A952-4EE7-A351-739AC7162AF8}|Zelda_like\\Zelda_like.vcxproj|solutionrelative:Zelda_like\\Entity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\trestoux\\Documents\\GitHub\\Capybara\\Zelda_like\\Zelda_like\\Tile.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Zelda_like\\Tile.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{336F1C5D-A952-4EE7-A351-739AC7162AF8}|Zelda_like\\Zelda_like.vcxproj|D:\\Capybara\\Zelda_like\\Zelda_like\\UserInput.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{336F1C5D-A952-4EE7-A351-739AC7162AF8}|Zelda_like\\Zelda_like.vcxproj|solutionrelative:Zelda_like\\UserInput.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\trestoux\\Documents\\GitHub\\Capybara\\Zelda_like\\Zelda_like\\GameUpdate.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Zelda_like\\GameUpdate.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{336F1C5D-A952-4EE7-A351-739AC7162AF8}|Zelda_like\\Zelda_like.vcxproj|D:\\Capybara\\Zelda_like\\Zelda_like\\UserInput.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{336F1C5D-A952-4EE7-A351-739AC7162AF8}|Zelda_like\\Zelda_like.vcxproj|solutionrelative:Zelda_like\\UserInput.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\trestoux\\Documents\\GitHub\\Capybara\\Zelda_like\\Zelda_like\\UserInput.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Zelda_like\\UserInput.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{336F1C5D-A952-4EE7-A351-739AC7162AF8}|Zelda_like\\Zelda_like.vcxproj|D:\\Capybara\\Zelda_like\\Zelda_like\\Tile.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{336F1C5D-A952-4EE7-A351-739AC7162AF8}|Zelda_like\\Zelda_like.vcxproj|solutionrelative:Zelda_like\\Tile.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\trestoux\\Documents\\GitHub\\Capybara\\Zelda_like\\Zelda_like\\UserInput.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Zelda_like\\UserInput.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{336F1C5D-A952-4EE7-A351-739AC7162AF8}|Zelda_like\\Zelda_like.vcxproj|D:\\Capybara\\Zelda_like\\Zelda_like\\Tile.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{336F1C5D-A952-4EE7-A351-739AC7162AF8}|Zelda_like\\Zelda_like.vcxproj|solutionrelative:Zelda_like\\Tile.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\trestoux\\Documents\\GitHub\\Capybara\\Zelda_like\\Zelda_like\\Entity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Zelda_like\\Entity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{336F1C5D-A952-4EE7-A351-739AC7162AF8}|Zelda_like\\Zelda_like.vcxproj|D:\\Capybara\\Zelda_like\\Zelda_like\\Zelda_like.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{336F1C5D-A952-4EE7-A351-739AC7162AF8}|Zelda_like\\Zelda_like.vcxproj|solutionrelative:Zelda_like\\Zelda_like.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\trestoux\\Documents\\GitHub\\Capybara\\Zelda_like\\Zelda_like\\Entity.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Zelda_like\\Entity.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{336F1C5D-A952-4EE7-A351-739AC7162AF8}|Zelda_like\\Zelda_like.vcxproj|D:\\Capybara\\Zelda_like\\Zelda_like\\Global.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{336F1C5D-A952-4EE7-A351-739AC7162AF8}|Zelda_like\\Zelda_like.vcxproj|solutionrelative:Zelda_like\\Global.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\trestoux\\Documents\\GitHub\\Capybara\\Zelda_like\\Zelda_like\\Global.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Zelda_like\\Global.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{336F1C5D-A952-4EE7-A351-739AC7162AF8}|Zelda_like\\Zelda_like.vcxproj|D:\\Capybara\\Zelda_like\\Zelda_like\\Global.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{336F1C5D-A952-4EE7-A351-739AC7162AF8}|Zelda_like\\Zelda_like.vcxproj|solutionrelative:Zelda_like\\Global.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\trestoux\\Documents\\GitHub\\Capybara\\Zelda_like\\Zelda_like\\Global.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Zelda_like\\Global.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{336F1C5D-A952-4EE7-A351-739AC7162AF8}|Zelda_like\\Zelda_like.vcxproj|D:\\Capybara\\Zelda_like\\Zelda_like\\Entity.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{336F1C5D-A952-4EE7-A351-739AC7162AF8}|Zelda_like\\Zelda_like.vcxproj|solutionrelative:Zelda_like\\Entity.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\trestoux\\Documents\\GitHub\\Capybara\\Zelda_like\\Zelda_like\\Zelda_like.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Zelda_like\\Zelda_like.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,45 +54,39 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "Tile.cpp",
-              "DocumentMoniker": "D:\\Capybara\\Zelda_like\\Zelda_like\\Tile.cpp",
+              "DocumentMoniker": "C:\\Users\\trestoux\\Documents\\GitHub\\Capybara\\Zelda_like\\Zelda_like\\Tile.cpp",
               "RelativeDocumentMoniker": "Zelda_like\\Tile.cpp",
-              "ToolTip": "D:\\Capybara\\Zelda_like\\Zelda_like\\Tile.cpp",
+              "ToolTip": "C:\\Users\\trestoux\\Documents\\GitHub\\Capybara\\Zelda_like\\Zelda_like\\Tile.cpp",
               "RelativeToolTip": "Zelda_like\\Tile.cpp",
               "ViewState": "AgIAACEAAAAAAAAAAAAAACcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-01-30T13:55:46.221Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-30T13:55:46.221Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
               "Title": "Tile.hpp",
-              "DocumentMoniker": "D:\\Capybara\\Zelda_like\\Zelda_like\\Tile.hpp",
+              "DocumentMoniker": "C:\\Users\\trestoux\\Documents\\GitHub\\Capybara\\Zelda_like\\Zelda_like\\Tile.hpp",
               "RelativeDocumentMoniker": "Zelda_like\\Tile.hpp",
-              "ToolTip": "D:\\Capybara\\Zelda_like\\Zelda_like\\Tile.hpp",
+              "ToolTip": "C:\\Users\\trestoux\\Documents\\GitHub\\Capybara\\Zelda_like\\Zelda_like\\Tile.hpp",
               "RelativeToolTip": "Zelda_like\\Tile.hpp",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAAAwAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-30T13:55:46.234Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-30T13:55:46.234Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "GameUpdate.cpp",
-              "DocumentMoniker": "D:\\Capybara\\Zelda_like\\Zelda_like\\GameUpdate.cpp",
+              "DocumentMoniker": "C:\\Users\\trestoux\\Documents\\GitHub\\Capybara\\Zelda_like\\Zelda_like\\GameUpdate.cpp",
               "RelativeDocumentMoniker": "Zelda_like\\GameUpdate.cpp",
-              "ToolTip": "D:\\Capybara\\Zelda_like\\Zelda_like\\GameUpdate.cpp",
+              "ToolTip": "C:\\Users\\trestoux\\Documents\\GitHub\\Capybara\\Zelda_like\\Zelda_like\\GameUpdate.cpp",
               "RelativeToolTip": "Zelda_like\\GameUpdate.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
@@ -101,107 +95,99 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "GameUpdate.hpp",
-              "DocumentMoniker": "D:\\Capybara\\Zelda_like\\Zelda_like\\GameUpdate.hpp",
+              "DocumentMoniker": "C:\\Users\\trestoux\\Documents\\GitHub\\Capybara\\Zelda_like\\Zelda_like\\GameUpdate.hpp",
               "RelativeDocumentMoniker": "Zelda_like\\GameUpdate.hpp",
-              "ToolTip": "D:\\Capybara\\Zelda_like\\Zelda_like\\GameUpdate.hpp",
+              "ToolTip": "C:\\Users\\trestoux\\Documents\\GitHub\\Capybara\\Zelda_like\\Zelda_like\\GameUpdate.hpp",
               "RelativeToolTip": "Zelda_like\\GameUpdate.hpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-30T13:55:46.235Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-30T13:55:46.235Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "UserInput.cpp",
-              "DocumentMoniker": "D:\\Capybara\\Zelda_like\\Zelda_like\\UserInput.cpp",
+              "DocumentMoniker": "C:\\Users\\trestoux\\Documents\\GitHub\\Capybara\\Zelda_like\\Zelda_like\\UserInput.cpp",
               "RelativeDocumentMoniker": "Zelda_like\\UserInput.cpp",
-              "ToolTip": "D:\\Capybara\\Zelda_like\\Zelda_like\\UserInput.cpp",
+              "ToolTip": "C:\\Users\\trestoux\\Documents\\GitHub\\Capybara\\Zelda_like\\Zelda_like\\UserInput.cpp",
               "RelativeToolTip": "Zelda_like\\UserInput.cpp",
               "ViewState": "AgIAAGMAAAAAAAAAAAAAADYAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-01-30T13:55:46.236Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-30T13:55:46.236Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "UserInput.hpp",
-              "DocumentMoniker": "D:\\Capybara\\Zelda_like\\Zelda_like\\UserInput.hpp",
+              "DocumentMoniker": "C:\\Users\\trestoux\\Documents\\GitHub\\Capybara\\Zelda_like\\Zelda_like\\UserInput.hpp",
               "RelativeDocumentMoniker": "Zelda_like\\UserInput.hpp",
-              "ToolTip": "D:\\Capybara\\Zelda_like\\Zelda_like\\UserInput.hpp",
+              "ToolTip": "C:\\Users\\trestoux\\Documents\\GitHub\\Capybara\\Zelda_like\\Zelda_like\\UserInput.hpp",
               "RelativeToolTip": "Zelda_like\\UserInput.hpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-30T13:55:46.237Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-30T13:55:46.237Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "Entity.cpp",
-              "DocumentMoniker": "D:\\Capybara\\Zelda_like\\Zelda_like\\Entity.cpp",
+              "DocumentMoniker": "C:\\Users\\trestoux\\Documents\\GitHub\\Capybara\\Zelda_like\\Zelda_like\\Entity.cpp",
               "RelativeDocumentMoniker": "Zelda_like\\Entity.cpp",
-              "ToolTip": "D:\\Capybara\\Zelda_like\\Zelda_like\\Entity.cpp",
+              "ToolTip": "C:\\Users\\trestoux\\Documents\\GitHub\\Capybara\\Zelda_like\\Zelda_like\\Entity.cpp",
               "RelativeToolTip": "Zelda_like\\Entity.cpp",
               "ViewState": "AgIAAEAAAAAAAAAAAIAwwFkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-01-30T13:55:46.269Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-30T13:55:46.269Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 7,
               "Title": "Entity.hpp",
-              "DocumentMoniker": "D:\\Capybara\\Zelda_like\\Zelda_like\\Entity.hpp",
+              "DocumentMoniker": "C:\\Users\\trestoux\\Documents\\GitHub\\Capybara\\Zelda_like\\Zelda_like\\Entity.hpp",
               "RelativeDocumentMoniker": "Zelda_like\\Entity.hpp",
-              "ToolTip": "D:\\Capybara\\Zelda_like\\Zelda_like\\Entity.hpp",
+              "ToolTip": "C:\\Users\\trestoux\\Documents\\GitHub\\Capybara\\Zelda_like\\Zelda_like\\Entity.hpp",
               "RelativeToolTip": "Zelda_like\\Entity.hpp",
               "ViewState": "AgIAABYAAAAAAAAAAAAAABMAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-30T13:55:46.315Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-30T13:55:46.315Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
               "Title": "Global.cpp",
-              "DocumentMoniker": "D:\\Capybara\\Zelda_like\\Zelda_like\\Global.cpp",
+              "DocumentMoniker": "C:\\Users\\trestoux\\Documents\\GitHub\\Capybara\\Zelda_like\\Zelda_like\\Global.cpp",
               "RelativeDocumentMoniker": "Zelda_like\\Global.cpp",
-              "ToolTip": "D:\\Capybara\\Zelda_like\\Zelda_like\\Global.cpp",
+              "ToolTip": "C:\\Users\\trestoux\\Documents\\GitHub\\Capybara\\Zelda_like\\Zelda_like\\Global.cpp",
               "RelativeToolTip": "Zelda_like\\Global.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-01-30T13:55:46.316Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-30T13:55:46.316Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
               "Title": "Global.hpp",
-              "DocumentMoniker": "D:\\Capybara\\Zelda_like\\Zelda_like\\Global.hpp",
+              "DocumentMoniker": "C:\\Users\\trestoux\\Documents\\GitHub\\Capybara\\Zelda_like\\Zelda_like\\Global.hpp",
               "RelativeDocumentMoniker": "Zelda_like\\Global.hpp",
-              "ToolTip": "D:\\Capybara\\Zelda_like\\Zelda_like\\Global.hpp",
+              "ToolTip": "C:\\Users\\trestoux\\Documents\\GitHub\\Capybara\\Zelda_like\\Zelda_like\\Global.hpp",
               "RelativeToolTip": "Zelda_like\\Global.hpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-30T13:55:46.317Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-30T13:55:46.317Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "Zelda_like.cpp",
-              "DocumentMoniker": "D:\\Capybara\\Zelda_like\\Zelda_like\\Zelda_like.cpp",
+              "DocumentMoniker": "C:\\Users\\trestoux\\Documents\\GitHub\\Capybara\\Zelda_like\\Zelda_like\\Zelda_like.cpp",
               "RelativeDocumentMoniker": "Zelda_like\\Zelda_like.cpp",
-              "ToolTip": "D:\\Capybara\\Zelda_like\\Zelda_like\\Zelda_like.cpp",
+              "ToolTip": "C:\\Users\\trestoux\\Documents\\GitHub\\Capybara\\Zelda_like\\Zelda_like\\Zelda_like.cpp",
               "RelativeToolTip": "Zelda_like\\Zelda_like.cpp",
               "ViewState": "AgIAAKgAAAAAAAAAAAAAAMsAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-01-30T13:55:46.318Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-30T13:55:46.318Z"
             }
           ]
         }

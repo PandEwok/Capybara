@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 ﻿  Entity.cpp
 D:\Capybara\Zelda_like\Zelda_like\Entity.cpp(12,104): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
 D:\Capybara\Zelda_like\Zelda_like\Entity.cpp(12,104): warning C4244:         with
@@ -22,3 +23,6 @@ D:\Capybara\Zelda_like\Zelda_like\Entity.cpp(90,1): warning C4715: 'Player::getA
 x64\Debug\Collisions.obj : warning LNK4042: objet spécifié plus d'une fois ; définitions supplémentaires ignorées
 x64\Debug\GameUpdate.obj : warning LNK4042: objet spécifié plus d'une fois ; définitions supplémentaires ignorées
   Zelda_like.vcxproj -> D:\Capybara\Zelda_like\x64\Debug\Zelda_like.exe
+=======
+﻿
+>>>>>>> Stashed changes
