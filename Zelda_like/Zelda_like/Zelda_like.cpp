@@ -6,6 +6,7 @@
 #include "Tile.hpp"
 #include "GameUpdate.hpp"
 #include "UserInput.hpp"
+#include  "Collisions.hpp"
 
 using namespace std;
 
@@ -30,7 +31,7 @@ int main()
             break;
         }
         for (char tileChar : line) {
-            if (tileChar == '0' or tileChar == '8' or tileChar == '9' or tileChar == 'o' or tileChar == '6' or tileChar == '7' or tileChar == 'u'
+            if (tileChar == '0' or tileChar == '8' or tileChar == '9' or tileChar == 'o' or tileChar == '6' or tileChar == '7' or tileChar == 'u' or tileChar == 'Y' or tileChar == 'D'
                 or tileChar == 'q' or tileChar == 'p' or tileChar == 'f' or tileChar == 'g' or tileChar == 'c' or tileChar == 'e' or tileChar == 'a' or tileChar == 'F') {
                 shared_ptr<Wall> newTile = make_shared<Wall>(tilePosition);
                 if (tileChar == '9') {
@@ -85,12 +86,21 @@ int main()
                     newTile->getSprite()->setScale(-1, 1);
                     newTile->getSprite()->move(Vector2f(16, 0));
                 }
-                /*tileMap.push_back(newTile);
-                if (tileChar == 'F') {
+                else if (tileChar == 'Y') {
+                    shared_ptr<Floor> newGrass = make_shared<Floor>(tilePosition);
+                    tileMap.push_back(newGrass);
+                    newTile->getSprite()->setTexture(highGroundTile);
+                }
+                else if (tileChar == 'D') {
+                    shared_ptr<Gate> newGate = make_shared<Gate>(tilePosition);
+                    tileMap.push_back(newGate);
+                    newTile->getSprite()->setTexture(highGroundTile);
+                }
+                tileMap.push_back(newTile);
+                /*if (tileChar == 'F') {
                     shared_ptr<Flag> newFlag = make_shared<Flag>(tilePosition);
                     tileMap.push_back(newFlag);
                 }*/
-                tileMap.push_back(newTile);
             }
             else if (tileChar == '1') {
                 shared_ptr<Floor> newTile = make_shared<Floor>(tilePosition);
@@ -123,6 +133,12 @@ int main()
                 shared_ptr<Tree> newTree = make_shared<Tree>(tilePosition);
                 tileMap.push_back(newTree);
             }
+            else if (tileChar == '#') {
+                shared_ptr<Floor> newTile = make_shared<Floor>(tilePosition);
+                tileMap.push_back(newTile);
+                shared_ptr<Pot> newPot = make_shared<Pot>(tilePosition);
+                tileMap.push_back(newPot);
+            }
             /*else if (tileChar == '4' or tileChar == '5') {
                 shared_ptr<Floor> newFloor = make_shared<Floor>(tilePosition);
                 tileMap.push_back(newFloor);
@@ -140,6 +156,8 @@ int main()
 
     thread uInputThread(userInput);
     uInputThread.detach();
+    thread collisionThread(collisionsProcess);
+    collisionThread.detach();
 
     while (isGameRunning) {
         while (window.pollEvent(event)) {
@@ -170,9 +188,21 @@ int main()
         }
         for (shared_ptr<Tile> tile : tileMap) {
             if (tile) {
-                if (tile->getLayer() == 1 and tile->getSprite()->getPosition().y <= player.getSprite()->getPosition().y) {
+                if (tile->getLayer() == 1) {
                     window.draw(*tile->getSprite());
                 }
+            }
+        }
+        for (shared_ptr<Tile> tile : tileMap) {
+            if (tile) {
+                if (tile->getLayer() == 2 and tile->getSprite()->getPosition().y <= player.getSprite()->getPosition().y) {
+                    window.draw(*tile->getSprite());
+                }
+            }
+        }
+        for (shared_ptr<Money> money : moneyList) {
+            if (money) {
+                window.draw(*money->getSprite());
             }
         }
 
@@ -180,7 +210,7 @@ int main()
 
         for (shared_ptr<Tile> tile : tileMap) {
             if (tile) {
-                if (tile->getLayer() == 1 and tile->getSprite()->getPosition().y > player.getSprite()->getPosition().y) {
+                if (tile->getLayer() == 2 and tile->getSprite()->getPosition().y > player.getSprite()->getPosition().y) {
                     window.draw(*tile->getSprite());
                 }
             }
@@ -192,6 +222,7 @@ int main()
             hb.setPosition(player.getHitBox().getPosition());
             hb.setFillColor(Color(0, 180, 255, 150));
             window.draw(hb);
+
             RectangleShape point(Vector2f(1, 1));
             point.setFillColor(Color(255, 0, 0));
             point.setPosition(player.getSprite()->getPosition() + Vector2f(0, 14));
@@ -202,6 +233,11 @@ int main()
             window.draw(point);
             point.setPosition(player.getSprite()->getPosition() + Vector2f(-8, 11));
             window.draw(point);
+
+            RectangleShape attRange(player.getActionRange().getSize());
+            attRange.setPosition(player.getActionRange().getPosition());
+            attRange.setFillColor(Color(220, 80, 255, 150));
+            window.draw(attRange);
         }
 
         window.draw(*hpBar);

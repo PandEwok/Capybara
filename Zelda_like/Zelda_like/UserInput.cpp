@@ -14,6 +14,10 @@ void userInput() {
         }
         toDeleteTiles.clear();
 
+        if (Mouse::isButtonPressed(Mouse::Left)) {
+
+        }
+
         inputMovement = Vector2f(0, 0.f);
         if (Keyboard::isKeyPressed(Keyboard::Scancode::A)) {
             inputMovement += Vector2f(-1.f, 0.f);
@@ -43,9 +47,11 @@ void userInput() {
 
         if (player.facing == player.FRONT) {
             if (player.getSprite()->getTexture() != &playerTextureFrontIdle and inputMovement == Vector2f(0, 0)) {
+                player.getSprite()->setTextureRect(IntRect(0, 0, player.getSprite()->getTextureRect().width, player.getSprite()->getTextureRect().height));
                 player.getSprite()->setTexture(playerTextureFrontIdle);
             }
             else if (player.getSprite()->getTexture() != &playerTextureFrontWalk and inputMovement != Vector2f(0, 0)) {
+                player.getSprite()->setTextureRect(IntRect(0, 0, player.getSprite()->getTextureRect().width, player.getSprite()->getTextureRect().height));
                 player.getSprite()->setTexture(playerTextureFrontWalk);
             }
             if (player.getSprite()->getScale().x < 0) {
@@ -54,9 +60,11 @@ void userInput() {
         }
         else if (player.facing == player.BACK) {
             if (player.getSprite()->getTexture() != &playerTextureBackIdle and inputMovement == Vector2f(0, 0)) {
+                player.getSprite()->setTextureRect(IntRect(0, 0, player.getSprite()->getTextureRect().width, player.getSprite()->getTextureRect().height));
                 player.getSprite()->setTexture(playerTextureBackIdle);
             }
             else if (player.getSprite()->getTexture() != &playerTextureBackWalk and inputMovement != Vector2f(0, 0)) {
+                player.getSprite()->setTextureRect(IntRect(0, 0, player.getSprite()->getTextureRect().width, player.getSprite()->getTextureRect().height));
                 player.getSprite()->setTexture(playerTextureBackWalk);
             }
             if (player.getSprite()->getScale().x < 0) {
@@ -65,9 +73,11 @@ void userInput() {
         }
         else if (player.facing == player.RIGHT or player.facing == player.LEFT) {
             if (player.getSprite()->getTexture() != &playerTextureSideIdle and inputMovement == Vector2f(0, 0)) {
+                player.getSprite()->setTextureRect(IntRect(0, 0, player.getSprite()->getTextureRect().width, player.getSprite()->getTextureRect().height));
                 player.getSprite()->setTexture(playerTextureSideIdle);
             }
             else if (player.getSprite()->getTexture() != &playerTextureSideWalk and inputMovement != Vector2f(0, 0)) {
+                player.getSprite()->setTextureRect(IntRect(0, 0, player.getSprite()->getTextureRect().width, player.getSprite()->getTextureRect().height));
                 player.getSprite()->setTexture(playerTextureSideWalk);
             }
         }
@@ -97,7 +107,7 @@ void userInput() {
                         }
                         continue;
                     }
-                    if (tile->getType() == "Wall" or tile->getType() == "Door") {
+                    if (tile->getType() == "Wall" or tile->getType() == "Door" or tile->getType() == "Pot") {
                         if (inputMovement.y > 0 and tile->getSprite()->getGlobalBounds().contains(player.getSprite()->getPosition() + Vector2f(0, 14))) {
                             inputMovement = Vector2f(inputMovement.x, 0);
                         }
@@ -110,6 +120,14 @@ void userInput() {
                         else if (inputMovement.x < 0 and tile->getSprite()->getGlobalBounds().contains(player.getSprite()->getPosition() + Vector2f(-8, 11))) {
                             inputMovement = Vector2f(0, inputMovement.y);
                         }
+                    }
+                }
+                if (tile->getSprite()->getGlobalBounds().intersects(player.getActionRange())) {
+                    if (tile->getType() == "Pot" and Mouse::isButtonPressed(Mouse::Left)) {
+                        toDeleteTiles.push_back(tile);
+                        shared_ptr<Money> newMoney = make_shared<Money>();
+                        newMoney->getSprite()->setPosition(tile->getSprite()->getPosition());
+                        moneyList.push_back(newMoney);
                     }
                 }
             }

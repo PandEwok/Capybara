@@ -1,7 +1,10 @@
-D:\Zelda_like\Zelda_like\Entity.cpp;D:\Zelda_like\Zelda_like\x64\Debug\Entity.obj
-D:\Zelda_like\Zelda_like\GameUpdate.cpp;D:\Zelda_like\Zelda_like\x64\Debug\GameUpdate.obj
-D:\Zelda_like\Zelda_like\GameUpdate.hpp;D:\Zelda_like\Zelda_like\x64\Debug\GameUpdate.obj
-D:\Zelda_like\Zelda_like\Global.cpp;D:\Zelda_like\Zelda_like\x64\Debug\Global.obj
-D:\Zelda_like\Zelda_like\Tile.cpp;D:\Zelda_like\Zelda_like\x64\Debug\Tile.obj
-D:\Zelda_like\Zelda_like\UserInput.cpp;D:\Zelda_like\Zelda_like\x64\Debug\UserInput.obj
-D:\Zelda_like\Zelda_like\Zelda_like.cpp;D:\Zelda_like\Zelda_like\x64\Debug\Zelda_like.obj
+D:\Capybara\Zelda_like\Zelda_like\Collisions.cpp;D:\Capybara\Zelda_like\Zelda_like\x64\Debug\Collisions.obj
+D:\Capybara\Zelda_like\Zelda_like\Collisions.hpp;D:\Capybara\Zelda_like\Zelda_like\x64\Debug\Collisions.obj
+D:\Capybara\Zelda_like\Zelda_like\Entity.cpp;D:\Capybara\Zelda_like\Zelda_like\x64\Debug\Entity.obj
+D:\Capybara\Zelda_like\Zelda_like\GameUpdate.cpp;D:\Capybara\Zelda_like\Zelda_like\x64\Debug\GameUpdate.obj
+D:\Capybara\Zelda_like\Zelda_like\GameUpdate.hpp;D:\Capybara\Zelda_like\Zelda_like\x64\Debug\GameUpdate.obj
+D:\Capybara\Zelda_like\Zelda_like\Global.cpp;D:\Capybara\Zelda_like\Zelda_like\x64\Debug\Global.obj
+D:\Capybara\Zelda_like\Zelda_like\Item.cpp;D:\Capybara\Zelda_like\Zelda_like\x64\Debug\Item.obj
+D:\Capybara\Zelda_like\Zelda_like\Tile.cpp;D:\Capybara\Zelda_like\Zelda_like\x64\Debug\Tile.obj
+D:\Capybara\Zelda_like\Zelda_like\UserInput.cpp;D:\Capybara\Zelda_like\Zelda_like\x64\Debug\UserInput.obj
+D:\Capybara\Zelda_like\Zelda_like\Zelda_like.cpp;D:\Capybara\Zelda_like\Zelda_like\x64\Debug\Zelda_like.obj

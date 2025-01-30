@@ -7,7 +7,6 @@ protected:
 	shared_ptr<Sprite> sprite = make_shared<Sprite>();
 public:
 	Entity(Vector2f textureSize);
-	virtual void draw() = 0;
 	shared_ptr<Sprite> getSprite();
 };
 
@@ -26,7 +25,6 @@ public:
 	};
 	int facing = FRONT;
 	Player();
-	void draw() override;
 	float getSpeed();
 	void move();
 	Clock* getFramerate();
@@ -36,6 +34,7 @@ public:
 	int getKeyState();
 	void setKeyState(int newValue);
 	FloatRect getHitBox();
+	FloatRect getActionRange();
 
 
 };
