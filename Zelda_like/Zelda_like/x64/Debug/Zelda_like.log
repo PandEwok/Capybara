@@ -1,24 +1,86 @@
-﻿  Entity.cpp
-D:\Capybara\Zelda_like\Zelda_like\Entity.cpp(12,104): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
-D:\Capybara\Zelda_like\Zelda_like\Entity.cpp(12,104): warning C4244:         with
-D:\Capybara\Zelda_like\Zelda_like\Entity.cpp(12,104): warning C4244:         [
-D:\Capybara\Zelda_like\Zelda_like\Entity.cpp(12,104): warning C4244:             T=unsigned int
-D:\Capybara\Zelda_like\Zelda_like\Entity.cpp(12,104): warning C4244:         ]
-D:\Capybara\Zelda_like\Zelda_like\Entity.cpp(12,104): warning C4244:         and
-D:\Capybara\Zelda_like\Zelda_like\Entity.cpp(12,104): warning C4244:         [
-D:\Capybara\Zelda_like\Zelda_like\Entity.cpp(12,104): warning C4244:             T=float
-D:\Capybara\Zelda_like\Zelda_like\Entity.cpp(12,104): warning C4244:         ]
-D:\Capybara\Zelda_like\Zelda_like\Entity.cpp(12,68): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
-D:\Capybara\Zelda_like\Zelda_like\Entity.cpp(12,68): warning C4244:         with
-D:\Capybara\Zelda_like\Zelda_like\Entity.cpp(12,68): warning C4244:         [
-D:\Capybara\Zelda_like\Zelda_like\Entity.cpp(12,68): warning C4244:             T=unsigned int
-D:\Capybara\Zelda_like\Zelda_like\Entity.cpp(12,68): warning C4244:         ]
-D:\Capybara\Zelda_like\Zelda_like\Entity.cpp(12,68): warning C4244:         and
-D:\Capybara\Zelda_like\Zelda_like\Entity.cpp(12,68): warning C4244:         [
-D:\Capybara\Zelda_like\Zelda_like\Entity.cpp(12,68): warning C4244:             T=float
-D:\Capybara\Zelda_like\Zelda_like\Entity.cpp(12,68): warning C4244:         ]
-D:\Capybara\Zelda_like\Zelda_like\Entity.cpp(90,1): warning C4715: 'Player::getActionRange' : les chemins de contrôle ne retournent pas tous une valeur
-  LINK : D:\Capybara\Zelda_like\x64\Debug\Zelda_like.exe introuvable ou non généré par la dernière édition de liens incrémentielle ; édition de liens complète en cours
+﻿  Collisions.cpp
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Item.hpp(3,10): warning C4067: jetons inattendus après la directive du préprocesseur - saut de ligne attendu
+  (compiler le fichier source 'Collisions.cpp')
+  
+  Collisions.hpp
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Item.hpp(3,10): warning C4067: jetons inattendus après la directive du préprocesseur - saut de ligne attendu
+  (compiler le fichier source 'Collisions.hpp')
+  
+  Entity.cpp
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Entity.cpp(12,104): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Entity.cpp(12,104): warning C4244:         with
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Entity.cpp(12,104): warning C4244:         [
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Entity.cpp(12,104): warning C4244:             T=unsigned int
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Entity.cpp(12,104): warning C4244:         ]
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Entity.cpp(12,104): warning C4244:         and
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Entity.cpp(12,104): warning C4244:         [
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Entity.cpp(12,104): warning C4244:             T=float
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Entity.cpp(12,104): warning C4244:         ]
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Entity.cpp(12,68): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Entity.cpp(12,68): warning C4244:         with
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Entity.cpp(12,68): warning C4244:         [
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Entity.cpp(12,68): warning C4244:             T=unsigned int
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Entity.cpp(12,68): warning C4244:         ]
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Entity.cpp(12,68): warning C4244:         and
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Entity.cpp(12,68): warning C4244:         [
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Entity.cpp(12,68): warning C4244:             T=float
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Entity.cpp(12,68): warning C4244:         ]
+  GameUpdate.cpp
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Item.hpp(3,10): warning C4067: jetons inattendus après la directive du préprocesseur - saut de ligne attendu
+  (compiler le fichier source 'GameUpdate.cpp')
+  
+  GameUpdate.hpp
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Item.hpp(3,10): warning C4067: jetons inattendus après la directive du préprocesseur - saut de ligne attendu
+  (compiler le fichier source 'GameUpdate.hpp')
+  
+  Global.cpp
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Global.cpp(11,44): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Global.cpp(11,31): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Global.cpp(75,39): warning C4018: '>=' : incompatibilité signed/unsigned
+  Item.cpp
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Item.hpp(3,10): warning C4067: jetons inattendus après la directive du préprocesseur - saut de ligne attendu
+  (compiler le fichier source 'Item.cpp')
+  
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Item.cpp(3,108): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Item.cpp(3,108): warning C4244:         with
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Item.cpp(3,108): warning C4244:         [
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Item.cpp(3,108): warning C4244:             T=unsigned int
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Item.cpp(3,108): warning C4244:         ]
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Item.cpp(3,108): warning C4244:         and
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Item.cpp(3,108): warning C4244:         [
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Item.cpp(3,108): warning C4244:             T=float
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Item.cpp(3,108): warning C4244:         ]
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Item.cpp(3,83): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Item.cpp(3,83): warning C4244:         with
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Item.cpp(3,83): warning C4244:         [
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Item.cpp(3,83): warning C4244:             T=unsigned int
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Item.cpp(3,83): warning C4244:         ]
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Item.cpp(3,83): warning C4244:         and
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Item.cpp(3,83): warning C4244:         [
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Item.cpp(3,83): warning C4244:             T=float
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Item.cpp(3,83): warning C4244:         ]
+  Tile.cpp
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Tile.cpp(53,57): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Tile.cpp(53,57): warning C4244:         with
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Tile.cpp(53,57): warning C4244:         [
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Tile.cpp(53,57): warning C4244:             T=unsigned int
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Tile.cpp(53,57): warning C4244:         ]
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Tile.cpp(53,57): warning C4244:         and
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Tile.cpp(53,57): warning C4244:         [
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Tile.cpp(53,57): warning C4244:             T=float
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Tile.cpp(53,57): warning C4244:         ]
+  UserInput.cpp
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Item.hpp(3,10): warning C4067: jetons inattendus après la directive du préprocesseur - saut de ligne attendu
+  (compiler le fichier source 'UserInput.cpp')
+  
+  Zelda_like.cpp
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Item.hpp(3,10): warning C4067: jetons inattendus après la directive du préprocesseur - saut de ligne attendu
+  (compiler le fichier source 'Zelda_like.cpp')
+  
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Zelda_like.cpp(15,15): warning C4244: 'argument' : conversion de 'time_t' en 'unsigned int', perte possible de données
+  Génération de code en cours...
+C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\Zelda_like\Entity.cpp(90,1): warning C4715: 'Player::getActionRange' : les chemins de contrôle ne retournent pas tous une valeur
+  LINK : C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\x64\Debug\Zelda_like.exe introuvable ou non généré par la dernière édition de liens incrémentielle ; édition de liens complète en cours
 x64\Debug\Collisions.obj : warning LNK4042: objet spécifié plus d'une fois ; définitions supplémentaires ignorées
 x64\Debug\GameUpdate.obj : warning LNK4042: objet spécifié plus d'une fois ; définitions supplémentaires ignorées
-  Zelda_like.vcxproj -> D:\Capybara\Zelda_like\x64\Debug\Zelda_like.exe
+  Zelda_like.vcxproj -> C:\Users\trestoux\Documents\GitHub\Capybara\Zelda_like\x64\Debug\Zelda_like.exe
