@@ -7,9 +7,9 @@ string whiteString = "\033[0m";
 string greenString = "\033[32m";
 string redString = "\033[31m";
 
-float screenWidth = 1600.f, screenHeight = screenWidth * 0.5625f;
+float screenWidth = 1200.f, screenHeight = screenWidth / 4 * 3;
 RenderWindow window(VideoMode(screenWidth, screenHeight), "ExCusEee Me, pRiNcesS", Style::Close);
-View mainView(FloatRect(screenWidth / 2, screenHeight / 2, 220, 220 * 0.5625f));
+View mainView(FloatRect(screenWidth / 2, screenHeight / 2, 220, 220 / 4 * 3));
 bool isGameRunning = true;
 Time timeSinceLastFrame;
 Time timeSinceLastFrameInputs;
@@ -17,7 +17,7 @@ Time timeSinceLastFrameInputs;
 Texture hpBarTexture;
 shared_ptr<Sprite> hpBar = make_shared<Sprite>();
 Vector2f inputMovement = Vector2f(0.f, 0.f);
-int playerMoney = 0;
+int playerScore = 0;
 Texture playerKeyTexture;
 shared_ptr<Sprite> playerKey = make_shared<Sprite>();
 bool showHitbox = false;
@@ -39,11 +39,6 @@ Texture grassWallTopEndTexture;
 Texture waterTileTexture;
 Texture bridgeTexture;
 Texture treeTexture;
-Texture highGroundTile;
-Texture doorExteriorTileTecture;
-Texture potTexture;
-
-Texture rubyTexture;
 
 void loadTextures() {
     playerTextureFrontIdle.loadFromFile("Images/Pixelarium - Playable Character - Free Version/Pack Content/Front animations/spr_player_front_idle.png");
@@ -64,10 +59,6 @@ void loadTextures() {
     waterTileTexture.loadFromFile("Images/Pixelarium - GrassLands - Free Version/Pack content/Sprites/Tileset/water_tile.png");
     bridgeTexture.loadFromFile("Images/Pixelarium - GrassLands - Free Version/Pack content/Sprites/Tileset/bridge.png");
     treeTexture.loadFromFile("Images/Pixelarium - GrassLands - Free Version/Pack content/Sprites/Vegetation/spr_tree1.png");
-    highGroundTile.loadFromFile("Images/Pixelarium - GrassLands - Free Version/Pack content/Sprites/Tileset/highGroundTile.png");
-    doorExteriorTileTecture.loadFromFile("Images/32rogues/door_tile.png");
-    potTexture.loadFromFile("Images/Dungeon Gathering Free Version/Vase Shine Anim.png");
-    rubyTexture.loadFromFile("Images/Coin_Gems/ruby_red.png");
 }
 
 void continueAnimation(shared_ptr<Sprite> sprite) {

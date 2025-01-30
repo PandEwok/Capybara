@@ -36,6 +36,7 @@
     <ClCompile Include="Tile.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
     <ClCompile Include="Item.cpp">
       <Filter>Fichiers sources</Filter>
@@ -55,6 +56,8 @@
 >>>>>>> Stashed changes
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+=======
+>>>>>>> parent of 4e6e33f (money and improvements)
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Global.hpp">
@@ -69,6 +72,7 @@
     <ClInclude Include="Tile.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
     <ClInclude Include="Item.hpp">
 =======
@@ -82,5 +86,7 @@
 >>>>>>> Stashed changes
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+=======
+>>>>>>> parent of 4e6e33f (money and improvements)
   </ItemGroup>
 </Project>

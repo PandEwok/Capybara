@@ -9,7 +9,16 @@ using namespace std;
 
 class Entity {
 protected:
+<<<<<<< HEAD
     shared_ptr<Sprite> sprite = make_shared<Sprite>();
+=======
+	shared_ptr<Sprite> sprite = make_shared<Sprite>();
+public:
+	Entity(Vector2f textureSize);
+	virtual void draw() = 0;
+	shared_ptr<Sprite> getSprite();
+};
+>>>>>>> parent of 4e6e33f (money and improvements)
 
 public:
     Entity(Vector2f textureSize);
@@ -31,6 +40,7 @@ public:
 	};
 	int facing = FRONT;
 	Player();
+	void draw() override;
 	float getSpeed();
 	void move();
 	Clock* getFramerate();
@@ -40,7 +50,6 @@ public:
 	int getKeyState();
 	void setKeyState(int newValue);
 	FloatRect getHitBox();
-	FloatRect getActionRange();
 
 
 };
