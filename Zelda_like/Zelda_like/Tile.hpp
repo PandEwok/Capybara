@@ -28,6 +28,10 @@ class Door : public Tile {
 public:
 	Door(Vector2f position);
 };
+class Gate : public Tile {
+public:
+	Gate(Vector2f position);
+};
 
 class Bridge : public Tile {
 public:
@@ -37,4 +41,9 @@ public:
 class Tree : public Tile {
 public:
 	Tree(Vector2f position);
+};
+
+class Pot : public Tile {
+public:
+	Pot(Vector2f position);
 };

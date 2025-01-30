@@ -33,7 +33,7 @@ extern Time timeSinceLastFrameInputs;
 extern Texture hpBarTexture;
 extern shared_ptr<Sprite> hpBar;
 extern Vector2f inputMovement;
-extern int playerScore;
+extern int playerMoney;
 extern Texture playerKeyTexture;
 extern shared_ptr<Sprite> playerKey;
 extern bool showHitbox;
@@ -57,6 +57,12 @@ extern Texture grassWallTopEndTexture;
 extern Texture waterTileTexture;
 extern Texture bridgeTexture;
 extern Texture treeTexture;
+extern Texture highGroundTile;
+extern Texture doorExteriorTileTecture;
+extern Texture potTexture;
+
+//items textures
+extern Texture rubyTexture;
 
 void loadTextures();
 

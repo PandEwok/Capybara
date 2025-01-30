@@ -36,8 +36,6 @@
     <ClCompile Include="Tile.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-<<<<<<< HEAD
-<<<<<<< Updated upstream
     <ClCompile Include="Item.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
@@ -45,19 +43,8 @@
       <Filter>Fichiers d%27en-tête</Filter>
     </ClCompile>
     <ClCompile Include="Collisions.cpp">
-=======
-    <ClCompile Include="Player.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="Enemy.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Hunter.cpp">
->>>>>>> Stashed changes
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-=======
->>>>>>> parent of 4e6e33f (money and improvements)
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Global.hpp">
@@ -72,21 +59,8 @@
     <ClInclude Include="Tile.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-<<<<<<< HEAD
-<<<<<<< Updated upstream
     <ClInclude Include="Item.hpp">
-=======
-    <ClInclude Include="Player.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="Enemy.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Hunter.h">
->>>>>>> Stashed changes
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-=======
->>>>>>> parent of 4e6e33f (money and improvements)
   </ItemGroup>
 </Project>

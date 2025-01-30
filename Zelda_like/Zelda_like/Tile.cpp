@@ -33,8 +33,9 @@ Floor::Floor(Vector2f position) : Tile(position)
 
 Door::Door(Vector2f position) : Tile(position)
 {
-	//sprite->setTexture(doorTileLeftTexture);
+	sprite->setTexture(doorExteriorTileTecture);
 	type = "Door";
+	layer = 1;
 }
 
 Bridge::Bridge(Vector2f position) : Tile(position)
@@ -51,5 +52,19 @@ Tree::Tree(Vector2f position) : Tile(position)
 	sprite->setTextureRect(IntRect(0, 0, treeTexture.getSize().x, treeTexture.getSize().y));
 	sprite->setOrigin(Vector2f(16, treeTexture.getSize().y - 16));
 	type = "Tree";
+	layer = 2;
+}
+
+Pot::Pot(Vector2f position) : Tile(position)
+{
+	sprite->setTexture(potTexture);
+	type = "Pot";
+}
+
+Gate::Gate(Vector2f position) : Tile(position)
+{
+	sprite->setTexture(doorExteriorTileTecture);
+	sprite->setTextureRect(IntRect(0, 0, doorExteriorTileTecture.getSize().y, doorExteriorTileTecture.getSize().y));
+	type = "Gate";
 	layer = 1;
 }

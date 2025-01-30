@@ -1,30 +1,15 @@
 #pragma once
 
 #include "Global.hpp"
-#include <memory>
-#include <SFML/Graphics.hpp>
-
-using namespace std;
-
 
 class Entity {
 protected:
-<<<<<<< HEAD
-    shared_ptr<Sprite> sprite = make_shared<Sprite>();
-=======
 	shared_ptr<Sprite> sprite = make_shared<Sprite>();
 public:
 	Entity(Vector2f textureSize);
-	virtual void draw() = 0;
 	shared_ptr<Sprite> getSprite();
 };
->>>>>>> parent of 4e6e33f (money and improvements)
 
-public:
-    Entity(Vector2f textureSize);
-    virtual void draw() = 0;
-    shared_ptr<Sprite> getSprite();
-};
 class Player : public Entity {
 protected:
 	float speed = 250.f;
@@ -40,7 +25,6 @@ public:
 	};
 	int facing = FRONT;
 	Player();
-	void draw() override;
 	float getSpeed();
 	void move();
 	Clock* getFramerate();
@@ -50,6 +34,7 @@ public:
 	int getKeyState();
 	void setKeyState(int newValue);
 	FloatRect getHitBox();
+	FloatRect getActionRange();
 
 
 };
@@ -69,5 +54,4 @@ public:
 	int getHp() const;
 	void decreaseHp(int value = 1);
 	bool isDead() const;
-    Vector2f getPosition() const;
 };
