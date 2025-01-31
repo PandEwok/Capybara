@@ -8,7 +8,8 @@
 #include "UserInput.hpp"
 #include "MainScreen.hpp"
 #include "Map.hpp"
-#include "Collisions.hpp"
+#include  "Collisions.hpp"
+#include "GUI.hpp"
 
 using namespace std;
 
@@ -23,8 +24,8 @@ int main()
     Event event;
     Clock mainClock;
     Game game;
-    
     MainScreen mainscreen;
+    
     map1.loadExterior(tileMap, player);
 
     thread uInputThread(userInput);
@@ -34,6 +35,8 @@ int main()
 
 
     mainscreen.MainScreenInit();
+    initGUI();
+
     while (isGameRunning) {
         
         if (isInMenu) {
@@ -63,7 +66,6 @@ int main()
         }
         //Game Start
         else if (!isInMenu) {
-
             while (window.pollEvent(event)) {
                 if (event.type == Event::KeyPressed and Keyboard::isKeyPressed(Keyboard::Escape)) {
                     cout << "close\n";
@@ -75,6 +77,7 @@ int main()
                     showHitbox = showHitbox == false;
                 }
             }
+
             mainView.setCenter(player.getSprite()->getPosition());
             window.setView(mainView);
 
@@ -95,6 +98,7 @@ int main()
         }
 
         window.clear();
+
 
         for (shared_ptr<Tile> tile : tileMap) {
             if (tile) {
@@ -123,7 +127,7 @@ int main()
             }
         }
 
-            window.draw(*player.getSprite());
+         window.draw(*player.getSprite());
 
         for (shared_ptr<Tile> tile : tileMap) {
             if (tile) {
@@ -157,7 +161,8 @@ int main()
             window.draw(attRange);
         }
 
-            window.draw(*hpBar);
+            
+            drawGUI();
         }
             window.display();
         

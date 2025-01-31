@@ -18,7 +18,6 @@ Game::Game() {
 }
 
 void Game::update() {
-	hpBar->setPosition(mainView.getCenter() + Vector2f(mainView.getSize().x / -2.f, mainView.getSize().y / 2.f) - Vector2f(0, hpBarTexture.getSize().y/1.5f));
 	if (player.getFramerate()->getElapsedTime().asSeconds() >= 0.1f) {
 		player.getFramerate()->restart();
 		continueAnimation(player.getSprite());

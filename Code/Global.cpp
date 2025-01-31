@@ -14,12 +14,14 @@ bool isGameRunning = true;
 bool playable = true;
 Time timeSinceLastFrame;
 Time timeSinceLastFrameInputs;
+bool hasGateKey = false;
 
 //Additional Menu Variables
 bool isInMenu = true;
 Vector2i mousePosition;
 bool hoverButtonPlay = false;
 bool hoverButtonExit = false;
+Font font;
 
 
 
@@ -83,13 +85,24 @@ Texture buttonExitTexture;
 Texture buttonExitHoverTexture;
 
 
+//Menu Sprites
 Sprite background;
 Sprite buttonPlay;
 Sprite buttonOptions;
 Sprite buttonExit;
 
+//GUI Sprites
+Sprite pumpcoinPouch;
+Sprite gateKey;
+
+//GUI Texture
+Texture pumpcoinPouchTexture;
+Text pumpcoinText;
+Texture gateKeyTexture;
+
 
 void loadTextures() {
+    font.setSmooth(false);
     playerTextureFrontIdle.loadFromFile("Images/Pixelarium - Playable Character - Free Version/Pack Content/Front animations/spr_player_front_idle.png");
     playerTextureFrontWalk.loadFromFile("Images/Pixelarium - Playable Character - Free Version/Pack Content/Front animations/spr_player_front_walk.png");
     playerTextureBackIdle.loadFromFile("Images/Pixelarium - Playable Character - Free Version/Pack Content/Back animations/spr_player_back_idle.png");
@@ -140,6 +153,10 @@ void loadTextures() {
     buttonPlayHoverTexture.loadFromFile("Images/mainmenu/buttons/play/buttonPlayHover.png");
     buttonExitTexture.loadFromFile("Images/mainmenu/buttons/exit/buttonExit.png");
     buttonExitHoverTexture.loadFromFile("Images/mainmenu/buttons/exit/buttonExitHover.png");
+
+    //GUI Textures
+    pumpcoinPouchTexture.loadFromFile("Images/GUI/pumpcoinPouchTexture.png");
+    gateKeyTexture.loadFromFile("Images/GUI/gatekey.png");
 
 }
 

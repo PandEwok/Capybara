@@ -30,6 +30,7 @@ extern bool isGameRunning;
 extern bool playable;
 extern Time timeSinceLastFrame;
 extern Time timeSinceLastFrameInputs;
+extern Font font;
 
 //Menu Variables
 extern bool isInMenu;
@@ -37,7 +38,7 @@ extern Vector2i mousePosition;
 extern bool hoverButtonPlay;
 extern bool hoverButtonExit;
 
-
+extern bool hasGateKey;
 
 
 extern Texture hpBarTexture;
@@ -109,6 +110,14 @@ extern Sprite buttonExit;
 extern Vector2i mousePosition;
 extern bool hoverButtonPlay;
 
+//GUI Sprites
+extern Sprite pumpcoinPouch;
+extern Sprite gateKey;
+
+//GUI Textures
+extern Texture pumpcoinPouchTexture;
+extern Text pumpcoinText;
+extern Texture gateKeyTexture;
 
 void loadTextures();
 
