@@ -89,6 +89,9 @@ extern Texture candleTexture;
 
 //items textures
 extern Texture rubyTexture;
+extern Texture swordTexture;
+extern Texture axeTexture;
+extern Texture daggerTexture;
 
 //Main Menu Textures
 extern Texture backgroundTexture;
