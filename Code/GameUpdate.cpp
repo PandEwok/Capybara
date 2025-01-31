@@ -9,6 +9,9 @@ Game::Game() {
 	hpBar->setTexture(hpBarTexture);
 	hpBar->setTextureRect(IntRect(0, 0, hpBarTexture.getSize().y, hpBarTexture.getSize().y));
 	moneyList = {};
+	swordad = {};
+	axead = {};
+	daggerad = {};
 }
 
 void Game::update() {
