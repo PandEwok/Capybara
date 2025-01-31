@@ -65,11 +65,12 @@ extern Texture grassWallSideTexture;
 extern Texture grassWallDownEndTexture;
 extern Texture grassWallTopTexture;
 extern Texture grassWallTopEndTexture;
+extern Texture grassWallCornerTexture;
 extern Texture waterTileTexture;
 extern Texture bridgeTexture;
 extern Texture treeTexture;
 extern Texture highGroundTile;
-extern Texture doorExteriorTileTecture;
+extern Texture doorExteriorTileTexture;
 extern Texture potTexture;
 	//dungeon textures
 extern Texture wallTileTexture;

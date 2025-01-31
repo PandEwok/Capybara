@@ -16,6 +16,7 @@ protected:
 public:
 	Money(int _amount = 1);
 	void interact(Player& player) override;
+};
 
 
 

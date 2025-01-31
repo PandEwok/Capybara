@@ -63,8 +63,8 @@ Pot::Pot(Vector2f position) : Tile(position)
 
 Gate::Gate(Vector2f position) : Tile(position)
 {
-	sprite->setTexture(doorExteriorTileTecture);
-	sprite->setTextureRect(IntRect(0, 0, doorExteriorTileTecture.getSize().y, doorExteriorTileTecture.getSize().y));
+	sprite->setTexture(doorExteriorTileTexture);
+	sprite->setTextureRect(IntRect(0, 0, doorExteriorTileTexture.getSize().y, doorExteriorTileTexture.getSize().y));
 	type = "Gate";
 	layer = 1;
 }

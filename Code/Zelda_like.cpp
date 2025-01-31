@@ -7,7 +7,8 @@
 #include "GameUpdate.hpp"
 #include "UserInput.hpp"
 #include "MainScreen.hpp"
-#include  "Collisions.hpp"
+#include "Map.hpp"
+#include "Collisions.hpp"
 
 using namespace std;
 
@@ -23,6 +24,7 @@ int main()
     Clock mainClock;
     Game game;
     
+    MainScreen mainscreen;
     map1.loadExterior(tileMap, player);
 
     thread uInputThread(userInput);

@@ -47,11 +47,12 @@ Texture grassWallSideTexture;
 Texture grassWallDownEndTexture;
 Texture grassWallTopTexture;
 Texture grassWallTopEndTexture;
+Texture grassWallCornerTexture;
 Texture waterTileTexture;
 Texture bridgeTexture;
 Texture treeTexture;
 Texture highGroundTile;
-Texture doorExteriorTileTecture;
+Texture doorExteriorTileTexture;
 Texture potTexture;
     //dungeon
 Texture wallTileTexture;
@@ -104,12 +105,13 @@ void loadTextures() {
     grassWallDownEndTexture.loadFromFile("Images/Pixelarium - GrassLands - Free Version/Pack content/Sprites/Tileset/grass_wall_down_end.png");
     grassWallTopTexture.loadFromFile("Images/Pixelarium - GrassLands - Free Version/Pack content/Sprites/Tileset/grass_wall_top.png");
     grassWallTopEndTexture.loadFromFile("Images/Pixelarium - GrassLands - Free Version/Pack content/Sprites/Tileset/grass_wall_top_end.png");
+    grassWallCornerTexture.loadFromFile("Images/Pixelarium - GrassLands - Free Version/Pack content/Sprites/Tileset/grass_wall_corner.png");
     waterTileTexture.loadFromFile("Images/Pixelarium - GrassLands - Free Version/Pack content/Sprites/Tileset/water_tile.png");
     bridgeTexture.loadFromFile("Images/Pixelarium - GrassLands - Free Version/Pack content/Sprites/Tileset/bridge.png");
     treeTexture.loadFromFile("Images/Pixelarium - GrassLands - Free Version/Pack content/Sprites/Vegetation/spr_tree1.png");
 
     highGroundTile.loadFromFile("Images/Pixelarium - GrassLands - Free Version/Pack content/Sprites/Tileset/highGroundTile.png");
-    doorExteriorTileTecture.loadFromFile("Images/32rogues/door_tile.png");
+    doorExteriorTileTexture.loadFromFile("Images/32rogues/door_tile.png");
     potTexture.loadFromFile("Images/Dungeon Gathering Free Version/Vase Shine Anim.png");
 
     wallTileTexture.loadFromFile("Images/2D Pixel Dungeon Asset Pack/character and tileset/wall_tile.png");
