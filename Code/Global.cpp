@@ -70,6 +70,9 @@ Texture flagTileTexture;
 Texture candleTexture;
 
 Texture rubyTexture;
+Texture swordTexture;
+Texture axeTexture;
+Texture daggerTexture;
 
 //Menu Textures
 Texture backgroundTexture;
@@ -125,6 +128,9 @@ void loadTextures() {
     candleTexture.loadFromFile("Images/2D Pixel Dungeon Asset Pack/items and trap_animation/torch/candlestick_2_idle.png");
 
     rubyTexture.loadFromFile("Images/Coin_Gems/ruby_red.png");
+    swordTexture.loadFromFile("Images/textureepeee");
+    axeTexture.loadFromFile("Images/textureaxez");
+    daggerTexture.loadFromFile("Images/texturenigger");
 
     //Main Menu Textures
     backgroundTexture.loadFromFile("Images/mainmenu/background.png");
