@@ -33,7 +33,7 @@ Floor::Floor(Vector2f position) : Tile(position)
 
 Door::Door(Vector2f position) : Tile(position)
 {
-	sprite->setTexture(doorExteriorTileTecture);
+	sprite->setTexture(doorTileLeftTexture);
 	type = "Door";
 	layer = 1;
 }
@@ -67,4 +67,9 @@ Gate::Gate(Vector2f position) : Tile(position)
 	sprite->setTextureRect(IntRect(0, 0, doorExteriorTileTecture.getSize().y, doorExteriorTileTecture.getSize().y));
 	type = "Gate";
 	layer = 1;
+}
+
+Flag::Flag(Vector2f position) : Tile(position) {
+	sprite->setTexture(flagTileTexture);
+	type = "Flag";
 }

@@ -38,6 +38,8 @@ Texture playerTextureBackWalk;
 Texture playerTextureSideIdle;
 Texture playerTextureSideWalk;
 
+//tiles
+    //exterior
 Texture grassTile1Texture;
 Texture grassTile2Texture;
 Texture grassWallDownTexture;
@@ -51,6 +53,21 @@ Texture treeTexture;
 Texture highGroundTile;
 Texture doorExteriorTileTecture;
 Texture potTexture;
+    //dungeon
+Texture wallTileTexture;
+Texture wallTileSideTexture;
+Texture wallTileBackTexture;
+Texture wallTileBackEndTexture;
+Texture wallTileBackIntersectionTexture;
+Texture wallTileMiddleTexture;
+Texture wallTileMiddleEndTexture;
+Texture wallTileIntersectionTexture;
+Texture wallTileIntersectionSideTexture;
+Texture floorTileTexture;
+Texture doorTileLeftTexture;
+Texture doorTileRightTexture;
+Texture flagTileTexture;
+Texture candleTexture;
 
 Texture rubyTexture;
 
@@ -91,6 +108,22 @@ void loadTextures() {
     highGroundTile.loadFromFile("Images/Pixelarium - GrassLands - Free Version/Pack content/Sprites/Tileset/highGroundTile.png");
     doorExteriorTileTecture.loadFromFile("Images/32rogues/door_tile.png");
     potTexture.loadFromFile("Images/Dungeon Gathering Free Version/Vase Shine Anim.png");
+
+    wallTileTexture.loadFromFile("Images/2D Pixel Dungeon Asset Pack/character and tileset/wall_tile.png");
+    wallTileSideTexture.loadFromFile("Images/2D Pixel Dungeon Asset Pack/character and tileset/wall_tile_side.png");
+    wallTileBackTexture.loadFromFile("Images/2D Pixel Dungeon Asset Pack/character and tileset/wall_tile_back.png");
+    wallTileBackEndTexture.loadFromFile("Images/2D Pixel Dungeon Asset Pack/character and tileset/wall_tile_back_end.png");
+    wallTileBackIntersectionTexture.loadFromFile("Images/2D Pixel Dungeon Asset Pack/character and tileset/wall_tile_back_intersection.png");
+    wallTileMiddleTexture.loadFromFile("Images/2D Pixel Dungeon Asset Pack/character and tileset/wall_tile_middle.png");
+    wallTileMiddleEndTexture.loadFromFile("Images/2D Pixel Dungeon Asset Pack/character and tileset/wall_tile_middle_end.png");
+    wallTileIntersectionTexture.loadFromFile("Images/2D Pixel Dungeon Asset Pack/character and tileset/wall_tile_intersection.png");
+    wallTileIntersectionSideTexture.loadFromFile("Images/2D Pixel Dungeon Asset Pack/character and tileset/wall_tile_intersection_side.png");
+    floorTileTexture.loadFromFile("Images/2D Pixel Dungeon Asset Pack/character and tileset/floor_tile.png");
+    doorTileLeftTexture.loadFromFile("Images/2D Pixel Dungeon Asset Pack/character and tileset/door_tile_left.png");
+    doorTileRightTexture.loadFromFile("Images/2D Pixel Dungeon Asset Pack/character and tileset/door_tile_right.png");
+    flagTileTexture.loadFromFile("Images/2D Pixel Dungeon Asset Pack/items and trap_animation/flag/flag_idle.png");
+    candleTexture.loadFromFile("Images/2D Pixel Dungeon Asset Pack/items and trap_animation/torch/candlestick_2_idle.png");
+
     rubyTexture.loadFromFile("Images/Coin_Gems/ruby_red.png");
 
     //Main Menu Textures

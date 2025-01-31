@@ -57,6 +57,7 @@ extern Texture playerTextureSideIdle;
 extern Texture playerTextureSideWalk;
 
 //tiles textures
+	//exterior textures
 extern Texture grassTile1Texture;
 extern Texture grassTile2Texture;
 extern Texture grassWallDownTexture;
@@ -70,6 +71,21 @@ extern Texture treeTexture;
 extern Texture highGroundTile;
 extern Texture doorExteriorTileTecture;
 extern Texture potTexture;
+	//dungeon textures
+extern Texture wallTileTexture;
+extern Texture wallTileSideTexture;
+extern Texture wallTileBackTexture;
+extern Texture wallTileBackEndTexture;
+extern Texture wallTileBackIntersectionTexture;
+extern Texture wallTileMiddleTexture;
+extern Texture wallTileMiddleEndTexture;
+extern Texture wallTileIntersectionTexture;
+extern Texture wallTileIntersectionSideTexture;
+extern Texture floorTileTexture;
+extern Texture doorTileLeftTexture;
+extern Texture doorTileRightTexture;
+extern Texture flagTileTexture;
+extern Texture candleTexture;
 
 //items textures
 extern Texture rubyTexture;

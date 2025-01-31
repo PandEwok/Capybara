@@ -47,3 +47,8 @@ class Pot : public Tile {
 public:
 	Pot(Vector2f position);
 };
+
+class Flag : public Tile {
+public:
+	Flag(Vector2f position);
+};

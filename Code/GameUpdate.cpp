@@ -27,7 +27,9 @@ void Game::update() {
 		itemClock.restart();
 		
 		for (shared_ptr<Tile> tile : tileMap) {
-			continueAnimation(tile->getSprite());
+			if (tile->getType() != "Gate") {
+				continueAnimation(tile->getSprite());
+			}
 		}
 	}
 }
