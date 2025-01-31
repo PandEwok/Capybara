@@ -31,6 +31,15 @@ extern bool playable;
 extern Time timeSinceLastFrame;
 extern Time timeSinceLastFrameInputs;
 
+//Menu Variables
+extern bool isInMenu;
+extern Vector2i mousePosition;
+extern bool hoverButtonPlay;
+extern bool hoverButtonExit;
+
+
+
+
 extern Texture hpBarTexture;
 extern shared_ptr<Sprite> hpBar;
 extern Vector2f inputMovement;
@@ -64,6 +73,22 @@ extern Texture potTexture;
 
 //items textures
 extern Texture rubyTexture;
+
+//Main Menu Textures
+extern Texture backgroundTexture;
+extern Texture buttonPlayTexture;
+extern Texture buttonPlayHoverTexture;
+extern Texture buttonExitTexture;
+extern Texture buttonExitHoverTexture;
+
+//Main Menu Sprites
+extern Sprite background;
+extern Sprite buttonPlay;
+extern Sprite buttonOptions;
+extern Sprite buttonExit;
+extern Vector2i mousePosition;
+extern bool hoverButtonPlay;
+
 
 void loadTextures();
 

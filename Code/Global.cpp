@@ -15,6 +15,14 @@ bool playable = true;
 Time timeSinceLastFrame;
 Time timeSinceLastFrameInputs;
 
+//Additional Menu Variables
+bool isInMenu = true;
+Vector2i mousePosition;
+bool hoverButtonPlay = false;
+bool hoverButtonExit = false;
+
+
+
 Texture hpBarTexture;
 shared_ptr<Sprite> hpBar = make_shared<Sprite>();
 Vector2f inputMovement = Vector2f(0.f, 0.f);
@@ -46,6 +54,20 @@ Texture potTexture;
 
 Texture rubyTexture;
 
+//Menu Textures
+Texture backgroundTexture;
+Texture buttonPlayTexture;
+Texture buttonPlayHoverTexture;
+Texture buttonExitTexture;
+Texture buttonExitHoverTexture;
+
+
+Sprite background;
+Sprite buttonPlay;
+Sprite buttonOptions;
+Sprite buttonExit;
+
+
 void loadTextures() {
     playerTextureFrontIdle.loadFromFile("Images/Pixelarium - Playable Character - Free Version/Pack Content/Front animations/spr_player_front_idle.png");
     playerTextureFrontWalk.loadFromFile("Images/Pixelarium - Playable Character - Free Version/Pack Content/Front animations/spr_player_front_walk.png");
@@ -65,10 +87,19 @@ void loadTextures() {
     waterTileTexture.loadFromFile("Images/Pixelarium - GrassLands - Free Version/Pack content/Sprites/Tileset/water_tile.png");
     bridgeTexture.loadFromFile("Images/Pixelarium - GrassLands - Free Version/Pack content/Sprites/Tileset/bridge.png");
     treeTexture.loadFromFile("Images/Pixelarium - GrassLands - Free Version/Pack content/Sprites/Vegetation/spr_tree1.png");
+
     highGroundTile.loadFromFile("Images/Pixelarium - GrassLands - Free Version/Pack content/Sprites/Tileset/highGroundTile.png");
     doorExteriorTileTecture.loadFromFile("Images/32rogues/door_tile.png");
     potTexture.loadFromFile("Images/Dungeon Gathering Free Version/Vase Shine Anim.png");
     rubyTexture.loadFromFile("Images/Coin_Gems/ruby_red.png");
+
+    //Main Menu Textures
+    backgroundTexture.loadFromFile("Images/mainmenu/background.png");
+    buttonPlayTexture.loadFromFile("Images/mainmenu/buttons/play/buttonPlay.png");
+    buttonPlayHoverTexture.loadFromFile("Images/mainmenu/buttons/play/buttonPlayHover.png");
+    buttonExitTexture.loadFromFile("Images/mainmenu/buttons/exit/buttonExit.png");
+    buttonExitHoverTexture.loadFromFile("Images/mainmenu/buttons/exit/buttonExitHover.png");
+
 }
 
 void continueAnimation(shared_ptr<Sprite> sprite) {
