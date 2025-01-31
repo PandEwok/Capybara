@@ -3,10 +3,11 @@
 
 #include "Global.hpp"
 #include "Entity.hpp"
+#include "Player.hpp"
 #include "Tile.hpp"
 #include "GameUpdate.hpp"
 #include "UserInput.hpp"
-#include  "Collisions.hpp"
+#include "Collisions.hpp"
 #include "Map.hpp"
 
 using namespace std;
@@ -47,6 +48,18 @@ int main()
 
         timeSinceLastFrame = mainClock.restart();
         game.update();
+
+        if (!playable) {
+            if (map1.getCurrentMap() == map1.EXTERIOR) {
+                map1.loadDungeon(tileMap, player);
+                map1.setCurrentMap(map1.DUNGEON);
+            }
+            else if (map1.getCurrentMap() == map1.DUNGEON) {
+                map1.loadExterior(tileMap, player);
+                map1.setCurrentMap(map1.EXTERIOR);
+            }
+            playable = true;
+        }
 
         window.clear();
 

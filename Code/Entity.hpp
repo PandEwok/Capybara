@@ -2,7 +2,6 @@
 
 #include "Global.hpp"
 #include <memory>
-#include <SFML/Graphics.hpp>
 
 class Entity {
 protected:

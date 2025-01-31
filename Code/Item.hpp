@@ -2,6 +2,7 @@
 
 #include "Global.hpp";
 #include "Entity.hpp"
+#include "Player.hpp"
 
 class Item {
 public:

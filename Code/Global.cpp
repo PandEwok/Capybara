@@ -11,6 +11,7 @@ float screenWidth = 1600.f, screenHeight = screenWidth * 0.5625f;
 RenderWindow window(VideoMode(screenWidth, screenHeight), "ExCusEee Me, pRiNcesS", Style::Close);
 View mainView(FloatRect(screenWidth / 2, screenHeight / 2, 220, 220 * 0.5625f));
 bool isGameRunning = true;
+bool playable = true;
 Time timeSinceLastFrame;
 Time timeSinceLastFrameInputs;
 

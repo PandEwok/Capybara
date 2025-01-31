@@ -1,7 +1,7 @@
 #pragma once
 
+#include "Global.hpp"
 #include "Entity.hpp"
-#include <SFML/Graphics.hpp>
 
 class Player : public Entity {
 protected:
@@ -21,7 +21,6 @@ public:
     int facing = FRONT;
 
     Player();
-    void draw() override;
     float getSpeed();
     void move();
     Clock* getFramerate();
@@ -31,4 +30,5 @@ public:
     int getKeyState();
     void setKeyState(int newValue);
     FloatRect getHitBox();
+    FloatRect getActionRange();
 };

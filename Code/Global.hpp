@@ -27,6 +27,7 @@ extern float screenWidth, screenHeight;
 extern RenderWindow window;
 extern View mainView;
 extern bool isGameRunning;
+extern bool playable;
 extern Time timeSinceLastFrame;
 extern Time timeSinceLastFrameInputs;
 

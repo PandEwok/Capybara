@@ -88,59 +88,51 @@ void userInput() {
 
         for (int i = 0; i < tileMap.size(); i++) {
             shared_ptr<Tile> tile = tileMap[i];
-            if (tile->getSprite()) {
-                if (tile->getSprite()->getGlobalBounds().intersects(player.getHitBox())) {
-                    if (tile->getType() == "Gate") {
-                        map1.loadDungeon(tileMap, player);
+            if (tile->getSprite()->getGlobalBounds().intersects(player.getHitBox())) {
+                if (tile->getType() == "Door" and player.getKeyState() > 0) {
+
+                    if (find(toDeleteTiles.begin(), toDeleteTiles.end(), tileMap[i]) == toDeleteTiles.end()) {
+                        player.setKeyState(player.getKeyState() - 1);
+                        toDeleteTiles.push_back(tile);
                     }
+                    if (i > 1) {
+                        if (tileMap[i - 2]->getType() == "Door" and find(toDeleteTiles.begin(), toDeleteTiles.end(), tileMap[i - 2]) == toDeleteTiles.end()) {
+                            toDeleteTiles.push_back(tileMap[i - 2]);
+                        }
+                    }
+                    if (i + 2 < tileMap.size() - 1) {
+                        if (tileMap[i + 2]->getType() == "Door" and find(toDeleteTiles.begin(), toDeleteTiles.end(), tileMap[i + 2]) == toDeleteTiles.end()) {
+                            toDeleteTiles.push_back(tileMap[i + 2]);
+                        }
+                    }
+                    continue;
+                }
+                if (tile->getType() == "Wall" or tile->getType() == "Door" or tile->getType() == "Pot") {
+                    if (inputMovement.y > 0 and tile->getSprite()->getGlobalBounds().contains(player.getSprite()->getPosition() + Vector2f(0, 14))) {
+                        inputMovement = Vector2f(inputMovement.x, 0);
+                    }
+                    else if (inputMovement.y < 0 and tile->getSprite()->getGlobalBounds().contains(player.getSprite()->getPosition() + Vector2f(0, 8))) {
+                        inputMovement = Vector2f(inputMovement.x, 0);
+                    }
+                    else if (inputMovement.x > 0 and tile->getSprite()->getGlobalBounds().contains(player.getSprite()->getPosition() + Vector2f(8, 11))) {
+                        inputMovement = Vector2f(0, inputMovement.y);
+                    }
+                    else if (inputMovement.x < 0 and tile->getSprite()->getGlobalBounds().contains(player.getSprite()->getPosition() + Vector2f(-8, 11))) {
+                        inputMovement = Vector2f(0, inputMovement.y);
+                    }
+                }
+                if (tile->getType() == "Gate") {
+                    playable = false;
+                    while (!playable) {}
+                    break;
                 }
             }
-        }
-
-        for (int i = 0; i < tileMap.size(); i++) {
-            shared_ptr<Tile> tile = tileMap[i];
-            if (tile->getSprite()) {
-                if (tile->getSprite()->getGlobalBounds().intersects(player.getHitBox())) {
-                    if (tile->getType() == "Door" and player.getKeyState() > 0) {
-
-                        if (find(toDeleteTiles.begin(), toDeleteTiles.end(), tileMap[i]) == toDeleteTiles.end()) {
-                            player.setKeyState(player.getKeyState() - 1);
-                            toDeleteTiles.push_back(tile);
-                        }
-                        if (i > 1) {
-                            if (tileMap[i - 2]->getType() == "Door" and find(toDeleteTiles.begin(), toDeleteTiles.end(), tileMap[i - 2]) == toDeleteTiles.end()) {
-                                toDeleteTiles.push_back(tileMap[i - 2]);
-                            }
-                        }
-                        if (i + 2 < tileMap.size() - 1) {
-                            if (tileMap[i + 2]->getType() == "Door" and find(toDeleteTiles.begin(), toDeleteTiles.end(), tileMap[i + 2]) == toDeleteTiles.end()) {
-                                toDeleteTiles.push_back(tileMap[i + 2]);
-                            }
-                        }
-                        continue;
-                    }
-                    if (tile->getType() == "Wall" or tile->getType() == "Door" or tile->getType() == "Pot") {
-                        if (inputMovement.y > 0 and tile->getSprite()->getGlobalBounds().contains(player.getSprite()->getPosition() + Vector2f(0, 14))) {
-                            inputMovement = Vector2f(inputMovement.x, 0);
-                        }
-                        else if (inputMovement.y < 0 and tile->getSprite()->getGlobalBounds().contains(player.getSprite()->getPosition() + Vector2f(0, 8))) {
-                            inputMovement = Vector2f(inputMovement.x, 0);
-                        }
-                        else if (inputMovement.x > 0 and tile->getSprite()->getGlobalBounds().contains(player.getSprite()->getPosition() + Vector2f(8, 11))) {
-                            inputMovement = Vector2f(0, inputMovement.y);
-                        }
-                        else if (inputMovement.x < 0 and tile->getSprite()->getGlobalBounds().contains(player.getSprite()->getPosition() + Vector2f(-8, 11))) {
-                            inputMovement = Vector2f(0, inputMovement.y);
-                        }
-                    }
-                }
-                if (tile->getSprite()->getGlobalBounds().intersects(player.getActionRange())) {
-                    if (tile->getType() == "Pot" and Mouse::isButtonPressed(Mouse::Left)) {
-                        toDeleteTiles.push_back(tile);
-                        shared_ptr<Money> newMoney = make_shared<Money>();
-                        newMoney->getSprite()->setPosition(tile->getSprite()->getPosition());
-                        moneyList.push_back(newMoney);
-                    }
+            if (tile->getSprite()->getGlobalBounds().intersects(player.getActionRange())) {
+                if (tile->getType() == "Pot" and Mouse::isButtonPressed(Mouse::Left)) {
+                    toDeleteTiles.push_back(tile);
+                    shared_ptr<Money> newMoney = make_shared<Money>();
+                    newMoney->getSprite()->setPosition(tile->getSprite()->getPosition());
+                    moneyList.push_back(newMoney);
                 }
             }
         }

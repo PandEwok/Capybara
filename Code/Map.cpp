@@ -84,15 +84,18 @@ void Map::loadExterior(vector<shared_ptr<Tile>>& tileMap, Player& player)
                     tileMap.push_back(newFlag);
                 }*/
             }
-            else if (tileChar == '1') {
+            else if (tileChar == '1' or tileChar == '=') {
                 shared_ptr<Floor> newTile = make_shared<Floor>(tilePosition);
                 int randTile = rand() % 100;
                 if (randTile < 30) {
                     newTile->getSprite()->setTexture(grassTile2Texture);
                 }
                 tileMap.push_back(newTile);
+                if (currentMap != EXTERIOR and tileChar == '=') {
+                    player.getSprite()->setPosition(tilePosition + Vector2f(8, 8));
+                }
             }
-            else if (tileChar == '$') {
+            else if (tileChar == '$' and currentMap == EXTERIOR) {
                 shared_ptr<Floor> newTile = make_shared<Floor>(tilePosition);
                 tileMap.push_back(newTile);
                 player.getSprite()->setPosition(tilePosition + Vector2f(8, 8));
@@ -272,6 +275,14 @@ void Map::loadDungeon(vector<shared_ptr<Tile>>& tileMap, Player& player)
         tilePosition.y += 16;
         tilePosition.x = 0;
     }
+}
+
+int Map::getCurrentMap() {
+    return currentMap;
+}
+
+void Map::setCurrentMap(int value) {
+    currentMap = value;
 }
 
 Map map1;
