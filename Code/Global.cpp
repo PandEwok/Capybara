@@ -105,6 +105,11 @@ Texture resumeButtonHoverTexture;
 Texture quitButtonTexture;
 Texture quitButtonHoverTexture;
 
+//Enemy Textures
+Texture hunterTextureBot;
+Texture hunterTextureTop;
+Texture hunterTextureLeft;
+Texture hunterTextureRight;
 
 void loadTextures() {
     font.setSmooth(false);
@@ -162,6 +167,14 @@ void loadTextures() {
     resumeButtonHoverTexture.loadFromFile("Images/GUI/pausemenu/resume/resumeButtonHover.png");
     quitButtonTexture.loadFromFile("Images/GUI/pausemenu/quit/quitButton.png");
     quitButtonHoverTexture.loadFromFile("Images/GUI/pausemenu/quit/quitButtonHover.png");
+
+    //Hunter Textures
+    hunterTextureBot.loadFromFile("Images/free-slime-mobs-pixel-art-top-down-sprite-pack/PNG/Slime1/Walk/Slime_bot.png");
+    hunterTextureTop.loadFromFile("Images/free-slime-mobs-pixel-art-top-down-sprite-pack/PNG/Slime1/Walk/Slime_top.png");
+    hunterTextureRight.loadFromFile("Images/free-slime-mobs-pixel-art-top-down-sprite-pack/PNG/Slime1/Walk/Slime_right.png");
+    hunterTextureLeft.loadFromFile("Images/free-slime-mobs-pixel-art-top-down-sprite-pack/PNG/Slime1/Walk/Slime_left.png");
+
+
 }
 
 void continueAnimation(shared_ptr<Sprite> sprite) {
