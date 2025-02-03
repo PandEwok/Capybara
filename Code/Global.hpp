@@ -31,6 +31,7 @@ extern bool playable;
 extern Time timeSinceLastFrame;
 extern Time timeSinceLastFrameInputs;
 extern Font font;
+extern bool isInPauseMenu;
 
 //Menu Variables
 extern bool isInMenu;
@@ -66,12 +67,11 @@ extern Texture grassWallSideTexture;
 extern Texture grassWallDownEndTexture;
 extern Texture grassWallTopTexture;
 extern Texture grassWallTopEndTexture;
-extern Texture grassWallCornerTexture;
 extern Texture waterTileTexture;
 extern Texture bridgeTexture;
 extern Texture treeTexture;
 extern Texture highGroundTile;
-extern Texture doorExteriorTileTexture;
+extern Texture doorExteriorTileTecture;
 extern Texture potTexture;
 	//dungeon textures
 extern Texture wallTileTexture;
@@ -91,9 +91,6 @@ extern Texture candleTexture;
 
 //items textures
 extern Texture rubyTexture;
-extern Texture swordTexture;
-extern Texture axeTexture;
-extern Texture daggerTexture;
 
 //Main Menu Textures
 extern Texture backgroundTexture;
@@ -118,6 +115,15 @@ extern Sprite gateKey;
 extern Texture pumpcoinPouchTexture;
 extern Text pumpcoinText;
 extern Texture gateKeyTexture;
+extern Texture resumeButtonTexture;
+extern Texture resumeButtonHoverTexture;
+extern Texture quitButtonTexture;
+extern Texture quitButtonHoverTexture;
+
+//GUI Interaction
+extern bool hoverButtonResume;
+extern bool hoverButtonQuit;
+
 
 void loadTextures();
 

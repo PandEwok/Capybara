@@ -14,7 +14,7 @@ void Map::loadExterior(vector<shared_ptr<Tile>>& tileMap, Player& player)
         }
         for (char tileChar : line) {
             if (tileChar == '0' or tileChar == '8' or tileChar == '9' or tileChar == 'o' or tileChar == '6' or tileChar == '7' or tileChar == 'u' or tileChar == 'Y' or tileChar == 'D'
-                or tileChar == 'q' or tileChar == 'p' or tileChar == 'f' or tileChar == 'g' or tileChar == 'c' or tileChar == 'e' or tileChar == 'a' or tileChar == 'F' or tileChar == '2' or tileChar == '3') {
+                or tileChar == 'q' or tileChar == 'p' or tileChar == 'f' or tileChar == 'g' or tileChar == 'c' or tileChar == 'e' or tileChar == 'a' or tileChar == 'F') {
                 shared_ptr<Wall> newTile = make_shared<Wall>(tilePosition);
                 if (tileChar == '9') {
                     newTile->getSprite()->setTexture(grassWallSideTexture);
@@ -78,14 +78,6 @@ void Map::loadExterior(vector<shared_ptr<Tile>>& tileMap, Player& player)
                     tileMap.push_back(newGate);
                     newTile->getSprite()->setTexture(highGroundTile);
                 }
-                else if (tileChar == '3') {
-                    newTile->getSprite()->setTexture(grassWallCornerTexture);
-                }
-                else if (tileChar == '2') {
-                    newTile->getSprite()->setTexture(grassWallCornerTexture);
-                    newTile->getSprite()->setScale(-1, 1);
-                    newTile->getSprite()->move(Vector2f(16, 0));
-                }
                 tileMap.push_back(newTile);
                 /*if (tileChar == 'F') {
                     shared_ptr<Flag> newFlag = make_shared<Flag>(tilePosition);
@@ -103,12 +95,10 @@ void Map::loadExterior(vector<shared_ptr<Tile>>& tileMap, Player& player)
                     player.getSprite()->setPosition(tilePosition + Vector2f(8, 8));
                 }
             }
-            else if (tileChar == '$') {
+            else if (tileChar == '$' and currentMap == EXTERIOR) {
                 shared_ptr<Floor> newTile = make_shared<Floor>(tilePosition);
                 tileMap.push_back(newTile);
-                if (currentMap == EXTERIOR) {
-                    player.getSprite()->setPosition(tilePosition + Vector2f(8, 8));
-                }
+                player.getSprite()->setPosition(tilePosition + Vector2f(8, 8));
             }
             else if (tileChar == '~') {
                 shared_ptr<Floor> newTile = make_shared<Floor>(tilePosition);

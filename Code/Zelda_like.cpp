@@ -66,23 +66,41 @@ int main()
         }
         //Game Start
         else if (!isInMenu) {
+            if (isInPauseMenu) {
+                updateGUI();
+            }
+
             while (window.pollEvent(event)) {
                 if (event.type == Event::KeyPressed and Keyboard::isKeyPressed(Keyboard::Escape)) {
-                    cout << "close\n";
-                    /*isPauseMenu = true;*/
-                    isGameRunning = false;
+                        isInPauseMenu = true;  // Pause the game
                 }
                 else if (event.type == Event::Closed) { isGameRunning = false; }
                 else if (event.type == Event::KeyPressed and Keyboard::isKeyPressed(Keyboard::Scancode::H)) {
                     showHitbox = showHitbox == false;
                 }
+                if (event.type == sf::Event::MouseButtonPressed) {
+                    if (hoverButtonExit)
+                        window.close();
+
+                    if (hoverButtonPlay)
+                        isInMenu = false;
+                    if (isInPauseMenu) {
+                        if (hoverButtonResume)
+                            isInPauseMenu = false;
+                        if (hoverButtonQuit)
+                            isGameRunning = false;
+                    }
+                }
             }
 
-            mainView.setCenter(player.getSprite()->getPosition());
-            window.setView(mainView);
+            if (!isInPauseMenu) {
+                mainView.setCenter(player.getSprite()->getPosition());
+                window.setView(mainView);
 
-            timeSinceLastFrame = mainClock.restart();
-            game.update();
+                timeSinceLastFrame = mainClock.restart();
+                game.update();
+            }
+
 
         if (!playable) {
             if (map1.getCurrentMap() == map1.EXTERIOR) {

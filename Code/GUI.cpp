@@ -1,5 +1,9 @@
 #include "GUI.hpp"
 
+sf::RectangleShape pauseOverlay;
+sf::Text pauseText;
+sf::Sprite resumeButton;
+sf::Sprite quitButton;
 
 void initGUI() {
     // Load font (make sure "font.ttf" exists in your project directory)
@@ -23,11 +27,32 @@ void initGUI() {
     //GATEKEY
     gateKey.setTexture(gateKeyTexture);
     gateKey.setScale(Vector2f(0.8f, 0.8f));
+
+    // Set up the pause overlay (semi-transparent)
+    pauseOverlay.setSize(sf::Vector2f(screenWidth, screenHeight));
+    pauseOverlay.setFillColor(sf::Color(0, 0, 0, 150)); // Black with 150 transparency
+
+    // Set up the pause text
+    pauseText.setFont(font);
+    pauseText.setCharacterSize(40.5);
+    pauseText.setFillColor(sf::Color::White);
+    pauseText.setString("Paused");
+    pauseText.setOrigin(pauseText.getLocalBounds().width / 2, pauseText.getLocalBounds().height / 2);
+
+    resumeButton.setTexture(resumeButtonTexture);
+    resumeButton.setScale(Vector2f(4.5f,4.5f));
+    resumeButton.setOrigin(resumeButton.getLocalBounds().width / 2, resumeButton.getLocalBounds().height / 2);
     
-    
+    quitButton.setTexture(quitButtonTexture);
+    quitButton.setScale(Vector2f(4.5f, 4.5f));
+    quitButton.setOrigin(quitButton.getLocalBounds().width / 2, quitButton.getLocalBounds().height / 2);
+
 }
 
 void drawGUI() {
+    sf::View oldView = window.getView();
+    
+
     cout << "Pumpcoin Position: " << pumpcoinPouch.getPosition().x << ", " << pumpcoinPouch.getPosition().y << endl;
 
     pumpcoinPouch.setPosition(mainView.getCenter().x-110, mainView.getCenter().y-50);
@@ -43,4 +68,30 @@ void drawGUI() {
     window.draw(pumpcoinText);
     window.draw(gateKey);
     window.draw(*hpBar);
+    if (isInPauseMenu) {
+        window.setView(window.getDefaultView());
+        window.draw(pauseOverlay);
+        pauseText.setPosition(screenWidth / 2, screenHeight / 2 - 300);
+        resumeButton.setPosition(screenWidth / 2, screenHeight / 2 - 100);
+        quitButton.setPosition(screenWidth / 2, screenHeight / 2+100);
+        window.draw(resumeButton);
+        window.draw(quitButton);
+        window.draw(pauseText);
+        
+    }
+    window.setView(oldView);
+}
+
+void updateGUI() {
+    //UPDATE
+    mousePosition = Mouse::getPosition(window);
+
+    // Check if the mouse is hovering over the button
+    hoverButtonResume = resumeButton.getGlobalBounds().contains(Vector2f(mousePosition));
+    hoverButtonQuit = quitButton.getGlobalBounds().contains(Vector2f(mousePosition));
+
+    // Change the texture accordingly
+    resumeButton.setTexture(hoverButtonResume ? resumeButtonHoverTexture : resumeButtonTexture);
+    quitButton.setTexture(hoverButtonQuit ? quitButtonHoverTexture : quitButtonTexture);
+
 }
