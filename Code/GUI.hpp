@@ -4,11 +4,10 @@
 #include <iostream>
 
 extern Vector2i mousePosition;
-extern sf::RectangleShape pauseOverlay;
-extern sf::Text pauseText;
-extern sf::Sprite resumeButton;
-extern sf::Sprite quitButton;
-
+extern RectangleShape pauseOverlay;
+extern Text pauseText;
+extern Sprite resumeButton;
+extern Sprite quitButton;
 
 void initGUI();
 

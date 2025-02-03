@@ -25,7 +25,7 @@ int main()
     Clock mainClock;
     Game game;
     MainScreen mainscreen;
-    
+
     map1.loadExterior(tileMap, player);
 
     thread uInputThread(userInput);
@@ -38,7 +38,7 @@ int main()
     initGUI();
 
     while (isGameRunning) {
-        
+
         if (isInMenu) {
 
             mainscreen.MainScreenUpdate();
@@ -60,8 +60,8 @@ int main()
                     if (hoverButtonPlay)
                         isInMenu = false;
                 }
-                    else if (event.type == Event::Closed) { isGameRunning = false; }
-                
+                else if (event.type == Event::Closed) { isGameRunning = false; }
+
             }
         }
         //Game Start
@@ -72,7 +72,7 @@ int main()
 
             while (window.pollEvent(event)) {
                 if (event.type == Event::KeyPressed and Keyboard::isKeyPressed(Keyboard::Escape)) {
-                        isInPauseMenu = true;  // Pause the game
+                    isInPauseMenu = true;
                 }
                 else if (event.type == Event::Closed) { isGameRunning = false; }
                 else if (event.type == Event::KeyPressed and Keyboard::isKeyPressed(Keyboard::Scancode::H)) {
@@ -102,87 +102,87 @@ int main()
             }
 
 
-        if (!playable) {
-            if (map1.getCurrentMap() == map1.EXTERIOR) {
-                map1.loadDungeon(tileMap, player);
-                map1.setCurrentMap(map1.DUNGEON);
+            if (!playable) {
+                if (map1.getCurrentMap() == map1.EXTERIOR) {
+                    map1.loadDungeon(tileMap, player);
+                    map1.setCurrentMap(map1.DUNGEON);
+                }
+                else if (map1.getCurrentMap() == map1.DUNGEON) {
+                    map1.loadExterior(tileMap, player);
+                    map1.setCurrentMap(map1.EXTERIOR);
+                }
+                moneyList.clear();
+                playable = true;
             }
-            else if (map1.getCurrentMap() == map1.DUNGEON) {
-                map1.loadExterior(tileMap, player);
-                map1.setCurrentMap(map1.EXTERIOR);
-            }
-            moneyList.clear();
-            playable = true;
-        }
 
-        window.clear();
+            window.clear();
 
 
-        for (shared_ptr<Tile> tile : tileMap) {
-            if (tile) {
-                if (tile->getLayer() == 0) {
-                    window.draw(*tile->getSprite());
+            for (shared_ptr<Tile> tile : tileMap) {
+                if (tile) {
+                    if (tile->getLayer() == 0) {
+                        window.draw(*tile->getSprite());
+                    }
                 }
             }
-        }
-        for (shared_ptr<Tile> tile : tileMap) {
-            if (tile) {
-                if (tile->getLayer() == 1) {
-                    window.draw(*tile->getSprite());
+            for (shared_ptr<Tile> tile : tileMap) {
+                if (tile) {
+                    if (tile->getLayer() == 1) {
+                        window.draw(*tile->getSprite());
+                    }
                 }
             }
-        }
-        for (shared_ptr<Tile> tile : tileMap) {
-            if (tile) {
-                if (tile->getLayer() == 2 and tile->getSprite()->getPosition().y <= player.getSprite()->getPosition().y) {
-                    window.draw(*tile->getSprite());
+            for (shared_ptr<Tile> tile : tileMap) {
+                if (tile) {
+                    if (tile->getLayer() == 2 and tile->getSprite()->getPosition().y <= player.getSprite()->getPosition().y) {
+                        window.draw(*tile->getSprite());
+                    }
                 }
             }
-        }
-        for (shared_ptr<Money> money : moneyList) {
-            if (money) {
-                window.draw(*money->getSprite());
-            }
-        }
-
-         window.draw(*player.getSprite());
-
-        for (shared_ptr<Tile> tile : tileMap) {
-            if (tile) {
-                if (tile->getLayer() == 2 and tile->getSprite()->getPosition().y > player.getSprite()->getPosition().y) {
-                    window.draw(*tile->getSprite());
+            for (shared_ptr<Money> money : moneyList) {
+                if (money) {
+                    window.draw(*money->getSprite());
                 }
             }
-        }
 
-        // hitbox display
-        if (showHitbox) {
-            RectangleShape hb(player.getHitBox().getSize());
-            hb.setPosition(player.getHitBox().getPosition());
-            hb.setFillColor(Color(0, 180, 255, 150));
-            window.draw(hb);
+            window.draw(*player.getSprite());
 
-            RectangleShape point(Vector2f(1, 1));
-            point.setFillColor(Color(255, 0, 0));
-            point.setPosition(player.getSprite()->getPosition() + Vector2f(0, 14));
-            window.draw(point);
-            point.setPosition(player.getSprite()->getPosition() + Vector2f(0, 8));
-            window.draw(point);
-            point.setPosition(player.getSprite()->getPosition() + Vector2f(8, 11));
-            window.draw(point);
-            point.setPosition(player.getSprite()->getPosition() + Vector2f(-8, 11));
-            window.draw(point);
+            for (shared_ptr<Tile> tile : tileMap) {
+                if (tile) {
+                    if (tile->getLayer() == 2 and tile->getSprite()->getPosition().y > player.getSprite()->getPosition().y) {
+                        window.draw(*tile->getSprite());
+                    }
+                }
+            }
 
-            RectangleShape attRange(player.getActionRange().getSize());
-            attRange.setPosition(player.getActionRange().getPosition());
-            attRange.setFillColor(Color(220, 80, 255, 150));
-            window.draw(attRange);
-        }
+            // hitbox display
+            if (showHitbox) {
+                RectangleShape hb(player.getHitBox().getSize());
+                hb.setPosition(player.getHitBox().getPosition());
+                hb.setFillColor(Color(0, 180, 255, 150));
+                window.draw(hb);
 
-            
+                RectangleShape point(Vector2f(1, 1));
+                point.setFillColor(Color(255, 0, 0));
+                point.setPosition(player.getSprite()->getPosition() + Vector2f(0, 14));
+                window.draw(point);
+                point.setPosition(player.getSprite()->getPosition() + Vector2f(0, 8));
+                window.draw(point);
+                point.setPosition(player.getSprite()->getPosition() + Vector2f(8, 11));
+                window.draw(point);
+                point.setPosition(player.getSprite()->getPosition() + Vector2f(-8, 11));
+                window.draw(point);
+
+                RectangleShape attRange(player.getActionRange().getSize());
+                attRange.setPosition(player.getActionRange().getPosition());
+                attRange.setFillColor(Color(220, 80, 255, 150));
+                window.draw(attRange);
+            }
+
+
             drawGUI();
         }
-            window.display();
-        
+        window.display();
+
     }
 }

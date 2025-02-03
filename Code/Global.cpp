@@ -28,8 +28,6 @@ Font font;
 bool hoverButtonResume = false;
 bool hoverButtonQuit = false;
 
-
-
 Texture hpBarTexture;
 shared_ptr<Sprite> hpBar = make_shared<Sprite>();
 Vector2f inputMovement = Vector2f(0.f, 0.f);
@@ -54,13 +52,14 @@ Texture grassWallSideTexture;
 Texture grassWallDownEndTexture;
 Texture grassWallTopTexture;
 Texture grassWallTopEndTexture;
+Texture grassWallCornerTexture;
 Texture waterTileTexture;
 Texture bridgeTexture;
 Texture treeTexture;
 Texture highGroundTile;
-Texture doorExteriorTileTecture;
+Texture doorExteriorTileTexture;
 Texture potTexture;
-    //dungeon
+//dungeon
 Texture wallTileTexture;
 Texture wallTileSideTexture;
 Texture wallTileBackTexture;
@@ -77,6 +76,9 @@ Texture flagTileTexture;
 Texture candleTexture;
 
 Texture rubyTexture;
+Texture swordTexture;
+Texture axeTexture;
+Texture daggerTexture;
 
 //Menu Textures
 Texture backgroundTexture;
@@ -128,12 +130,13 @@ void loadTextures() {
     grassWallDownEndTexture.loadFromFile("Images/Pixelarium - GrassLands - Free Version/Pack content/Sprites/Tileset/grass_wall_down_end.png");
     grassWallTopTexture.loadFromFile("Images/Pixelarium - GrassLands - Free Version/Pack content/Sprites/Tileset/grass_wall_top.png");
     grassWallTopEndTexture.loadFromFile("Images/Pixelarium - GrassLands - Free Version/Pack content/Sprites/Tileset/grass_wall_top_end.png");
+    grassWallCornerTexture.loadFromFile("Images/Pixelarium - GrassLands - Free Version/Pack content/Sprites/Tileset/grass_wall_corner.png");
     waterTileTexture.loadFromFile("Images/Pixelarium - GrassLands - Free Version/Pack content/Sprites/Tileset/water_tile.png");
     bridgeTexture.loadFromFile("Images/Pixelarium - GrassLands - Free Version/Pack content/Sprites/Tileset/bridge.png");
     treeTexture.loadFromFile("Images/Pixelarium - GrassLands - Free Version/Pack content/Sprites/Vegetation/spr_tree1.png");
 
     highGroundTile.loadFromFile("Images/Pixelarium - GrassLands - Free Version/Pack content/Sprites/Tileset/highGroundTile.png");
-    doorExteriorTileTecture.loadFromFile("Images/32rogues/door_tile.png");
+    doorExteriorTileTexture.loadFromFile("Images/32rogues/door_tile.png");
     potTexture.loadFromFile("Images/Dungeon Gathering Free Version/Vase Shine Anim.png");
 
     wallTileTexture.loadFromFile("Images/2D Pixel Dungeon Asset Pack/character and tileset/wall_tile.png");
@@ -152,6 +155,9 @@ void loadTextures() {
     candleTexture.loadFromFile("Images/2D Pixel Dungeon Asset Pack/items and trap_animation/torch/candlestick_2_idle.png");
 
     rubyTexture.loadFromFile("Images/Coin_Gems/ruby_red.png");
+    swordTexture.loadFromFile("Images/textureepeee");
+    axeTexture.loadFromFile("Images/textureaxez");
+    daggerTexture.loadFromFile("Images/texturenigger");
 
     //Main Menu Textures
     backgroundTexture.loadFromFile("Images/mainmenu/background.png");
@@ -163,6 +169,7 @@ void loadTextures() {
     //GUI Textures
     pumpcoinPouchTexture.loadFromFile("Images/GUI/pumpcoinPouchTexture.png");
     gateKeyTexture.loadFromFile("Images/GUI/gatekey.png");
+
     resumeButtonTexture.loadFromFile("Images/GUI/pausemenu/resume/resumeButton.png");
     resumeButtonHoverTexture.loadFromFile("Images/GUI/pausemenu/resume/resumeButtonHover.png");
     quitButtonTexture.loadFromFile("Images/GUI/pausemenu/quit/quitButton.png");

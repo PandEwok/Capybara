@@ -6,14 +6,14 @@ using namespace sf;
 
 void MainScreen::MainScreenInit() {
     background.setTexture(backgroundTexture);
-    background.setScale(Vector2f(1.17f,1.0f));
+    background.setScale(Vector2f(1.17f, 1.0f));
     //background.setOrigin(background.getLocalBounds().width / 2, background.getLocalBounds().height / 2);
     //background.setPosition(desktop.width / 2, desktop.height / 2);
 
     buttonPlay.setTexture(buttonPlayTexture);
     buttonPlay.setScale(Vector2f(4.0f, 4.0f));
     buttonPlay.setOrigin(buttonPlay.getLocalBounds().width / 2, buttonPlay.getLocalBounds().height / 2);
-    buttonPlay.setPosition(screenWidth / 2, screenHeight / 2-150);
+    buttonPlay.setPosition(screenWidth / 2, screenHeight / 2 - 150);
 
     buttonExit.setTexture(buttonExitTexture);
     buttonExit.setScale(Vector2f(4.0f, 4.0f));
