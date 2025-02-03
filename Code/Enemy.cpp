@@ -14,6 +14,10 @@ int Enemy::getHp() const {
     return hp;
 }
 
+void Enemy::setHp(int newHp) {
+    hp = (newHp < 0) ? 0 : newHp;
+}
+
 void Enemy::decreaseHp(int value) {
     hp -= value;
     if (hp < 0) {

@@ -100,6 +100,11 @@ Texture pumpcoinPouchTexture;
 Text pumpcoinText;
 Texture gateKeyTexture;
 
+//Enemy Textures
+Texture hunterTextureBot;
+Texture hunterTextureTop;
+Texture hunterTextureLeft;
+Texture hunterTextureRight;
 
 void loadTextures() {
     font.setSmooth(false);
@@ -157,6 +162,12 @@ void loadTextures() {
     //GUI Textures
     pumpcoinPouchTexture.loadFromFile("Images/GUI/pumpcoinPouchTexture.png");
     gateKeyTexture.loadFromFile("Images/GUI/gatekey.png");
+
+    //Hunter Textures
+    hunterTextureBot.loadFromFile("Images/free-slime-mobs-pixel-art-top-down-sprite-pack/PNG/Slime1/Walk/Slime_bot.png");
+    hunterTextureTop.loadFromFile("Images/free-slime-mobs-pixel-art-top-down-sprite-pack/PNG/Slime1/Walk/Slime_top.png");
+    hunterTextureRight.loadFromFile("Images/free-slime-mobs-pixel-art-top-down-sprite-pack/PNG/Slime1/Walk/Slime_right.png");
+    hunterTextureLeft.loadFromFile("Images/free-slime-mobs-pixel-art-top-down-sprite-pack/PNG/Slime1/Walk/Slime_left.png");
 
 }
 

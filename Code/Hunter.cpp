@@ -1,12 +1,12 @@
 #include "Hunter.hpp"
 #include <cmath>
 
-Hunter::Hunter(Vector2f textureSize, float speed, int hp, bool stealthy, Player* playerTarget)
-	: Enemy(textureSize, speed, hp), isStealthy(false), target(playerTarget) {
+Hunter::Hunter(Vector2f textureSize, float speed, int hp, bool stealthy, Player* playerTarget, shared_ptr<Texture> texture)
+	: Enemy(textureSize, speed, 7), isStealthy(false), target(playerTarget) {
 }
 
 void Hunter::update(float deltaTime) {
-	if (!target) return;
+	if (!target || hp <= 0) return;
 	Vector2f hunterPos = getPosition();
 	Vector2f playerPos = target->getPosition();
 

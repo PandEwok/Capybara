@@ -3,10 +3,9 @@
 #include "Entity.hpp"
 
 class Enemy : public Entity {
-private:
+protected:
     float speed;
     int hp;
-
 public:
     Enemy(Vector2f textureSize, float speed, int hp);
 
@@ -16,6 +15,7 @@ public:
     void setSpeed(float newSpeed);
 
     int getHp() const;
+    void setHp(int newHp);
     void decreaseHp(int value = 1);
     bool isDead() const;
 };
