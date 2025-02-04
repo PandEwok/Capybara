@@ -5,9 +5,10 @@
 
 class Player : public Entity {
 protected:
-    float speed = 250.f;
+    float speed = 170.f;
     int hp = 3;
     Clock framrate;
+    bool isAttacking = false;
     int keyNumber = 0;
 
 public:
@@ -27,6 +28,8 @@ public:
     int getHp();
     void decreaseHp(int value = 1);
     void increaseHp(int value = 1);
+    bool getIsAttacking();
+    void setIsAttacking(bool value);
     int getKeyState();
     void setKeyState(int newValue);
     FloatRect getHitBox();

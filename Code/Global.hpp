@@ -31,6 +31,11 @@ extern bool playable;
 extern Time timeSinceLastFrame;
 extern Time timeSinceLastFrameInputs;
 extern Font font;
+extern Font smallFont;
+extern RectangleShape shading;
+extern float shadeValue;
+extern bool isShadeIncreasing;
+
 extern bool isInPauseMenu;
 
 //Menu Variables
@@ -40,6 +45,8 @@ extern bool hoverButtonPlay;
 extern bool hoverButtonExit;
 
 extern bool hasGateKey;
+extern bool isGateOpen;
+extern string goingThrough;
 
 
 extern Texture hpBarTexture;
@@ -49,14 +56,23 @@ extern int playerMoney;
 extern Texture playerKeyTexture;
 extern shared_ptr<Sprite> playerKey;
 extern bool showHitbox;
+extern Texture eKeyTexture;
+extern Clock eKeyClock;
+extern shared_ptr<Sprite> eKey;
 
 //player textures
 extern Texture playerTextureFrontIdle;
 extern Texture playerTextureFrontWalk;
+extern Texture playerTextureFrontAttack;
 extern Texture playerTextureBackIdle;
 extern Texture playerTextureBackWalk;
+extern Texture playerTextureBackAttack;
 extern Texture playerTextureSideIdle;
 extern Texture playerTextureSideWalk;
+extern Texture playerTextureSideAttack;
+
+//npc textures
+extern Texture shopKeeperTexture;
 
 //tiles textures
 	//exterior textures
@@ -74,7 +90,12 @@ extern Texture treeTexture;
 extern Texture highGroundTile;
 extern Texture doorExteriorTileTexture;
 extern Texture potTexture;
-//dungeon textures
+extern Texture houseTexture;
+extern Texture houseDoorTexture;
+extern Texture shopTexture;
+extern Texture shopDoorTexture;
+	//dungeon textures
+extern Texture dungeonOffMapTexture;
 extern Texture wallTileTexture;
 extern Texture wallTileSideTexture;
 extern Texture wallTileBackTexture;
@@ -89,6 +110,14 @@ extern Texture doorTileLeftTexture;
 extern Texture doorTileRightTexture;
 extern Texture flagTileTexture;
 extern Texture candleTexture;
+	//house textures
+extern Texture houseFloorTexture;
+extern Texture houseWallTexture;
+extern Texture houseWallBackTexture;
+extern Texture houseWallTopCornerTexture;
+extern Texture houseWallSideTexture;
+extern Texture houseWallIntersectionTexture;
+extern Texture houseExitTexture;
 
 //items textures
 extern Texture rubyTexture;
@@ -148,3 +177,5 @@ void loadSound();
 void continueAnimation(shared_ptr<Sprite> sprite);
 
 Vector2f normalize(Vector2f value);
+
+void shadeScreen();
