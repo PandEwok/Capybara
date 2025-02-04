@@ -29,6 +29,14 @@ Ceci est une démo d'un projet qui pourrait être plus important, un jeu complet
 cette zone sert de prologue a cette version final, la fin de ce donjnon permettant l'accès au reste du jeu rajouté par la version finale.   
 cette version finale sera vendu au tarif fort de 20.01€ sur la plateforme Steam.   
 
+## <ins> OST utilisé </ins>   
+-> "File Select", The legend of Zelda: A link to the past   
+https://www.youtube.com/watch?v=Lahn6mN-hnk   
+-> "Minish Woods", The legend of Zelda: The minish cap   
+https://www.youtube.com/watch?v=OvZfSXVnHtQ   
+-> "Zelda II temple theme snes Arrangement (A link to the past style)- The Adventure of Link", Loeder   
+https://www.youtube.com/watch?v=Wd0TXw1d0zg
+
 
 
 
