@@ -3,7 +3,9 @@
 
 
 
+
 void userInput() {
+    Event event;
     Clock mainClock;
     vector<shared_ptr<Tile>> toDeleteTiles = {};
     while (isGameRunning) {
@@ -15,77 +17,99 @@ void userInput() {
         }
         toDeleteTiles.clear();
 
-        if (Mouse::isButtonPressed(Mouse::Left)) {
-
+        if (Mouse::isButtonPressed(Mouse::Left) and !player.getIsAttacking()) {
+            player.setIsAttacking(true);
         }
 
         inputMovement = Vector2f(0, 0.f);
-        if (Keyboard::isKeyPressed(Keyboard::Scancode::A)) {
-            inputMovement += Vector2f(-1.f, 0.f);
-        }
-        if (Keyboard::isKeyPressed(Keyboard::Scancode::W)) {
-            inputMovement += Vector2f(0, -1.f);
-        }
-        if (Keyboard::isKeyPressed(Keyboard::Scancode::S)) {
-            inputMovement += Vector2f(0, 1.f);
-        }
-        if (Keyboard::isKeyPressed(Keyboard::Scancode::D)) {
-            inputMovement += Vector2f(1, 0.f);
-        }
+        if (!player.getIsAttacking()) {
 
-        if (inputMovement.y > 0) {
-            player.facing = player.FRONT;
-        }
-        else if (inputMovement.y < 0) {
-            player.facing = player.BACK;
-        }
-        if (inputMovement.x > 0) {
-            player.facing = player.RIGHT;
-        }
-        else if (inputMovement.x < 0) {
-            player.facing = player.LEFT;
-        }
+            if (Keyboard::isKeyPressed(Keyboard::Scancode::A)) {
+                inputMovement += Vector2f(-1.f, 0.f);
+            }
+            if (Keyboard::isKeyPressed(Keyboard::Scancode::W)) {
+                inputMovement += Vector2f(0, -1.f);
+            }
+            if (Keyboard::isKeyPressed(Keyboard::Scancode::S)) {
+                inputMovement += Vector2f(0, 1.f);
+            }
+            if (Keyboard::isKeyPressed(Keyboard::Scancode::D)) {
+                inputMovement += Vector2f(1, 0.f);
+            }
 
-        if (player.facing == player.FRONT) {
-            if (player.getSprite()->getTexture() != &playerTextureFrontIdle and inputMovement == Vector2f(0, 0)) {
-                player.getSprite()->setTextureRect(IntRect(0, 0, player.getSprite()->getTextureRect().width, player.getSprite()->getTextureRect().height));
-                player.getSprite()->setTexture(playerTextureFrontIdle);
+            if (inputMovement.y > 0) {
+                player.facing = player.FRONT;
             }
-            else if (player.getSprite()->getTexture() != &playerTextureFrontWalk and inputMovement != Vector2f(0, 0)) {
-                player.getSprite()->setTextureRect(IntRect(0, 0, player.getSprite()->getTextureRect().width, player.getSprite()->getTextureRect().height));
-                player.getSprite()->setTexture(playerTextureFrontWalk);
+            else if (inputMovement.y < 0) {
+                player.facing = player.BACK;
             }
-            if (player.getSprite()->getScale().x < 0) {
+            if (inputMovement.x > 0) {
+                player.facing = player.RIGHT;
+            }
+            else if (inputMovement.x < 0) {
+                player.facing = player.LEFT;
+            }
+
+
+            if (player.facing == player.FRONT) {
+                if (player.getSprite()->getTexture() != &playerTextureFrontIdle and inputMovement == Vector2f(0, 0)) {
+                    player.getSprite()->setTextureRect(IntRect(0, 0, player.getSprite()->getTextureRect().width, player.getSprite()->getTextureRect().height));
+                    player.getSprite()->setTexture(playerTextureFrontIdle);
+                }
+                else if (player.getSprite()->getTexture() != &playerTextureFrontWalk and inputMovement != Vector2f(0, 0)) {
+                    player.getSprite()->setTextureRect(IntRect(0, 0, player.getSprite()->getTextureRect().width, player.getSprite()->getTextureRect().height));
+                    player.getSprite()->setTexture(playerTextureFrontWalk);
+                }
+                if (player.getSprite()->getScale().x < 0) {
+                    player.getSprite()->setScale(player.getSprite()->getScale().x * (-1.f), player.getSprite()->getScale().y);
+                }
+            }
+            else if (player.facing == player.BACK) {
+                if (player.getSprite()->getTexture() != &playerTextureBackIdle and inputMovement == Vector2f(0, 0)) {
+                    player.getSprite()->setTextureRect(IntRect(0, 0, player.getSprite()->getTextureRect().width, player.getSprite()->getTextureRect().height));
+                    player.getSprite()->setTexture(playerTextureBackIdle);
+                }
+                else if (player.getSprite()->getTexture() != &playerTextureBackWalk and inputMovement != Vector2f(0, 0)) {
+                    player.getSprite()->setTextureRect(IntRect(0, 0, player.getSprite()->getTextureRect().width, player.getSprite()->getTextureRect().height));
+                    player.getSprite()->setTexture(playerTextureBackWalk);
+                }
+                if (player.getSprite()->getScale().x < 0) {
+                    player.getSprite()->setScale(player.getSprite()->getScale().x * (-1.f), player.getSprite()->getScale().y);
+                }
+            }
+            else if (player.facing == player.RIGHT or player.facing == player.LEFT) {
+                if (player.getSprite()->getTexture() != &playerTextureSideIdle and inputMovement == Vector2f(0, 0)) {
+                    player.getSprite()->setTextureRect(IntRect(0, 0, player.getSprite()->getTextureRect().width, player.getSprite()->getTextureRect().height));
+                    player.getSprite()->setTexture(playerTextureSideIdle);
+                }
+                else if (player.getSprite()->getTexture() != &playerTextureSideWalk and inputMovement != Vector2f(0, 0)) {
+                    player.getSprite()->setTextureRect(IntRect(0, 0, player.getSprite()->getTextureRect().width, player.getSprite()->getTextureRect().height));
+                    player.getSprite()->setTexture(playerTextureSideWalk);
+                }
+            }
+            if ((player.facing == player.LEFT and player.getSprite()->getScale().x > 0) or (player.facing == player.RIGHT and player.getSprite()->getScale().x < 0)) {
                 player.getSprite()->setScale(player.getSprite()->getScale().x * (-1.f), player.getSprite()->getScale().y);
             }
         }
-        else if (player.facing == player.BACK) {
-            if (player.getSprite()->getTexture() != &playerTextureBackIdle and inputMovement == Vector2f(0, 0)) {
+        else {
+            if (player.facing == player.FRONT and player.getSprite()->getTexture() != &playerTextureFrontAttack) {
                 player.getSprite()->setTextureRect(IntRect(0, 0, player.getSprite()->getTextureRect().width, player.getSprite()->getTextureRect().height));
-                player.getSprite()->setTexture(playerTextureBackIdle);
+                player.getSprite()->setTexture(playerTextureFrontAttack);
             }
-            else if (player.getSprite()->getTexture() != &playerTextureBackWalk and inputMovement != Vector2f(0, 0)) {
+            else if (player.facing == player.BACK and player.getSprite()->getTexture() != &playerTextureBackAttack) {
                 player.getSprite()->setTextureRect(IntRect(0, 0, player.getSprite()->getTextureRect().width, player.getSprite()->getTextureRect().height));
-                player.getSprite()->setTexture(playerTextureBackWalk);
+                player.getSprite()->setTexture(playerTextureBackAttack);
             }
-            if (player.getSprite()->getScale().x < 0) {
-                player.getSprite()->setScale(player.getSprite()->getScale().x * (-1.f), player.getSprite()->getScale().y);
+            else if (player.facing == player.RIGHT and player.getSprite()->getTexture() != &playerTextureSideAttack) {
+                player.getSprite()->setTextureRect(IntRect(0, 0, player.getSprite()->getTextureRect().width, player.getSprite()->getTextureRect().height));
+                player.getSprite()->setTexture(playerTextureSideAttack);
+            }
+            else if (player.facing == player.LEFT and player.getSprite()->getTexture() != &playerTextureSideAttack) {
+                player.getSprite()->setTextureRect(IntRect(0, 0, player.getSprite()->getTextureRect().width, player.getSprite()->getTextureRect().height));
+                player.getSprite()->setTexture(playerTextureSideAttack);
             }
         }
-        else if (player.facing == player.RIGHT or player.facing == player.LEFT) {
-            if (player.getSprite()->getTexture() != &playerTextureSideIdle and inputMovement == Vector2f(0, 0)) {
-                player.getSprite()->setTextureRect(IntRect(0, 0, player.getSprite()->getTextureRect().width, player.getSprite()->getTextureRect().height));
-                player.getSprite()->setTexture(playerTextureSideIdle);
-            }
-            else if (player.getSprite()->getTexture() != &playerTextureSideWalk and inputMovement != Vector2f(0, 0)) {
-                player.getSprite()->setTextureRect(IntRect(0, 0, player.getSprite()->getTextureRect().width, player.getSprite()->getTextureRect().height));
-                player.getSprite()->setTexture(playerTextureSideWalk);
-            }
-        }
-        if ((player.facing == player.LEFT and player.getSprite()->getScale().x > 0) or (player.facing == player.RIGHT and player.getSprite()->getScale().x < 0)) {
-            player.getSprite()->setScale(player.getSprite()->getScale().x * (-1.f), player.getSprite()->getScale().y);
-        }
-
+        
         for (int i = 0; i < tileMap.size(); i++) {
             shared_ptr<Tile> tile = tileMap[i];
             if (tile->getSprite()->getGlobalBounds().intersects(player.getHitBox())) {
@@ -121,10 +145,33 @@ void userInput() {
                         inputMovement = Vector2f(0, inputMovement.y);
                     }
                 }
-                if (tile->getType() == "Gate") {
-                    playable = false;
-                    while (!playable) {}
-                    break;
+                if ((tile->getType() == "Gate" and isGateOpen) or tile->getType() == "HouseDoor" or tile->getType() == "ShopDoor") {
+                    Vector2f boundsPos = tile->getSprite()->getGlobalBounds().getPosition();
+                    Vector2f boundsSize = tile->getSprite()->getGlobalBounds().getSize();
+                    FloatRect gateHitBox = FloatRect(boundsPos.x, boundsPos.y + boundsSize.y / 3.f, boundsSize.x, boundsSize.y / 3.f * 2.f);
+                    if (gateHitBox.intersects(player.getHitBox())) {
+                        playable = false;
+                        goingThrough = tile->getType();
+                        isShadeIncreasing = true;
+                        player.getSprite()->setTextureRect(IntRect(0, 0, player.getSprite()->getTextureRect().width, player.getSprite()->getTextureRect().height));
+                        if (player.facing == player.FRONT) {
+                            player.getSprite()->setTexture(playerTextureFrontIdle);
+                        }
+                        else if (player.facing == player.BACK) {
+                            player.getSprite()->setTexture(playerTextureBackIdle);
+                        }
+                        else if (player.facing == player.RIGHT) {
+                            player.getSprite()->setTexture(playerTextureSideIdle);
+                        }
+                        else if (player.facing == player.LEFT) {
+                            player.getSprite()->setTexture(playerTextureSideIdle);
+                        }
+                        thread shadeThread(shadeScreen);
+                        shadeThread.detach();
+                        while (!playable) {}
+                        mainClock.restart();
+                        break;
+                    }
                 }
             }
             if (tile->getSprite()->getGlobalBounds().intersects(player.getActionRange())) {

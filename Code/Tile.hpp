@@ -5,13 +5,15 @@
 class Tile {
 protected:
 	shared_ptr<Sprite> sprite = make_shared<Sprite>();
-	string type;
+	string type = "N/A";
 	int layer = 0;
 public:
 	shared_ptr<Sprite> getSprite();
 	Tile(Vector2f position);
 	string getType();
+	void setType(string value);
 	int getLayer();
+	void setLayer(int value);
 };
 
 class Wall : public Tile {
@@ -36,6 +38,11 @@ public:
 class Bridge : public Tile {
 public:
 	Bridge(Vector2f position);
+};
+
+class House : public Tile {
+public:
+	House(Vector2f position);
 };
 
 class Tree : public Tile {

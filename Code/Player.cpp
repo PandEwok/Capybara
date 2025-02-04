@@ -48,6 +48,14 @@ void Player::increaseHp(int value)
 	cout << "HP is now " << hp << greenString << " (+" << value << ")" << whiteString << endl;
 }
 
+bool Player::getIsAttacking() {
+	return isAttacking;
+}
+
+void Player::setIsAttacking(bool value) {
+	isAttacking = value;
+}
+
 int Player::getKeyState()
 {
 	return keyNumber;
@@ -61,21 +69,21 @@ void Player::setKeyState(int newValue)
 FloatRect Player::getHitBox() {
 	Vector2f boundsPos = sprite->getGlobalBounds().getPosition();
 	Vector2f boundsSize = sprite->getGlobalBounds().getSize();
-	return FloatRect(boundsPos.x + boundsSize.x / 9.f * 4.f, boundsPos.y + boundsSize.y / 7.f * 3.3f, boundsSize.x / 9.f, boundsSize.y / 7.f * 1.5f);
+	return FloatRect(boundsPos.x + boundsSize.x / 7.f * 3.f, boundsPos.y + boundsSize.y / 5.f * 2.5f, boundsSize.x / 7.f, boundsSize.y / 5.f * 1.f);
 }
 
 FloatRect Player::getActionRange()
 {
 	if (facing == FRONT) {
-		return FloatRect(getHitBox().getPosition().x, getHitBox().getPosition().y + 14, getHitBox().width, 6);
+		return FloatRect(getHitBox().getPosition().x - 12, getHitBox().getPosition().y + 15, getHitBox().width +12*2, 10);
 	}
 	if (facing == BACK) {
-		return FloatRect(getHitBox().getPosition().x, getHitBox().getPosition().y - 11, getHitBox().width, 8);
+		return FloatRect(getHitBox().getPosition().x - 12, getHitBox().getPosition().y - 15, getHitBox().width +12*2, 10);
 	}
 	if (facing == RIGHT) {
-		return FloatRect(getHitBox().getPosition().x + 10, getHitBox().getPosition().y, 6, getHitBox().height);
+		return FloatRect(getHitBox().getPosition().x + getHitBox().width+3, getHitBox().getPosition().y - 5, 10, getHitBox().height +5*2);
 	}
 	if (facing == LEFT) {
-		return FloatRect(getHitBox().getPosition().x - 8, getHitBox().getPosition().y, 6, getHitBox().height);
+		return FloatRect(getHitBox().getPosition().x - 10 - 3, getHitBox().getPosition().y - 5, 10, getHitBox().height +5*2);
 	}
 }
