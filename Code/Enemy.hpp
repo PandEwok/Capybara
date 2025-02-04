@@ -6,6 +6,7 @@ class Enemy : public Entity {
 protected:
     float speed;
     int hp;
+
 public:
     Enemy(Vector2f textureSize, float speed, int hp);
 

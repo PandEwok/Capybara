@@ -34,6 +34,7 @@ void collisionsProcess()
 					}
 				}
 			}
+
 			toDeleteAxe = {};
 			for (shared_ptr<Axe> adxe : axead) {
 				if (adxe) {
@@ -43,6 +44,7 @@ void collisionsProcess()
 					}
 				}
 			}
+
 			toDeleteDagger = {};
 			for (shared_ptr<Dagger> dadgger : daggerad) {
 				if (dadgger) {

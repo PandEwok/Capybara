@@ -12,9 +12,14 @@ RenderWindow window(VideoMode(screenWidth, screenHeight), "ExCusEee Me, pRiNcesS
 View mainView(FloatRect(screenWidth / 2, screenHeight / 2, 220, 220 * 0.5625f));
 bool isGameRunning = true;
 bool playable = true;
+RectangleShape shading(mainView.getSize());
+float shadeValue = 0.f;
+bool isShadeIncreasing = false;
 Time timeSinceLastFrame;
 Time timeSinceLastFrameInputs;
-bool hasGateKey = false;
+bool hasGateKey = true;
+bool isGateOpen = false;
+string goingThrough = "";
 bool isInPauseMenu = false;
 
 //Additional Menu Variables
@@ -23,6 +28,7 @@ Vector2i mousePosition;
 bool hoverButtonPlay = false;
 bool hoverButtonExit = false;
 Font font;
+Font smallFont;
 
 //GUI Interaction
 bool hoverButtonResume = false;
@@ -35,13 +41,23 @@ int playerMoney = 0;
 Texture playerKeyTexture;
 shared_ptr<Sprite> playerKey = make_shared<Sprite>();
 bool showHitbox = false;
+Texture eKeyTexture;
+Clock eKeyClock;
+shared_ptr<Sprite> eKey = make_shared<Sprite>();
 
+//player
 Texture playerTextureFrontIdle;
 Texture playerTextureFrontWalk;
+Texture playerTextureFrontAttack;
 Texture playerTextureBackIdle;
 Texture playerTextureBackWalk;
+Texture playerTextureBackAttack;
 Texture playerTextureSideIdle;
 Texture playerTextureSideWalk;
+Texture playerTextureSideAttack;
+
+//npc
+Texture shopKeeperTexture;
 
 //tiles
     //exterior
@@ -59,7 +75,12 @@ Texture treeTexture;
 Texture highGroundTile;
 Texture doorExteriorTileTexture;
 Texture potTexture;
-//dungeon
+Texture houseTexture;
+Texture houseDoorTexture;
+Texture shopTexture;
+Texture shopDoorTexture;
+    //dungeon
+Texture dungeonOffMapTexture;
 Texture wallTileTexture;
 Texture wallTileSideTexture;
 Texture wallTileBackTexture;
@@ -74,6 +95,14 @@ Texture doorTileLeftTexture;
 Texture doorTileRightTexture;
 Texture flagTileTexture;
 Texture candleTexture;
+    //house
+Texture houseFloorTexture;
+Texture houseWallTexture;
+Texture houseWallBackTexture;
+Texture houseWallTopCornerTexture;
+Texture houseWallSideTexture;
+Texture houseWallIntersectionTexture;
+Texture houseExitTexture;
 
 Texture rubyTexture;
 Texture swordTexture;
@@ -126,15 +155,23 @@ Sound titleTheme;
 SoundBuffer overworldThemeBuffer;
 Sound overworldTheme;
 
+
 void loadTextures() {
     font.setSmooth(false);
+    smallFont.setSmooth(false);
     playerTextureFrontIdle.loadFromFile("Images/Character/dasel front idle.png");
     playerTextureFrontWalk.loadFromFile("Images/Character/dasel front.png");
+    playerTextureFrontAttack.loadFromFile("Images/Pixelarium - Playable Character - Free Version/Pack Content/Front animations/spr_player_front_attack.png");
     playerTextureBackIdle.loadFromFile("Images/Character/dasel back idle.png");
     playerTextureBackWalk.loadFromFile("Images/Character/dasel back.png");
+    playerTextureBackAttack.loadFromFile("Images/Pixelarium - Playable Character - Free Version/Pack Content/Back animations/spr_player_back_attack.png");
     playerTextureSideIdle.loadFromFile("Images/Character/dasel side right idle.png");
     playerTextureSideWalk.loadFromFile("Images/Character/dasel side right.png");
+    playerTextureSideAttack.loadFromFile("Images/Pixelarium - Playable Character - Free Version/Pack Content/Side animations/spr_player_right_attack.png");
     hpBarTexture.loadFromFile("Images/healthBar.png");
+    eKeyTexture.loadFromFile("Images/e_key_ui.png");
+
+    shopKeeperTexture.loadFromFile("Images/shopKeeperCapy.png");
 
     grassTile1Texture.loadFromFile("Images/Pixelarium - GrassLands - Free Version/Pack content/Sprites/Tileset/grass_tile_1.png");
     grassTile2Texture.loadFromFile("Images/Pixelarium - GrassLands - Free Version/Pack content/Sprites/Tileset/grass_tile_2.png");
@@ -151,7 +188,12 @@ void loadTextures() {
     highGroundTile.loadFromFile("Images/Pixelarium - GrassLands - Free Version/Pack content/Sprites/Tileset/highGroundTile.png");
     doorExteriorTileTexture.loadFromFile("Images/32rogues/door_tile.png");
     potTexture.loadFromFile("Images/Dungeon Gathering Free Version/Vase Shine Anim.png");
+    houseTexture.loadFromFile("Images/player_house.png");
+    houseDoorTexture.loadFromFile("Images/player_house_door.png");
+    shopTexture.loadFromFile("Images/shop_building.png");
+    shopDoorTexture.loadFromFile("Images/shop_building_door.png");
 
+    dungeonOffMapTexture.loadFromFile("Images/2D Pixel Dungeon Asset Pack/character and tileset/dungeon_off_map.png");
     wallTileTexture.loadFromFile("Images/2D Pixel Dungeon Asset Pack/character and tileset/wall_tile.png");
     wallTileSideTexture.loadFromFile("Images/2D Pixel Dungeon Asset Pack/character and tileset/wall_tile_side.png");
     wallTileBackTexture.loadFromFile("Images/2D Pixel Dungeon Asset Pack/character and tileset/wall_tile_back.png");
@@ -167,7 +209,15 @@ void loadTextures() {
     flagTileTexture.loadFromFile("Images/2D Pixel Dungeon Asset Pack/items and trap_animation/flag/flag_idle.png");
     candleTexture.loadFromFile("Images/2D Pixel Dungeon Asset Pack/items and trap_animation/torch/candlestick_2_idle.png");
 
-    rubyTexture.loadFromFile("Images/Coin_Gems/ruby_red.png");
+    houseFloorTexture.loadFromFile("Images/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Tileset/house_floor.png");
+    houseWallTexture.loadFromFile("Images/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Tileset/house_wall.png");
+    houseWallBackTexture.loadFromFile("Images/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Tileset/house_wall_back.png");
+    houseWallTopCornerTexture.loadFromFile("Images/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Tileset/house_wall_top_corner.png");
+    houseWallSideTexture.loadFromFile("Images/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Tileset/house_wall_side.png");
+    houseWallIntersectionTexture.loadFromFile("Images/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Tileset/house_wall_intersection.png");
+    houseExitTexture.loadFromFile("Images/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Tileset/house_exit.png");
+
+    rubyTexture.loadFromFile("Images/pumpcoin.png");
     swordTexture.loadFromFile("Images/textureepeee");
     axeTexture.loadFromFile("Images/textureaxez");
     daggerTexture.loadFromFile("Images/texturenigger");
@@ -214,7 +264,7 @@ void continueAnimation(shared_ptr<Sprite> sprite) {
     if (sprite->getTextureRect().left >= texture->getSize().x - sprite->getTextureRect().width) {
         sprite->setTextureRect(IntRect(0, 0, sprite->getTextureRect().width, sprite->getTextureRect().height));
     }
-    else {
+    else if (sprite->getTextureRect().getSize().x <= texture->getSize().x/2.f) {
         IntRect rect = sprite->getTextureRect();
         rect.left += sprite->getTextureRect().width;
         sprite->setTextureRect(rect);
@@ -245,5 +295,21 @@ Vector2f normalize(Vector2f value)
     }
     else {
         return Vector2f(baseX, baseY);
+    }
+}
+
+void shadeScreen() {
+    while (true) {
+        if (isShadeIncreasing and shading.getFillColor().a < 255) {
+            shadeValue += pow(10.f, -4.6f);
+            shading.setFillColor(Color(0, 0, 0, shadeValue));
+        }
+        else if (!isShadeIncreasing) {
+            shadeValue -= pow(10.f, -4.6f);
+            shading.setFillColor(Color(0, 0, 0, shadeValue));
+            if (shading.getFillColor().a <= 0) {
+                break;
+            }
+        }
     }
 }

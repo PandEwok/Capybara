@@ -1,7 +1,6 @@
 #pragma once
 
 #include "Global.hpp"
-#include <iostream>
 #include "Player.hpp"
 #include "GameUpdate.hpp"
 

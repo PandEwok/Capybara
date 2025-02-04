@@ -10,6 +10,9 @@ void initGUI() {
     if (!font.loadFromFile("Images/fonts/Super-Mario-World.ttf")) {
         cout << "Failed to load font!" << endl;
     }
+    if (!smallFont.loadFromFile("Images/fonts/Minecraftia-Regular.ttf")) {
+        cout << "Failed to load small font!" << endl;
+    }
 
     //PUMPCOIN
     // Set up the text
@@ -21,16 +24,13 @@ void initGUI() {
     pumpcoinText.setOutlineThickness(1.0f);
     pumpcoinText.setString("x 0"); // Default value
 
-
-
-
     pumpcoinPouch.setTexture(pumpcoinPouchTexture);
-    pumpcoinPouch.setScale(Vector2f(0.4f, 0.4f));
+    pumpcoinPouch.setScale(Vector2f(0.4f,0.4f));
 
     //GATEKEY
     gateKey.setTexture(gateKeyTexture);
     gateKey.setScale(Vector2f(0.8f, 0.8f));
-
+    
     //DOORKEY
     doorKey.setTexture(doorKeyTexture);
 
@@ -60,12 +60,15 @@ void initGUI() {
     quitButton.setTexture(quitButtonTexture);
     quitButton.setScale(Vector2f(4.5f, 4.5f));
     quitButton.setOrigin(quitButton.getLocalBounds().width / 2, quitButton.getLocalBounds().height / 2);
-
+    
 }
 
 void drawGUI() {
     View oldView = window.getView();
 
+    pumpcoinPouch.setPosition(mainView.getCenter().x-110, mainView.getCenter().y-50);
+    gateKey.setPosition(mainView.getCenter().x - 110, mainView.getCenter().y+40);
+    hpBar->setPosition(mainView.getCenter() + Vector2f(mainView.getSize().x / -2.f, mainView.getSize().y / 2.f) - Vector2f(0, hpBarTexture.getSize().y+99.20));
 
     cout << "Pumpcoin Position: " << pumpcoinPouch.getPosition().x << ", " << pumpcoinPouch.getPosition().y << endl;
 
@@ -74,20 +77,19 @@ void drawGUI() {
     doorKey.setPosition(mainView.getCenter().x - 110, mainView.getCenter().y + 40);
     hpBar->setPosition(mainView.getCenter() + Vector2f(mainView.getSize().x / -2.f, mainView.getSize().y / 2.f) - Vector2f(0, hpBarTexture.getSize().y + 99.20));
 
-
     pumpcoinText.setString("x " + to_string(playerMoney)); // Update the counter
-    pumpcoinText.setPosition(pumpcoinPouch.getPosition().x + 15, pumpcoinPouch.getPosition().y + 1.5); // Adjust position
+    pumpcoinText.setPosition(pumpcoinPouch.getPosition().x+15, pumpcoinPouch.getPosition().y+1.5); // Adjust position
 
     doorkeyText.setString("x " + to_string(player.getKeyState())); // Update the counter
-    doorkeyText.setPosition(doorKey.getPosition().x + 17, doorKey.getPosition().y+2); // Adjust position
+    doorkeyText.setPosition(doorKey.getPosition().x + 17, doorKey.getPosition().y + 2); // Adjust position
 
     // Draw elements
     window.draw(pumpcoinPouch);
     window.draw(pumpcoinText);
-    
     window.draw(*hpBar);
-    if(hasGateKey)
+    if (hasGateKey) {
         window.draw(gateKey);
+    }
     if (player.getKeyState() > 0) {
         window.draw(doorKey);
         window.draw(doorkeyText);
@@ -101,7 +103,6 @@ void drawGUI() {
         window.draw(resumeButton);
         window.draw(quitButton);
         window.draw(pauseText);
-
     }
     window.setView(oldView);
 }

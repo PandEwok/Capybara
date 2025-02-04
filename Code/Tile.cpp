@@ -2,7 +2,9 @@
 
 shared_ptr<Sprite> Tile::getSprite()
 {
-	return sprite;
+	if (sprite != nullptr) {
+		return sprite;
+	}
 }
 
 Tile::Tile(Vector2f position)
@@ -11,13 +13,20 @@ Tile::Tile(Vector2f position)
 	sprite->setPosition(position);
 }
 
-string Tile::getType()
-{
+string Tile::getType() {
 	return type;
+}
+
+void Tile::setType(string value) {
+	type = value;
 }
 
 int Tile::getLayer() {
 	return layer;
+}
+
+void Tile::setLayer(int value) {
+	layer = value;
 }
 
 Wall::Wall(Vector2f position) : Tile(position) {
@@ -66,10 +75,19 @@ Gate::Gate(Vector2f position) : Tile(position)
 	sprite->setTexture(doorExteriorTileTexture);
 	sprite->setTextureRect(IntRect(0, 0, doorExteriorTileTexture.getSize().y, doorExteriorTileTexture.getSize().y));
 	type = "Gate";
-	layer = 1;
+	layer = 2;
 }
 
 Flag::Flag(Vector2f position) : Tile(position) {
 	sprite->setTexture(flagTileTexture);
 	type = "Flag";
+}
+
+House::House(Vector2f position) : Tile(position)
+{
+	sprite->setTexture(houseTexture);
+	sprite->setTextureRect(IntRect(6, 0, houseTexture.getSize().x - 12, houseTexture.getSize().y));
+	sprite->setOrigin(Vector2f(-6, 0));
+	type = "Wall";
+	layer = 2;
 }

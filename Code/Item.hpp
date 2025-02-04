@@ -18,6 +18,8 @@ public:
 	void interact(Player& player) override;
 };
 
+
+
 //Weeeeeeeeeeeeeeeeeeeeeeeapons
 class Sword : public Entity, public Item {
 protected:
