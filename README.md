@@ -20,7 +20,16 @@ S pour se déplacer vers le bas
 D pour se déplacer vers la droite   
    
 E pour intéragir   
-Clique Gauche pour attaquer
+Clique Gauche pour attaquer   
+
+## <ins> Qui visons-nous ? et Publication</ins>   
+Ce jeu est fait pour tous, fan de Zelda, non-initié mais surtout pour tous nos confrère qui sont ascendant capybara.   
+   
+Ceci est une démo d'un projet qui pourrait être plus important, un jeu complet ! avec un open world et plus de donjons et plus de dragons ~~et toujours plus de dragon et encore de dragooooooooon !!!!!!!!!!!!!!!~~ .... oulà on s'est emporté.   
+cette zone sert de prologue a cette version final, la fin de ce donjnon permettant l'accès au reste du jeu rajouté par la version finale.   
+cette version finale sera vendu a tarif fort de 20.01€ sur la plateforme Steam.   
+
+
 
 
 
