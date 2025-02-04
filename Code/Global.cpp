@@ -120,6 +120,12 @@ Texture hunterTextureRight;
 SoundBuffer pumpcoinCollectBuffer;
 Sound pumpcoinCollectSFX;
 
+//Music
+SoundBuffer titleThemeBuffer;
+Sound titleTheme;
+SoundBuffer overworldThemeBuffer;
+Sound overworldTheme;
+
 void loadTextures() {
     font.setSmooth(false);
     playerTextureFrontIdle.loadFromFile("Images/Pixelarium - Playable Character - Free Version/Pack Content/Front animations/spr_player_front_idle.png");
@@ -195,6 +201,12 @@ void loadTextures() {
 void loadSound() {
     pumpcoinCollectBuffer.loadFromFile("Sounds/pumpcoin-collect.ogg");
     pumpcoinCollectSFX.setBuffer(pumpcoinCollectBuffer);
+
+    titleThemeBuffer.loadFromFile("Sounds/music/title.ogg");
+    titleTheme.setBuffer(titleThemeBuffer);
+
+    overworldThemeBuffer.loadFromFile("Sounds/music/overworld.ogg");
+    overworldTheme.setBuffer(overworldThemeBuffer);
 }
 
 void continueAnimation(shared_ptr<Sprite> sprite) {

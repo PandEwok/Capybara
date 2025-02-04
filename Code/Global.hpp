@@ -136,6 +136,12 @@ extern bool hoverButtonQuit;
 extern SoundBuffer pumpcoinCollectBuffer;
 extern Sound pumpcoinCollectSFX;
 
+//Music
+extern SoundBuffer titleThemeBuffer;
+extern Sound titleTheme;
+extern SoundBuffer overworldThemeBuffer;
+extern Sound overworldTheme;
+
 void loadTextures();
 void loadSound();
 
