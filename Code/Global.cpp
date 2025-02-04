@@ -128,12 +128,12 @@ Sound overworldTheme;
 
 void loadTextures() {
     font.setSmooth(false);
-    playerTextureFrontIdle.loadFromFile("Images/Pixelarium - Playable Character - Free Version/Pack Content/Front animations/spr_player_front_idle.png");
-    playerTextureFrontWalk.loadFromFile("Images/Pixelarium - Playable Character - Free Version/Pack Content/Front animations/spr_player_front_walk.png");
-    playerTextureBackIdle.loadFromFile("Images/Pixelarium - Playable Character - Free Version/Pack Content/Back animations/spr_player_back_idle.png");
-    playerTextureBackWalk.loadFromFile("Images/Pixelarium - Playable Character - Free Version/Pack Content/Back animations/spr_player_back_walk.png");
-    playerTextureSideIdle.loadFromFile("Images/Pixelarium - Playable Character - Free Version/Pack Content/Side animations/spr_player_right_idle.png");
-    playerTextureSideWalk.loadFromFile("Images/Pixelarium - Playable Character - Free Version/Pack Content/Side animations/spr_player_right_walk.png");
+    playerTextureFrontIdle.loadFromFile("Images/Character/dasel front idle.png");
+    playerTextureFrontWalk.loadFromFile("Images/Character/dasel front.png");
+    playerTextureBackIdle.loadFromFile("Images/Character/dasel back idle.png");
+    playerTextureBackWalk.loadFromFile("Images/Character/dasel back.png");
+    playerTextureSideIdle.loadFromFile("Images/Character/dasel side right idle.png");
+    playerTextureSideWalk.loadFromFile("Images/Character/dasel side right.png");
     hpBarTexture.loadFromFile("Images/healthBar.png");
 
     grassTile1Texture.loadFromFile("Images/Pixelarium - GrassLands - Free Version/Pack content/Sprites/Tileset/grass_tile_1.png");

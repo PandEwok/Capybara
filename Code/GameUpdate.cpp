@@ -18,7 +18,7 @@ Game::Game() {
 }
 
 void Game::update() {
-	if (player.getFramerate()->getElapsedTime().asSeconds() >= 0.1f) {
+	if (player.getFramerate()->getElapsedTime().asSeconds() >= 0.2f) {
 		player.getFramerate()->restart();
 		continueAnimation(player.getSprite());
 	}

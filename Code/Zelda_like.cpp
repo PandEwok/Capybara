@@ -41,7 +41,9 @@ int main()
     while (isGameRunning) {
 
         if (isInMenu) {
-
+            //titleTheme.setVolume(60.f);
+            titleTheme.play();
+            //titleTheme.setLoop(true);
             mainscreen.MainScreenUpdate();
             window.clear();
             mainscreen.MainScreenDraw();
@@ -58,8 +60,10 @@ int main()
                     if (hoverButtonExit)
                         window.close();
 
-                    if (hoverButtonPlay)
+                    if (hoverButtonPlay) {
                         isInMenu = false;
+                        titleTheme.stop();
+                    }
                 }
                 else if (event.type == Event::Closed) { isGameRunning = false; }
 
