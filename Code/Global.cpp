@@ -97,6 +97,7 @@ Sprite buttonExit;
 //GUI Sprites
 Sprite pumpcoinPouch;
 Sprite gateKey;
+Sprite doorKey;
 
 //GUI Texture
 Texture pumpcoinPouchTexture;
@@ -106,12 +107,18 @@ Texture resumeButtonTexture;
 Texture resumeButtonHoverTexture;
 Texture quitButtonTexture;
 Texture quitButtonHoverTexture;
+Texture doorKeyTexture;
+Text doorkeyText;
 
 //Enemy Textures
 Texture hunterTextureBot;
 Texture hunterTextureTop;
 Texture hunterTextureLeft;
 Texture hunterTextureRight;
+
+//Sounds
+SoundBuffer pumpcoinCollectBuffer;
+Sound pumpcoinCollectSFX;
 
 void loadTextures() {
     font.setSmooth(false);
@@ -169,6 +176,7 @@ void loadTextures() {
     //GUI Textures
     pumpcoinPouchTexture.loadFromFile("Images/GUI/pumpcoinPouchTexture.png");
     gateKeyTexture.loadFromFile("Images/GUI/gatekey.png");
+    doorKeyTexture.loadFromFile("Images/GUI/doorkey.png");
 
     resumeButtonTexture.loadFromFile("Images/GUI/pausemenu/resume/resumeButton.png");
     resumeButtonHoverTexture.loadFromFile("Images/GUI/pausemenu/resume/resumeButtonHover.png");
@@ -182,6 +190,11 @@ void loadTextures() {
     hunterTextureLeft.loadFromFile("Images/free-slime-mobs-pixel-art-top-down-sprite-pack/PNG/Slime1/Walk/Slime_left.png");
 
 
+}
+
+void loadSound() {
+    pumpcoinCollectBuffer.loadFromFile("Sounds/pumpcoin-collect.ogg");
+    pumpcoinCollectSFX.setBuffer(pumpcoinCollectBuffer);
 }
 
 void continueAnimation(shared_ptr<Sprite> sprite) {

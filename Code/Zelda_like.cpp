@@ -20,6 +20,7 @@ int main()
     window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());*/
 
     loadTextures();
+    loadSound();
 
     Event event;
     Clock mainClock;

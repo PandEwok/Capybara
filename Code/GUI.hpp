@@ -2,6 +2,8 @@
 
 #include "Global.hpp"
 #include <iostream>
+#include "Player.hpp"
+#include "GameUpdate.hpp"
 
 extern Vector2i mousePosition;
 extern RectangleShape pauseOverlay;

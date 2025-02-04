@@ -10,6 +10,7 @@ Money::Money(int _amount) : amount(_amount), Entity(Vector2f(rubyTexture.getSize
 void Money::interact(Player& player)
 {
 	playerMoney++;
+	pumpcoinCollectSFX.play();
 }
 
 //weaponz

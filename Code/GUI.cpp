@@ -21,12 +21,26 @@ void initGUI() {
     pumpcoinText.setOutlineThickness(1.0f);
     pumpcoinText.setString("x 0"); // Default value
 
+
+
+
     pumpcoinPouch.setTexture(pumpcoinPouchTexture);
     pumpcoinPouch.setScale(Vector2f(0.4f, 0.4f));
 
     //GATEKEY
     gateKey.setTexture(gateKeyTexture);
     gateKey.setScale(Vector2f(0.8f, 0.8f));
+
+    //DOORKEY
+    doorKey.setTexture(doorKeyTexture);
+
+    //DoorKey Text
+    doorkeyText.setFont(font);
+    doorkeyText.setCharacterSize(8.5); // Adjust as needed
+    doorkeyText.setFillColor(sf::Color::White);
+    doorkeyText.setOutlineColor(sf::Color::Black);
+    doorkeyText.setOutlineThickness(1.0f);
+    doorkeyText.setString("x 0"); // Default value
 
     // Set up the pause overlay (semi-transparent)
     pauseOverlay.setSize(sf::Vector2f(screenWidth, screenHeight));
@@ -57,17 +71,27 @@ void drawGUI() {
 
     pumpcoinPouch.setPosition(mainView.getCenter().x - 110, mainView.getCenter().y - 50);
     gateKey.setPosition(mainView.getCenter().x - 110, mainView.getCenter().y + 40);
+    doorKey.setPosition(mainView.getCenter().x - 110, mainView.getCenter().y + 40);
     hpBar->setPosition(mainView.getCenter() + Vector2f(mainView.getSize().x / -2.f, mainView.getSize().y / 2.f) - Vector2f(0, hpBarTexture.getSize().y + 99.20));
 
 
     pumpcoinText.setString("x " + to_string(playerMoney)); // Update the counter
     pumpcoinText.setPosition(pumpcoinPouch.getPosition().x + 15, pumpcoinPouch.getPosition().y + 1.5); // Adjust position
 
+    doorkeyText.setString("x " + to_string(player.getKeyState())); // Update the counter
+    doorkeyText.setPosition(doorKey.getPosition().x + 17, doorKey.getPosition().y+2); // Adjust position
+
     // Draw elements
     window.draw(pumpcoinPouch);
     window.draw(pumpcoinText);
-    window.draw(gateKey);
+    
     window.draw(*hpBar);
+    if(hasGateKey)
+        window.draw(gateKey);
+    if (player.getKeyState() > 0) {
+        window.draw(doorKey);
+        window.draw(doorkeyText);
+    }
     if (isInPauseMenu) {
         window.setView(window.getDefaultView());
         window.draw(pauseOverlay);
