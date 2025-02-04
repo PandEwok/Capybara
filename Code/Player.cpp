@@ -69,7 +69,7 @@ void Player::setKeyState(int newValue)
 FloatRect Player::getHitBox() {
 	Vector2f boundsPos = sprite->getGlobalBounds().getPosition();
 	Vector2f boundsSize = sprite->getGlobalBounds().getSize();
-	return FloatRect(boundsPos.x + boundsSize.x / 9.f * 4.f, boundsPos.y + boundsSize.y / 7.f * 3.3f, boundsSize.x / 9.f, boundsSize.y / 7.f * 1.5f);
+	return FloatRect(boundsPos.x + boundsSize.x / 7.f * 3.f, boundsPos.y + boundsSize.y / 5.f * 2.5f, boundsSize.x / 7.f, boundsSize.y / 5.f * 1.f);
 }
 
 FloatRect Player::getActionRange()

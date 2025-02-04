@@ -70,8 +70,6 @@ void drawGUI() {
     gateKey.setPosition(mainView.getCenter().x - 110, mainView.getCenter().y+40);
     hpBar->setPosition(mainView.getCenter() + Vector2f(mainView.getSize().x / -2.f, mainView.getSize().y / 2.f) - Vector2f(0, hpBarTexture.getSize().y+99.20));
 
-    cout << "Pumpcoin Position: " << pumpcoinPouch.getPosition().x << ", " << pumpcoinPouch.getPosition().y << endl;
-
     pumpcoinPouch.setPosition(mainView.getCenter().x - 110, mainView.getCenter().y - 50);
     gateKey.setPosition(mainView.getCenter().x - 110, mainView.getCenter().y + 40);
     doorKey.setPosition(mainView.getCenter().x - 110, mainView.getCenter().y + 40);

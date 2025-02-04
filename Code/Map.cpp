@@ -112,7 +112,7 @@ void Map::loadExterior(vector<shared_ptr<Tile>>& tileMap, Player& player)
                 newDoor->getSprite()->setTextureRect(IntRect(0, 0, 16, 16));
                 tileMap.push_back(newDoor);
                 if (goingThrough == "HouseDoor") {
-                    player.getSprite()->setPosition(tilePosition + Vector2f(40, 70));
+                    player.getSprite()->setPosition(tilePosition + Vector2f(40, 72));
                 }
             }
             else if (tileChar == 'S') {
