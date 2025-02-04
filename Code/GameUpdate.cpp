@@ -29,7 +29,7 @@ void Game::update() {
 		eKeyClock.restart();
 		continueAnimation(eKey);
 	}
-	float playerClockResetTime = 0.1f;
+	float playerClockResetTime = 0.2f;
 	if (player.getIsAttacking()) {
 		playerClockResetTime = 0.05f;
 	}
