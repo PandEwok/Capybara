@@ -5,7 +5,7 @@
 
 
 Dans ce jeu fortement inspiré par la légende de Zelda (fait réel), nous suivons une héroïne du nom de Dasel qui doit s'aventurer dans un donjon pour **SAUVER LE MONDE**.   
-Mais petit problème, elle n'a pas l'etoffe d'un hero capable de remplirt cette quête...   
+Mais petit problème, elle n'a pas l'étoffe d'un hero capable de remplir cette quête...   
 
 ## <ins>Gameplay: </ins>  
 inspiré par les zelda 2D comme A link to the past, Link's awakening ou encore Oracle of Ages\Seasons, nous suivons donc un personnage (au centre de l'ecran) dans un jeu en pixel art vue du dessus, capable d'attaquer grâce a ses armes: l'épée, la hache et la dague, chacune ayant une vitesse d'attaque et des dégats différents.   
@@ -27,7 +27,7 @@ Ce jeu est fait pour tous, fan de Zelda, non-initié mais surtout pour tous nos 
    
 Ceci est une démo d'un projet qui pourrait être plus important, un jeu complet ! avec un open world et plus de donjons et plus de dragons ~~et toujours plus de dragon et encore de dragooooooooon !!!!!!!!!!!!!!!~~ .... oulà on s'est emporté.   
 cette zone sert de prologue a cette version final, la fin de ce donjnon permettant l'accès au reste du jeu rajouté par la version finale.   
-cette version finale sera vendu a tarif fort de 20.01€ sur la plateforme Steam.   
+cette version finale sera vendu au tarif fort de 20.01€ sur la plateforme Steam.   
 
 
 
