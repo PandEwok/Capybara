@@ -159,15 +159,15 @@ Sound overworldTheme;
 void loadTextures() {
     font.setSmooth(false);
     smallFont.setSmooth(false);
-    playerTextureFrontIdle.loadFromFile("Images/Character/dasel front idle.png");
-    playerTextureFrontWalk.loadFromFile("Images/Character/dasel front.png");
+    playerTextureFrontIdle.loadFromFile("Images/Character/front/dasel front idle.png");
+    playerTextureFrontWalk.loadFromFile("Images/Character/front/dasel front.png");
     playerTextureFrontAttack.loadFromFile("Images/Pixelarium - Playable Character - Free Version/Pack Content/Front animations/spr_player_front_attack.png");
-    playerTextureBackIdle.loadFromFile("Images/Character/dasel back idle.png");
-    playerTextureBackWalk.loadFromFile("Images/Character/dasel back.png");
+    playerTextureBackIdle.loadFromFile("Images/Character/back/dasel back idle.png");
+    playerTextureBackWalk.loadFromFile("Images/Character/back/dasel back.png");
     playerTextureBackAttack.loadFromFile("Images/Pixelarium - Playable Character - Free Version/Pack Content/Back animations/spr_player_back_attack.png");
-    playerTextureSideIdle.loadFromFile("Images/Character/dasel side right idle.png");
-    playerTextureSideWalk.loadFromFile("Images/Character/dasel side right.png");
-    playerTextureSideAttack.loadFromFile("Images/Pixelarium - Playable Character - Free Version/Pack Content/Side animations/spr_player_right_attack.png");
+    playerTextureSideIdle.loadFromFile("Images/Character/side/dasel side right idle.png");
+    playerTextureSideWalk.loadFromFile("Images/Character/side/dasel side right.png");
+    playerTextureSideAttack.loadFromFile("Images/Character/side/attack dasel side.png");
     hpBarTexture.loadFromFile("Images/healthBar.png");
     eKeyTexture.loadFromFile("Images/e_key_ui.png");
 
