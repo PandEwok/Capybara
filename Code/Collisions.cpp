@@ -5,6 +5,8 @@ vector<shared_ptr<Sword>> toDeleteSword;
 vector<shared_ptr<Axe>> toDeleteAxe;
 vector<shared_ptr<Dagger>> toDeleteDagger;
 
+//a
+
 void collisionsProcess()
 {
 	while (isGameRunning) {
