@@ -157,6 +157,7 @@ Sound overworldTheme;
 
 
 void loadTextures() {
+    font.setSmooth(false);
     playerTextureFrontIdle.loadFromFile("Images/Character/front/dasel front idle.png");
     playerTextureFrontWalk.loadFromFile("Images/Character/front/dasel front.png");
     playerTextureFrontAttack.loadFromFile("Images/Pixelarium - Playable Character - Free Version/Pack Content/Front animations/spr_player_front_attack.png");
