@@ -8,7 +8,7 @@ string greenString = "\033[32m";
 string redString = "\033[31m";
 
 float screenWidth = 1600.f, screenHeight = screenWidth * 0.5625f;
-RenderWindow window(VideoMode(screenWidth, screenHeight), "ExCusEee Me, pRiNcesS", Style::Close);
+RenderWindow window(VideoMode(screenWidth, screenHeight), "The Legend of the Almost Hero", Style::Close);
 View mainView(FloatRect(screenWidth / 2, screenHeight / 2, 220, 220 * 0.5625f));
 bool isGameRunning = true;
 bool playable = true;

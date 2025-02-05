@@ -16,8 +16,8 @@ using namespace std;
 int main()
 {
     srand(time(0));
-    /*Image icon; icon.loadFromFile("icon.png");
-    window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());*/
+    Image icon; icon.loadFromFile("icon.png");
+    window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
 
     loadTextures();
     loadSound();
