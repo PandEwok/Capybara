@@ -4,7 +4,7 @@ void Map::loadExterior(vector<shared_ptr<Tile>>& tileMap, Player& player)
 {
     tileMap.clear();
 
-    fstream map("Images/map.txt");
+    fstream map("Map/map.txt");
     string line;
     Vector2f tilePosition = Vector2f(0, 0);
     while (true) {
@@ -147,7 +147,7 @@ void Map::loadDungeon(vector<shared_ptr<Tile>>& tileMap, Player& player)
 {
     tileMap.clear();
 
-    fstream map("Images/map2.txt");
+    fstream map("Map/map-dungeon1.txt");
     string line;
     Vector2f tilePosition = Vector2f(0, 0);
     while (true) {

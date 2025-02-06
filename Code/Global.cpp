@@ -148,12 +148,24 @@ Texture hunterTextureRight;
 //Sounds
 SoundBuffer pumpcoinCollectBuffer;
 Sound pumpcoinCollectSFX;
+SoundBuffer slashBuffer;
+Sound slashSFX;
+SoundBuffer keyGetBuffer;
+Sound keyGetSFX;
+SoundBuffer potBreakBuffer;
+Sound potBreakSFX;
 
 //Music
 SoundBuffer titleThemeBuffer;
 Sound titleTheme;
 SoundBuffer overworldThemeBuffer;
 Sound overworldTheme;
+SoundBuffer dungeonThemeBuffer;
+Sound dungeonTheme;
+SoundBuffer houseThemeBuffer;
+Sound houseTheme;
+SoundBuffer shopThemeBuffer;
+Sound shopTheme;
 
 
 void loadTextures() {
@@ -252,11 +264,29 @@ void loadSound() {
     pumpcoinCollectBuffer.loadFromFile("Sounds/pumpcoin-collect.ogg");
     pumpcoinCollectSFX.setBuffer(pumpcoinCollectBuffer);
 
+    slashBuffer.loadFromFile("Sounds/slash.wav");
+    slashSFX.setBuffer(slashBuffer);
+
+    potBreakBuffer.loadFromFile("Sounds/potShatter.ogg");
+    potBreakSFX.setBuffer(potBreakBuffer);
+
+    keyGetBuffer.loadFromFile("Sounds/keyGet.wav");
+    keyGetSFX.setBuffer(keyGetBuffer);
+
     titleThemeBuffer.loadFromFile("Sounds/music/title.ogg");
     titleTheme.setBuffer(titleThemeBuffer);
 
     overworldThemeBuffer.loadFromFile("Sounds/music/overworld.ogg");
     overworldTheme.setBuffer(overworldThemeBuffer);
+
+    dungeonThemeBuffer.loadFromFile("Sounds/music/dungeon.ogg");
+    dungeonTheme.setBuffer(dungeonThemeBuffer);
+
+    houseThemeBuffer.loadFromFile("Sounds/music/house.ogg");
+    houseTheme.setBuffer(houseThemeBuffer);
+
+    shopThemeBuffer.loadFromFile("Sounds/music/shop.ogg");
+    shopTheme.setBuffer(shopThemeBuffer);
 }
 
 void continueAnimation(shared_ptr<Sprite> sprite) {

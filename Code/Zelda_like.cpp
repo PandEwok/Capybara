@@ -13,6 +13,16 @@
 
 using namespace std;
 
+void pauseSongs() {
+    overworldTheme.setVolume(overworldTheme.getVolume()-1);
+    dungeonTheme.setVolume(dungeonTheme.getVolume()-1);
+}
+
+void unpauseSongs() {
+    overworldTheme.setVolume(45.f);
+    dungeonTheme.setVolume(45.f);
+}
+
 int main()
 {
     srand(time(0));
@@ -38,12 +48,27 @@ int main()
     mainscreen.MainScreenInit();
     initGUI();
 
+    //Music Settings
+    titleTheme.setVolume(60.f);
+    titleTheme.setLoop(true);
+    titleTheme.play();
+    
+
+    overworldTheme.setVolume(55.f);
+    overworldTheme.setLoop(true);
+
+    dungeonTheme.setVolume(45.f);
+    dungeonTheme.setLoop(true);
+
+    //Sound Settings
+    slashSFX.setVolume(250.f);
+    potBreakSFX.setVolume(50.f);
+
+
     while (isGameRunning) {
-        
+
         if (isInMenu) {
-            //titleTheme.setVolume(60.f);
-            titleTheme.play();
-            //titleTheme.setLoop(true);
+
             mainscreen.MainScreenUpdate();
             window.clear();
             mainscreen.MainScreenDraw();
@@ -65,14 +90,19 @@ int main()
                         titleTheme.stop();
                     }
                 }
-                    else if (event.type == Event::Closed) { isGameRunning = false; }
-                
+                else if (event.type == Event::Closed) { isGameRunning = false; }
+
             }
         }
         //Game Start
         else if (!isInMenu) {
+
             if (isInPauseMenu) {
                 updateGUI();
+                pauseSongs();
+            }
+            else {
+                unpauseSongs();
             }
             while (window.pollEvent(event)) {
                 if (event.type == Event::KeyPressed and Keyboard::isKeyPressed(Keyboard::Escape)) {
@@ -242,7 +272,35 @@ int main()
             drawGUI();
             window.draw(shading);
         }
-            window.display();
-        
+        window.display();
+
+        if (!isInMenu) {
+            if (map1.getCurrentMap() == map1.EXTERIOR) {
+                if (overworldTheme.getStatus() != overworldTheme.Playing) {
+                    overworldTheme.play();
+                    dungeonTheme.pause();
+                    houseTheme.pause();
+                    shopTheme.pause();
+                }
+            }
+            if (map1.getCurrentMap() == map1.DUNGEON) {
+                if (dungeonTheme.getStatus() != dungeonTheme.Playing) {
+                    dungeonTheme.play();
+                    overworldTheme.pause();
+                }
+            }
+            if (map1.getCurrentMap() == map1.HOUSE) {
+                if (houseTheme.getStatus() != houseTheme.Playing) {
+                    houseTheme.play();
+                    overworldTheme.pause();
+                }
+            }
+            if (map1.getCurrentMap() == map1.SHOP) {
+                if (shopTheme.getStatus() != shopTheme.Playing) {
+                    shopTheme.play();
+                    overworldTheme.pause();
+                }
+            }
+        }
     }
 }

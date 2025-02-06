@@ -16,6 +16,7 @@
 #include <conio.h>
 #include <chrono>
 
+
 using namespace std;
 using namespace sf;
 
@@ -164,12 +165,25 @@ extern bool hoverButtonQuit;
 //Sounds
 extern SoundBuffer pumpcoinCollectBuffer;
 extern Sound pumpcoinCollectSFX;
+extern SoundBuffer slashBuffer;
+extern Sound slashSFX;
+extern SoundBuffer potBreakBuffer;
+extern Sound potBreakSFX;
+extern SoundBuffer keyGetBuffer;
+extern Sound keyGetSFX;
 
 //Music
 extern SoundBuffer titleThemeBuffer;
 extern Sound titleTheme;
 extern SoundBuffer overworldThemeBuffer;
 extern Sound overworldTheme;
+extern SoundBuffer dungeonThemeBuffer;
+extern Sound dungeonTheme;
+extern SoundBuffer houseThemeBuffer;
+extern Sound houseTheme;
+extern SoundBuffer shopThemeBuffer;
+extern Sound shopTheme;
+
 
 void loadTextures();
 void loadSound();

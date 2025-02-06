@@ -11,6 +11,8 @@ void userInput() {
     while (isGameRunning) {
         timeSinceLastFrameInputs = mainClock.restart();
 
+        while (isInPauseMenu) {};
+
         for (shared_ptr<Tile> tile : toDeleteTiles) {
             auto pos = find(tileMap.begin(), tileMap.end(), tile);
             tileMap.erase(pos);
@@ -19,6 +21,7 @@ void userInput() {
 
         if (Mouse::isButtonPressed(Mouse::Left) and !player.getIsAttacking()) {
             player.setIsAttacking(true);
+            slashSFX.play();
         }
 
         inputMovement = Vector2f(0, 0.f);
@@ -180,6 +183,7 @@ void userInput() {
                     shared_ptr<Money> newMoney = make_shared<Money>();
                     newMoney->getSprite()->setPosition(tile->getSprite()->getPosition());
                     moneyList.push_back(newMoney);
+                    potBreakSFX.play();
                 }
             }
         }

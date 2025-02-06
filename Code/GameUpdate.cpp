@@ -63,4 +63,5 @@ void Game::update() {
 			}
 		}
 	}
+
 }
