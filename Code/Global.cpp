@@ -221,9 +221,9 @@ void loadTextures() {
     houseExitTexture.loadFromFile("Images/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Tileset/house_exit.png");
 
     rubyTexture.loadFromFile("Images/pumpcoin.png");
-    swordTexture.loadFromFile("Images/textureepeee");
-    axeTexture.loadFromFile("Images/textureaxez");
-    daggerTexture.loadFromFile("Images/texturenigger");
+    swordTexture.loadFromFile("Images/textureepee.png");
+    axeTexture.loadFromFile("Images/texturehache.png");
+    daggerTexture.loadFromFile("Images/texturedagger.png");
     goldKeyTexture.loadFromFile("Images/2D Pixel Dungeon Asset Pack/items and trap_animation/keys/keys_1_idle.png");
 
     //Main Menu Textures
