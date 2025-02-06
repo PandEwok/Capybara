@@ -87,6 +87,7 @@ Jeu jouable et fonctionnel où il manque quelque features prévu
 ### 7.2 Améliorations futures et mise à jour   
 - Correction de bugs
 - ajout système armes
+- ajout d'un boss à la fin du donjon
 
 ## 7.3 Possibilités d'évolution   
 possibilité de mener vers un jeu complet
