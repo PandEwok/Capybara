@@ -8,7 +8,7 @@ string greenString = "\033[32m";
 string redString = "\033[31m";
 
 float screenWidth = 1600.f, screenHeight = screenWidth * 0.5625f;
-RenderWindow window(VideoMode(screenWidth, screenHeight), "ExCusEee Me, pRiNcesS", Style::Close);
+RenderWindow window(VideoMode(screenWidth, screenHeight), "The Legend of the Almost Hero", Style::Close);
 View mainView(FloatRect(screenWidth / 2, screenHeight / 2, 220, 220 * 0.5625f));
 bool isGameRunning = true;
 bool playable = true;
@@ -161,10 +161,10 @@ void loadTextures() {
     smallFont.setSmooth(false);
     playerTextureFrontIdle.loadFromFile("Images/Character/front/dasel front idle.png");
     playerTextureFrontWalk.loadFromFile("Images/Character/front/dasel front.png");
-    playerTextureFrontAttack.loadFromFile("Images/Pixelarium - Playable Character - Free Version/Pack Content/Front animations/spr_player_front_attack.png");
+    playerTextureFrontAttack.loadFromFile("Images/Character/front/attack dasel front.png");
     playerTextureBackIdle.loadFromFile("Images/Character/back/dasel back idle.png");
     playerTextureBackWalk.loadFromFile("Images/Character/back/dasel back.png");
-    playerTextureBackAttack.loadFromFile("Images/Pixelarium - Playable Character - Free Version/Pack Content/Back animations/spr_player_back_attack.png");
+    playerTextureBackAttack.loadFromFile("Images/Character/back/attack dasel back.png");
     playerTextureSideIdle.loadFromFile("Images/Character/side/dasel side right idle.png");
     playerTextureSideWalk.loadFromFile("Images/Character/side/dasel side right.png");
     playerTextureSideAttack.loadFromFile("Images/Character/side/attack dasel side.png");
