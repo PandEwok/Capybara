@@ -10,6 +10,7 @@
 #include "Map.hpp"
 #include  "Collisions.hpp"
 #include "GUI.hpp"
+#include "Hunter.hpp"
 
 using namespace std;
 
@@ -181,38 +182,46 @@ int main()
                 window.clear();
 
 
-                for (shared_ptr<Tile> tile : tileMap) {
-                    if (tile) {
-                        if (tile->getLayer() == 0) {
-                            window.draw(*tile->getSprite());
-                        }
+            for (shared_ptr<Tile> tile : tileMap) {
+                if (tile) {
+                    if (tile->getLayer() == 0) {
+                        window.draw(*tile->getSprite());
                     }
                 }
-                for (shared_ptr<Tile> tile : tileMap) {
-                    if (tile) {
-                        if (tile->getLayer() == 1) {
-                            window.draw(*tile->getSprite());
-                        }
+            }
+            for (shared_ptr<Tile> tile : tileMap) {
+                if (tile) {
+                    if (tile->getLayer() == 1) {
+                        window.draw(*tile->getSprite());
                     }
                 }
-                for (shared_ptr<Tile> tile : tileMap) {
-                    if (tile) {
-                        if (tile->getLayer() == 2 and tile->getSprite()->getPosition().y <= player.getSprite()->getPosition().y) {
-                            window.draw(*tile->getSprite());
-                        }
+            }
+            for (shared_ptr<Tile> tile : tileMap) {
+                if (tile) {
+                    if (tile->getLayer() == 2 and tile->getSprite()->getPosition().y <= player.getSprite()->getPosition().y) {
+                        window.draw(*tile->getSprite());
                     }
                 }
-                for (shared_ptr<Money> money : moneyList) {
-                    if (money) {
-                        window.draw(*money->getSprite());
-                    }
+            }
+            for (shared_ptr<Money> money : moneyList) {
+                if (money) {
+                    window.draw(*money->getSprite());
                 }
-                for (shared_ptr<Npc> npc : npcList) {
-                    if (npc->getSprite()->getPosition().y <= player.getSprite()->getPosition().y) {
-                        window.draw(*npc->getSprite());
-                        npc->displayName();
-                    }
+            }
+            for (shared_ptr<MarketItem> item : marketItemList) {
+                if (item) {
+                    window.draw(*item->getSprite());
                 }
+            }
+            for (shared_ptr<Npc> npc : npcList) {
+                if (npc->getSprite()->getPosition().y <= player.getSprite()->getPosition().y) {
+                    window.draw(*npc->getSprite());
+                    npc->displayName();
+                }
+            }
+            for (shared_ptr<Hunter> enemy : hunterList) {
+                window.draw(*enemy->getSprite());
+            }
 
                 window.draw(*player.getSprite());
 

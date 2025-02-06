@@ -101,6 +101,13 @@ void Map::loadExterior(vector<shared_ptr<Tile>>& tileMap, Player& player)
                 shared_ptr<Pot> newPot = make_shared<Pot>(tilePosition);
                 tileMap.push_back(newPot);
             }
+            else if (tileChar == 'E') {
+                shared_ptr<Floor> newTile = make_shared<Floor>(tilePosition);
+                tileMap.push_back(newTile);
+                shared_ptr<Hunter> newHunter = make_shared<Hunter>(Vector2f(hunterTextureBot.getSize().y, hunterTextureBot.getSize().y), 7.f, 3, false, &player);
+                newHunter->setHunterPosition(tilePosition + Vector2f(8, 8));
+                hunterList.push_back(newHunter);
+            }
             else if (tileChar == 'H') {
                 shared_ptr<Wall> newFloor = make_shared<Wall>(tilePosition);
                 tileMap.push_back(newFloor);

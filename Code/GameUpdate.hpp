@@ -16,7 +16,7 @@ extern vector<shared_ptr<Npc>> npcList;
 extern vector<shared_ptr<Sword>> swordad;
 extern vector<shared_ptr<Axe>> axead;
 extern vector<shared_ptr<Dagger>> daggerad;
-extern vector<shared_ptr<Hunter>> hunterad;
+extern vector<shared_ptr<Hunter>> hunterList;
 
 class Game {
 protected:
