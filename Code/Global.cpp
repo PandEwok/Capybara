@@ -164,7 +164,7 @@ void loadTextures() {
     playerTextureFrontAttack.loadFromFile("Images/Character/front/attack dasel front.png");
     playerTextureBackIdle.loadFromFile("Images/Character/back/dasel back idle.png");
     playerTextureBackWalk.loadFromFile("Images/Character/back/dasel back.png");
-    playerTextureBackAttack.loadFromFile("Images/Character/back/attack dasel back.png");
+    playerTextureBackAttack.loadFromFile("Images/Character/back/dasel back attack.png");
     playerTextureSideIdle.loadFromFile("Images/Character/side/dasel side right idle.png");
     playerTextureSideWalk.loadFromFile("Images/Character/side/dasel side right.png");
     playerTextureSideAttack.loadFromFile("Images/Character/side/attack dasel side.png");
