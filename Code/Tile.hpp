@@ -7,8 +7,6 @@ protected:
 	shared_ptr<Sprite> sprite = make_shared<Sprite>();
 	string type = "N/A";
 	int layer = 0;
-	shared_ptr<Clock> tileClock = make_shared<Clock>();
-	float frameTime = 0.1f;
 public:
 	shared_ptr<Sprite> getSprite();
 	Tile(Vector2f position);
@@ -16,8 +14,6 @@ public:
 	void setType(string value);
 	int getLayer();
 	void setLayer(int value);
-	shared_ptr<Clock> getClock();
-	float getFrameTime();
 };
 
 class Wall : public Tile {
@@ -62,9 +58,4 @@ public:
 class Flag : public Tile {
 public:
 	Flag(Vector2f position);
-};
-
-class Trap : public Tile {
-public:
-	Trap(Vector2f position);
 };

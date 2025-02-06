@@ -18,19 +18,6 @@ public:
 	void interact(Player& player) override;
 };
 
-class MarketItem : public Entity, public Item {
-protected:
-	int price=1;
-public:
-	MarketItem(int _price = 1);
-	int getPrice();
-	void setPrice(int value);
-};
-class DungeonKey : public MarketItem {
-public:
-	DungeonKey(Vector2f position);
-	void interact(Player& player) override;
-};
 
 
 //Weeeeeeeeeeeeeeeeeeeeeeeapons

@@ -2,8 +2,10 @@
 
 RectangleShape pauseOverlay;
 Text pauseText;
+Text gameOverText;
 Sprite resumeButton;
 Sprite quitButton;
+Sprite gameOverScreen;
 
 void initGUI() {
     // Load font (make sure "font.ttf" exists in your project directory)
@@ -61,19 +63,29 @@ void initGUI() {
     quitButton.setScale(Vector2f(4.5f, 4.5f));
     quitButton.setOrigin(quitButton.getLocalBounds().width / 2, quitButton.getLocalBounds().height / 2);
     
+
+    //Game Over Screen
+    gameOverScreen.setTexture(gameOverTexture);
+    gameOverScreen.setScale(Vector2f(5.0f, 5.0f));
+
+    gameOverText.setFont(font);
+    gameOverText.setCharacterSize(5.5f);
+    gameOverText.setFillColor(sf::Color::White);
+    gameOverText.setString("GAME OVER");
+    gameOverText.setOrigin(pauseText.getLocalBounds().width / 2, pauseText.getLocalBounds().height / 2);
 }
 
 void drawGUI() {
     View oldView = window.getView();
 
-    pumpcoinPouch.setPosition(mainView.getCenter().x-110, mainView.getCenter().y-50);
-    gateKey.setPosition(mainView.getCenter().x - 110, mainView.getCenter().y+40);
-    hpBar->setPosition(mainView.getCenter() + Vector2f(mainView.getSize().x / -2.f, mainView.getSize().y / 2.f) - Vector2f(0, hpBarTexture.getSize().y+99.20));
+    //pumpcoinPouch.setPosition(mainView.getCenter().x-110, mainView.getCenter().y);
+    //gateKey.setPosition(mainView.getCenter().x - 110, mainView.getCenter().y+40);
+    //hpBar->setPosition(mainView.getCenter() + Vector2f(mainView.getSize().x / -2.f, mainView.getSize().y / 2.f) - Vector2f(0, hpBarTexture.getSize().y+99.20));
 
-    pumpcoinPouch.setPosition(mainView.getCenter().x - 110, mainView.getCenter().y - 50);
-    gateKey.setPosition(mainView.getCenter().x - 110, mainView.getCenter().y + 40);
-    doorKey.setPosition(mainView.getCenter().x - 110, mainView.getCenter().y + 40);
-    hpBar->setPosition(mainView.getCenter() + Vector2f(mainView.getSize().x / -2.f, mainView.getSize().y / 2.f) - Vector2f(0, hpBarTexture.getSize().y + 99.20));
+    pumpcoinPouch.setPosition(mainView.getCenter().x - 132, mainView.getCenter().y - 63);
+    gateKey.setPosition(mainView.getCenter().x - 135, mainView.getCenter().y + 55);
+    doorKey.setPosition(mainView.getCenter().x - 135, mainView.getCenter().y + 55);
+    hpBar->setPosition(mainView.getCenter() + Vector2f(mainView.getSize().x / -2.f, mainView.getSize().y / 2.f) - Vector2f(0, hpBarTexture.getSize().y + 125));
 
     pumpcoinText.setString("x " + to_string(playerMoney)); // Update the counter
     pumpcoinText.setPosition(pumpcoinPouch.getPosition().x+15, pumpcoinPouch.getPosition().y+1.5); // Adjust position
@@ -81,28 +93,33 @@ void drawGUI() {
     doorkeyText.setString("x " + to_string(player.getKeyState())); // Update the counter
     doorkeyText.setPosition(doorKey.getPosition().x + 17, doorKey.getPosition().y + 2); // Adjust position
 
-    // Draw elements
-    window.draw(pumpcoinPouch);
-    window.draw(pumpcoinText);
-    window.draw(*hpBar);
-    if (hasGateKey) {
-        window.draw(gateKey);
+    if (player.getHp() > 0){
+        // Draw elements
+        window.draw(pumpcoinPouch);
+        window.draw(pumpcoinText);
+        window.draw(*hpBar);
+        if (hasGateKey) {
+            window.draw(gateKey);
+        }
+        if (player.getKeyState() > 0) {
+            window.draw(doorKey);
+            window.draw(doorkeyText);
+        }
+        if (isInPauseMenu) {
+            window.setView(window.getDefaultView());
+            window.draw(pauseOverlay);
+            pauseText.setPosition(screenWidth / 2, screenHeight / 2 - 300);
+            resumeButton.setPosition(screenWidth / 2, screenHeight / 2 - 100);
+            quitButton.setPosition(screenWidth / 2, screenHeight / 2 + 100);
+            window.draw(resumeButton);
+            window.draw(quitButton);
+            window.draw(pauseText);
+        }
+        window.setView(oldView);
     }
-    if (player.getKeyState() > 0) {
-        window.draw(doorKey);
-        window.draw(doorkeyText);
+    else if (player.getHp() < 0) {
+        gameOverText.setPosition(screenWidth / 2, screenHeight / 2);
     }
-    if (isInPauseMenu) {
-        window.setView(window.getDefaultView());
-        window.draw(pauseOverlay);
-        pauseText.setPosition(screenWidth / 2, screenHeight / 2 - 300);
-        resumeButton.setPosition(screenWidth / 2, screenHeight / 2 - 100);
-        quitButton.setPosition(screenWidth / 2, screenHeight / 2 + 100);
-        window.draw(resumeButton);
-        window.draw(quitButton);
-        window.draw(pauseText);
-    }
-    window.setView(oldView);
 }
 
 void updateGUI() {

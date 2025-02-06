@@ -9,7 +9,7 @@ string redString = "\033[31m";
 
 float screenWidth = 1600.f, screenHeight = screenWidth * 0.5625f;
 RenderWindow window(VideoMode(screenWidth, screenHeight), "The Legend of the Almost Hero", Style::Close);
-View mainView(FloatRect(screenWidth / 2, screenHeight / 2, 220, 220 * 0.5625f));
+View mainView(FloatRect(screenWidth / 2, screenHeight / 2, 270, 270 * 0.5625f));
 bool isGameRunning = true;
 bool playable = true;
 RectangleShape shading(mainView.getSize());
@@ -17,7 +17,7 @@ float shadeValue = 0.f;
 bool isShadeIncreasing = false;
 Time timeSinceLastFrame;
 Time timeSinceLastFrameInputs;
-bool hasGateKey = false;
+bool hasGateKey = true;
 bool isGateOpen = false;
 string goingThrough = "";
 bool isInPauseMenu = false;
@@ -95,7 +95,6 @@ Texture doorTileLeftTexture;
 Texture doorTileRightTexture;
 Texture flagTileTexture;
 Texture candleTexture;
-Texture trapTexture;
     //house
 Texture houseFloorTexture;
 Texture houseWallTexture;
@@ -109,7 +108,6 @@ Texture rubyTexture;
 Texture swordTexture;
 Texture axeTexture;
 Texture daggerTexture;
-Texture goldKeyTexture;
 
 //Menu Textures
 Texture backgroundTexture;
@@ -140,6 +138,7 @@ Texture quitButtonTexture;
 Texture quitButtonHoverTexture;
 Texture doorKeyTexture;
 Text doorkeyText;
+Texture gameOverTexture;
 
 //Enemy Textures
 Texture hunterTextureBot;
@@ -222,7 +221,6 @@ void loadTextures() {
     doorTileRightTexture.loadFromFile("Images/2D Pixel Dungeon Asset Pack/character and tileset/door_tile_right.png");
     flagTileTexture.loadFromFile("Images/2D Pixel Dungeon Asset Pack/items and trap_animation/flag/flag_idle.png");
     candleTexture.loadFromFile("Images/2D Pixel Dungeon Asset Pack/items and trap_animation/torch/candlestick_2_idle.png");
-    trapTexture.loadFromFile("Images/2D Pixel Dungeon Asset Pack/items and trap_animation/peaks/peaks_anim.png");
 
     houseFloorTexture.loadFromFile("Images/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Tileset/house_floor.png");
     houseWallTexture.loadFromFile("Images/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Tileset/house_wall.png");
@@ -233,10 +231,9 @@ void loadTextures() {
     houseExitTexture.loadFromFile("Images/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Tileset/house_exit.png");
 
     rubyTexture.loadFromFile("Images/pumpcoin.png");
-    swordTexture.loadFromFile("Images/textureepee.png");
-    axeTexture.loadFromFile("Images/texturehache.png");
-    daggerTexture.loadFromFile("Images/texturedagger.png");
-    goldKeyTexture.loadFromFile("Images/2D Pixel Dungeon Asset Pack/items and trap_animation/keys/keys_1_idle.png");
+    swordTexture.loadFromFile("Images/textureepeee");
+    axeTexture.loadFromFile("Images/textureaxez");
+    daggerTexture.loadFromFile("Images/texturenigger");
 
     //Main Menu Textures
     backgroundTexture.loadFromFile("Images/mainmenu/background.png");
@@ -254,6 +251,7 @@ void loadTextures() {
     resumeButtonHoverTexture.loadFromFile("Images/GUI/pausemenu/resume/resumeButtonHover.png");
     quitButtonTexture.loadFromFile("Images/GUI/pausemenu/quit/quitButton.png");
     quitButtonHoverTexture.loadFromFile("Images/GUI/pausemenu/quit/quitButtonHover.png");
+    gameOverTexture.loadFromFile("Images/GUI/gameOverbg.png");
 
     //Hunter Textures
     hunterTextureBot.loadFromFile("Images/free-slime-mobs-pixel-art-top-down-sprite-pack/PNG/Slime1/Walk/Slime_bot.png");

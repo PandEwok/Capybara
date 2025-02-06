@@ -9,6 +9,9 @@ extern RectangleShape pauseOverlay;
 extern Text pauseText;
 extern Sprite resumeButton;
 extern Sprite quitButton;
+extern Sprite gameOverScreen;
+extern Text gameOverText;
+
 
 void initGUI();
 

@@ -10,7 +10,6 @@ protected:
     Clock framrate;
     bool isAttacking = false;
     int keyNumber = 0;
-    Clock invincibilityClock;
 
 public:
     enum direction {
@@ -26,7 +25,6 @@ public:
     float getSpeed();
     void move();
     Clock* getFramerate();
-    Clock* getInvincibilityClock();
     int getHp();
     void decreaseHp(int value = 1);
     void increaseHp(int value = 1);

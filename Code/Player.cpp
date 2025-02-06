@@ -20,27 +20,19 @@ Clock* Player::getFramerate()
 	return &framrate;
 }
 
-Clock* Player::getInvincibilityClock()
-{
-	return &invincibilityClock;
-}
-
 int Player::getHp() {
 	return hp;
 }
 
 void Player::decreaseHp(int value) {
-	if (invincibilityClock.getElapsedTime().asSeconds() >= 1.f) {
-		invincibilityClock.restart();
-		for (int i = 0; i < value; i++) {
-			if (hp <= 0) {
-				break;
-			}
-			continueAnimation(hpBar);
+	for (int i = 0; i < value; i++) {
+		if (hp <= 0) {
+			break;
 		}
-		hp -= value;
-		cout << "HP is now " << hp << redString << " (-" << value << ")" << whiteString << endl;
+		continueAnimation(hpBar);
 	}
+	hp -= value;
+	cout << "HP is now " << hp << redString << " (-" << value << ")" << whiteString << endl;
 }
 
 void Player::increaseHp(int value)
@@ -83,15 +75,15 @@ FloatRect Player::getHitBox() {
 FloatRect Player::getActionRange()
 {
 	if (facing == FRONT) {
-		return FloatRect(getHitBox().getPosition().x - 12, getHitBox().getPosition().y + 15, getHitBox().width + 12 * 2, 10);
+		return FloatRect(getHitBox().getPosition().x - 12, getHitBox().getPosition().y + 15, getHitBox().width +12*2, 10);
 	}
 	if (facing == BACK) {
-		return FloatRect(getHitBox().getPosition().x - 12, getHitBox().getPosition().y - 15, getHitBox().width + 12 * 2, 10);
+		return FloatRect(getHitBox().getPosition().x - 12, getHitBox().getPosition().y - 15, getHitBox().width +12*2, 10);
 	}
 	if (facing == RIGHT) {
-		return FloatRect(getHitBox().getPosition().x + getHitBox().width + 3, getHitBox().getPosition().y - 5, 10, getHitBox().height + 5 * 2);
+		return FloatRect(getHitBox().getPosition().x + getHitBox().width+3, getHitBox().getPosition().y - 5, 10, getHitBox().height +5*2);
 	}
 	if (facing == LEFT) {
-		return FloatRect(getHitBox().getPosition().x - 10 - 3, getHitBox().getPosition().y - 5, 10, getHitBox().height + 5 * 2);
+		return FloatRect(getHitBox().getPosition().x - 10 - 3, getHitBox().getPosition().y - 5, 10, getHitBox().height +5*2);
 	}
 }

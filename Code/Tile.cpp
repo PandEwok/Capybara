@@ -1,10 +1,14 @@
 #include "Tile.hpp"
 
-shared_ptr<Sprite> Tile::getSprite() {
-	return sprite;
+shared_ptr<Sprite> Tile::getSprite()
+{
+	if (sprite != nullptr) {
+		return sprite;
+	}
 }
 
-Tile::Tile(Vector2f position) {
+Tile::Tile(Vector2f position)
+{
 	sprite->setTextureRect(IntRect(0, 0, 16, 16));
 	sprite->setPosition(position);
 }
@@ -23,16 +27,6 @@ int Tile::getLayer() {
 
 void Tile::setLayer(int value) {
 	layer = value;
-}
-
-shared_ptr<Clock> Tile::getClock()
-{
-	return tileClock;
-}
-
-float Tile::getFrameTime()
-{
-	return frameTime;
 }
 
 Wall::Wall(Vector2f position) : Tile(position) {
@@ -96,11 +90,4 @@ House::House(Vector2f position) : Tile(position)
 	sprite->setOrigin(Vector2f(-6, 0));
 	type = "Wall";
 	layer = 2;
-}
-
-Trap::Trap(Vector2f position) : Tile(position)
-{
-	sprite->setTexture(trapTexture);
-	type = "Trap";
-	frameTime = 0.05f;
 }
