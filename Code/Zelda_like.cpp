@@ -137,42 +137,61 @@ int main()
                     game.update();
                 }
 
-                if (!playable) {
-                    if (shading.getFillColor().a >= 255) {
-                        isShadeIncreasing = false;
-                        npcList.clear();
-                        if (goingThrough == "Gate") {
-                            if (map1.getCurrentMap() == map1.EXTERIOR) {
-                                map1.loadDungeon(tileMap, player);
-                                map1.setCurrentMap(map1.DUNGEON);
-                            }
-                            else if (map1.getCurrentMap() == map1.DUNGEON) {
-                                map1.loadExterior(tileMap, player);
-                                map1.setCurrentMap(map1.EXTERIOR);
-                            }
+            if (!playable) {
+                if (shading.getFillColor().a >= 255) {
+                    isShadeIncreasing = false;
+                    npcList.clear();
+                    marketItemList.clear();
+                    if (goingThrough == "Gate") {
+                        if (map1.getCurrentMap() == map1.EXTERIOR) {
+                            map1.loadDungeon(tileMap, player, "Map/map-dungeon1.txt");
+                            map1.setCurrentMap(map1.DUNGEON);
                         }
-                        else if (goingThrough == "HouseDoor") {
-                            if (map1.getCurrentMap() == map1.EXTERIOR) {
-                                map1.loadHouse(tileMap, player);
-                                map1.setCurrentMap(map1.HOUSE);
-                            }
-                            else if (map1.getCurrentMap() == map1.HOUSE) {
-                                map1.loadExterior(tileMap, player);
-                                map1.setCurrentMap(map1.EXTERIOR);
-                            }
+                        else if (map1.getCurrentMap() == map1.DUNGEON) {
+                            map1.loadExterior(tileMap, player);
+                            map1.setCurrentMap(map1.EXTERIOR);
                         }
-                        else if (goingThrough == "ShopDoor") {
-                            if (map1.getCurrentMap() == map1.EXTERIOR) {
-                                map1.loadShop(tileMap, player);
-                                map1.setCurrentMap(map1.SHOP);
-                            }
-                            else if (map1.getCurrentMap() == map1.SHOP) {
-                                map1.loadExterior(tileMap, player);
-                                map1.setCurrentMap(map1.EXTERIOR);
-                            }
+                        else if (map1.getCurrentMap() == map1.DUNGEON2) {
+                            map1.loadDungeon(tileMap, player, "Map/map-dungeon3.txt");
+                            map1.setCurrentMap(map1.DUNGEON3);
                         }
-                        moneyList.clear();
+                        else if (map1.getCurrentMap() == map1.DUNGEON3) {
+                            map1.loadDungeon(tileMap, player, "Map/map-dungeon2.txt");
+                            map1.setCurrentMap(map1.DUNGEON2);
+                        }
                     }
+                    else if (goingThrough == "HouseDoor") {
+                        if (map1.getCurrentMap() == map1.EXTERIOR) {
+                            map1.loadHouse(tileMap, player);
+                            map1.setCurrentMap(map1.HOUSE);
+                        }
+                        else if (map1.getCurrentMap() == map1.HOUSE) {
+                            map1.loadExterior(tileMap, player);
+                            map1.setCurrentMap(map1.EXTERIOR);
+                        }
+                    }
+                    else if (goingThrough == "ShopDoor") {
+                        if (map1.getCurrentMap() == map1.EXTERIOR) {
+                            map1.loadShop(tileMap, player);
+                            map1.setCurrentMap(map1.SHOP);
+                        }
+                        else if (map1.getCurrentMap() == map1.SHOP) {
+                            map1.loadExterior(tileMap, player);
+                            map1.setCurrentMap(map1.EXTERIOR);
+                        }
+                    }
+                    else if (goingThrough == "Stairs") {
+                        if (map1.getCurrentMap() == map1.DUNGEON) {
+                            map1.loadDungeon(tileMap, player, "Map/map-dungeon2.txt");
+                            map1.setCurrentMap(map1.DUNGEON2);
+                        }
+                        else if (map1.getCurrentMap() == map1.DUNGEON2) {
+                            map1.loadDungeon(tileMap, player, "Map/map-dungeon1.txt");
+                            map1.setCurrentMap(map1.DUNGEON);
+                        }
+                    }
+                    moneyList.clear();
+                }
 
                     if (!isShadeIncreasing and shading.getFillColor().a <= 0) {
                         playable = true;
@@ -183,21 +202,21 @@ int main()
 
 
             for (shared_ptr<Tile> tile : tileMap) {
-                if (tile) {
+                if (tile != nullptr) {
                     if (tile->getLayer() == 0) {
                         window.draw(*tile->getSprite());
                     }
                 }
             }
             for (shared_ptr<Tile> tile : tileMap) {
-                if (tile) {
+                if (tile != nullptr) {
                     if (tile->getLayer() == 1) {
                         window.draw(*tile->getSprite());
                     }
                 }
             }
             for (shared_ptr<Tile> tile : tileMap) {
-                if (tile) {
+                if (tile != nullptr) {
                     if (tile->getLayer() == 2 and tile->getSprite()->getPosition().y <= player.getSprite()->getPosition().y) {
                         window.draw(*tile->getSprite());
                     }
@@ -225,34 +244,34 @@ int main()
 
                 window.draw(*player.getSprite());
 
-                for (shared_ptr<Tile> tile : tileMap) {
-                    if (tile) {
-                        if (tile->getLayer() == 2 and tile->getSprite()->getPosition().y > player.getSprite()->getPosition().y) {
-                            window.draw(*tile->getSprite());
-                        }
+            for (shared_ptr<Tile> tile : tileMap) {
+                if (tile != nullptr) {
+                    if (tile->getLayer() == 2 and tile->getSprite()->getPosition().y > player.getSprite()->getPosition().y) {
+                        window.draw(*tile->getSprite());
                     }
                 }
-                for (shared_ptr<Npc> npc : npcList) {
-                    if (npc->getSprite()->getPosition().y > player.getSprite()->getPosition().y) {
-                        window.draw(*npc->getSprite());
-                        npc->displayName();
-                    }
+            }
+            for (shared_ptr<Npc> npc : npcList) {
+                if (npc->getSprite()->getPosition().y > player.getSprite()->getPosition().y) {
+                    window.draw(*npc->getSprite());
+                    npc->displayName();
                 }
+            }
 
-                for (int i = 0; i < tileMap.size(); i++) {
-                    shared_ptr<Tile> tile = tileMap[i];
-                    if (tile->getSprite()->getGlobalBounds().intersects(player.getSprite()->getGlobalBounds())) {
-                        if (tile->getType() == "Gate" and !isGateOpen and hasGateKey) {
-                            eKey->setPosition(tile->getSprite()->getPosition() + Vector2f(24, 4));
-                            window.draw(*eKey);
-                            if (Keyboard::isKeyPressed(Keyboard::Scancode::E)) {
-                                hasGateKey = false;
-                                isGateOpen = true;
-                                continueAnimation(tile->getSprite());
-                            }
+            for (int i = 0; i < tileMap.size(); i++) {
+                shared_ptr<Tile> tile = tileMap[i];
+                if (tile != nullptr and tile->getSprite()->getGlobalBounds().intersects(player.getSprite()->getGlobalBounds())) {
+                    if (tile->getType() == "Gate" and !isGateOpen and hasGateKey) {
+                        eKey->setPosition(tile->getSprite()->getPosition() + Vector2f(24, 4));
+                        window.draw(*eKey);
+                        if (Keyboard::isKeyPressed(Keyboard::Scancode::E)) {
+                            hasGateKey = false;
+                            isGateOpen = true;
+                            continueAnimation(tile->getSprite());
                         }
                     }
                 }
+            }
 
                 // hitbox display
                 if (showHitbox) {

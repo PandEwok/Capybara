@@ -7,17 +7,8 @@
 void userInput() {
     Event event;
     Clock mainClock;
-    vector<shared_ptr<Tile>> toDeleteTiles = {};
     while (isGameRunning) {
         timeSinceLastFrameInputs = mainClock.restart();
-
-        while (isInPauseMenu) {};
-
-        for (shared_ptr<Tile> tile : toDeleteTiles) {
-            auto pos = find(tileMap.begin(), tileMap.end(), tile);
-            tileMap.erase(pos);
-        }
-        toDeleteTiles.clear();
 
         if (Mouse::isButtonPressed(Mouse::Left) and !player.getIsAttacking()) {
             player.setIsAttacking(true);
@@ -112,28 +103,28 @@ void userInput() {
                 player.getSprite()->setTexture(playerTextureSideAttack);
             }
         }
+
+        for (int i = 0; i < marketItemList.size(); i++) {
+            shared_ptr<MarketItem> item = marketItemList[i];
+            if (item->getSprite()->getGlobalBounds().intersects(player.getHitBox())) {
+                if (inputMovement.y > 0 and item->getSprite()->getGlobalBounds().contains(player.getSprite()->getPosition() + Vector2f(0, 14))) {
+                    inputMovement = Vector2f(inputMovement.x, 0);
+                }
+                else if (inputMovement.y < 0 and item->getSprite()->getGlobalBounds().contains(player.getSprite()->getPosition() + Vector2f(0, 8))) {
+                    inputMovement = Vector2f(inputMovement.x, 0);
+                }
+                else if (inputMovement.x > 0 and item->getSprite()->getGlobalBounds().contains(player.getSprite()->getPosition() + Vector2f(8, 11))) {
+                    inputMovement = Vector2f(0, inputMovement.y);
+                }
+                else if (inputMovement.x < 0 and item->getSprite()->getGlobalBounds().contains(player.getSprite()->getPosition() + Vector2f(-8, 11))) {
+                    inputMovement = Vector2f(0, inputMovement.y);
+                }
+            }
+        }
         
         for (int i = 0; i < tileMap.size(); i++) {
             shared_ptr<Tile> tile = tileMap[i];
-            if (tile->getSprite()->getGlobalBounds().intersects(player.getHitBox())) {
-                if (tile->getType() == "Door" and player.getKeyState() > 0) {
-
-                    if (find(toDeleteTiles.begin(), toDeleteTiles.end(), tileMap[i]) == toDeleteTiles.end()) {
-                        player.setKeyState(player.getKeyState() - 1);
-                        toDeleteTiles.push_back(tile);
-                    }
-                    if (i > 1) {
-                        if (tileMap[i - 2]->getType() == "Door" and find(toDeleteTiles.begin(), toDeleteTiles.end(), tileMap[i - 2]) == toDeleteTiles.end()) {
-                            toDeleteTiles.push_back(tileMap[i - 2]);
-                        }
-                    }
-                    if (i + 2 < tileMap.size() - 1) {
-                        if (tileMap[i + 2]->getType() == "Door" and find(toDeleteTiles.begin(), toDeleteTiles.end(), tileMap[i + 2]) == toDeleteTiles.end()) {
-                            toDeleteTiles.push_back(tileMap[i + 2]);
-                        }
-                    }
-                    continue;
-                }
+            if (tile != nullptr and tile->getSprite()->getGlobalBounds().intersects(player.getHitBox())) {
                 if (tile->getType() == "Wall" or tile->getType() == "Door" or tile->getType() == "Pot") {
                     if (inputMovement.y > 0 and tile->getSprite()->getGlobalBounds().contains(player.getSprite()->getPosition() + Vector2f(0, 14))) {
                         inputMovement = Vector2f(inputMovement.x, 0);
@@ -148,7 +139,7 @@ void userInput() {
                         inputMovement = Vector2f(0, inputMovement.y);
                     }
                 }
-                if ((tile->getType() == "Gate" and isGateOpen) or tile->getType() == "HouseDoor" or tile->getType() == "ShopDoor") {
+                if ((tile->getType() == "Gate" and isGateOpen) or tile->getType() == "HouseDoor" or tile->getType() == "ShopDoor" or tile->getType() == "Stairs") {
                     Vector2f boundsPos = tile->getSprite()->getGlobalBounds().getPosition();
                     Vector2f boundsSize = tile->getSprite()->getGlobalBounds().getSize();
                     FloatRect gateHitBox = FloatRect(boundsPos.x, boundsPos.y + boundsSize.y / 3.f, boundsSize.x, boundsSize.y / 3.f * 2.f);
@@ -175,15 +166,6 @@ void userInput() {
                         mainClock.restart();
                         break;
                     }
-                }
-            }
-            if (tile->getSprite()->getGlobalBounds().intersects(player.getActionRange())) {
-                if (tile->getType() == "Pot" and Mouse::isButtonPressed(Mouse::Left)) {
-                    toDeleteTiles.push_back(tile);
-                    shared_ptr<Money> newMoney = make_shared<Money>();
-                    newMoney->getSprite()->setPosition(tile->getSprite()->getPosition());
-                    moneyList.push_back(newMoney);
-                    potBreakSFX.play();
                 }
             }
         }

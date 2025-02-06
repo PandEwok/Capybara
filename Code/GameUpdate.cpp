@@ -3,6 +3,7 @@
 Player player;
 vector<shared_ptr<Tile>> tileMap;
 vector<shared_ptr<Money>> moneyList;
+vector<shared_ptr<MarketItem>> marketItemList;
 vector<shared_ptr<Npc>> npcList;
 vector<shared_ptr<Sword>> swordad;
 vector<shared_ptr<Axe>> axead;
@@ -14,6 +15,7 @@ Game::Game() {
 	hpBar->setTexture(hpBarTexture);
 	hpBar->setTextureRect(IntRect(0, 0, hpBarTexture.getSize().y, hpBarTexture.getSize().y));
 	moneyList = {};
+	marketItemList = {};
 	npcList = {};
 	swordad = {};
 	axead = {};
@@ -48,6 +50,12 @@ void Game::update() {
 		if (money->animationTime.getElapsedTime().asSeconds() >= 0.2f) {
 			money->animationTime.restart();
 			continueAnimation(money->getSprite());
+		}
+	}
+	for (shared_ptr<MarketItem> item : marketItemList) {
+		if (item->animationTime.getElapsedTime().asSeconds() >= 0.2f) {
+			item->animationTime.restart();
+			continueAnimation(item->getSprite());
 		}
 	}
 	for (shared_ptr<Npc> npc : npcList) {

@@ -150,11 +150,11 @@ void Map::loadExterior(vector<shared_ptr<Tile>>& tileMap, Player& player)
     }
 }
 
-void Map::loadDungeon(vector<shared_ptr<Tile>>& tileMap, Player& player)
+void Map::loadDungeon(vector<shared_ptr<Tile>>& tileMap, Player& player, string floor)
 {
     tileMap.clear();
-
-    fstream map("Map/map-dungeon1.txt");
+    
+    fstream map(floor);
     string line;
     Vector2f tilePosition = Vector2f(0, 0);
     while (true) {
@@ -226,7 +226,9 @@ void Map::loadDungeon(vector<shared_ptr<Tile>>& tileMap, Player& player)
                 shared_ptr<Floor> newTile = make_shared<Floor>(tilePosition);
                 newTile->getSprite()->setTexture(floorTileTexture);
                 tileMap.push_back(newTile);
-                player.getSprite()->setPosition(tilePosition + Vector2f(8, 8));
+                if (goingThrough == "Gate") {
+                    player.getSprite()->setPosition(tilePosition + Vector2f(8, 8));
+                }
             }
             else if (tileChar == '~') {
                 shared_ptr<Floor> newTile = make_shared<Floor>(tilePosition);
@@ -259,6 +261,26 @@ void Map::loadDungeon(vector<shared_ptr<Tile>>& tileMap, Player& player)
                     newTile->getSprite()->setTexture(doorTileRightTexture);
                 }
                 tileMap.push_back(newTile);
+            }
+            else if (tileChar == 'H') {
+                shared_ptr<Trap> newTile = make_shared<Trap>(tilePosition);
+                tileMap.push_back(newTile);
+            }
+            else if (tileChar == 's') {
+                shared_ptr<Floor> newTile = make_shared<Floor>(tilePosition);
+                newTile->getSprite()->setTexture(floorTileTexture);
+                tileMap.push_back(newTile);
+                shared_ptr<Gate> newStairs = make_shared<Gate>(tilePosition);
+                newStairs->setType("Stairs");
+                newStairs->getSprite()->setTexture(stairTexture);
+                newStairs->getSprite()->setTextureRect(IntRect(0, 0, 16, 16));
+                tileMap.push_back(newStairs);
+                if (currentMap == DUNGEON2) {
+                    player.getSprite()->setPosition(tilePosition + Vector2f(-10, 5));
+                }
+                else if (currentMap == DUNGEON) {
+                    player.getSprite()->setPosition(tilePosition + Vector2f(8, 30));
+                }
             }
             tilePosition.x += 16;
         }
@@ -436,6 +458,15 @@ void Map::loadShop(vector<shared_ptr<Tile>>& tileMap, Player& player)
                 tileMap.push_back(newTile);
                 shared_ptr<Pot> newPot = make_shared<Pot>(tilePosition);
                 tileMap.push_back(newPot);
+            }
+            else if (tileChar == 'k') {
+                shared_ptr<Floor> newTile = make_shared<Floor>(tilePosition);
+                newTile->getSprite()->setTexture(houseFloorTexture);
+                tileMap.push_back(newTile);
+                if (!hasGateKey and !isGateOpen) {
+                    shared_ptr<DungeonKey> newKey = make_shared<DungeonKey>(tilePosition + Vector2f(8, 8));
+                    marketItemList.push_back(newKey);
+                }
             }
             else if (tileChar == '=') {
                 shared_ptr<Gate> newDoor = make_shared<Gate>(tilePosition);

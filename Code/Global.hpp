@@ -20,6 +20,8 @@
 using namespace std;
 using namespace sf;
 
+extern mutex mtx;
+
 extern string whiteString;
 extern string greenString;
 extern string redString;
@@ -111,6 +113,8 @@ extern Texture doorTileLeftTexture;
 extern Texture doorTileRightTexture;
 extern Texture flagTileTexture;
 extern Texture candleTexture;
+extern Texture trapTexture;
+extern Texture stairTexture;
 	//house textures
 extern Texture houseFloorTexture;
 extern Texture houseWallTexture;
@@ -125,6 +129,7 @@ extern Texture rubyTexture;
 extern Texture swordTexture;
 extern Texture axeTexture;
 extern Texture daggerTexture;
+extern Texture goldKeyTexture;
 
 //Main Menu Textures
 extern Texture backgroundTexture;
