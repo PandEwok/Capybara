@@ -1,27 +1,44 @@
 #include "Hunter.hpp"
 #include <cmath>
 
-Hunter::Hunter(Vector2f textureSize, float speed, int hp, bool stealthy, Player* playerTarget, shared_ptr<Texture> texture)
-	: Enemy(textureSize, speed, 7), isStealthy(false), target(playerTarget) {
+Hunter::Hunter(Vector2f textureSize, float speed, int hp, bool stealthy, Player* playerTarget)
+	: Enemy(textureSize, 10.f, 7), isStealthy(false), target(playerTarget) {
+	sprite->setTextureRect(IntRect(0, 0, textureSize.x, textureSize.y));
 }
 
 void Hunter::update(float deltaTime) {
+
+	sprite->setTexture(hunterTextureBot);
+
 	if (!target || hp <= 0) return;
-	Vector2f hunterPos = getPosition();
-	Vector2f playerPos = target->getPosition();
 
-	Vector2f direction(playerPos.x - hunterPos.x, playerPos.y - hunterPos.y);
+	Vector2f playerPosition = target->getPosition();
+	Vector2f hunterPosition = getPosition();
 
-	float length = std::sqrt(direction.x * direction.x + direction.y * direction.y);
+	Vector2f direction = playerPosition - hunterPosition;
+
+	float length = sqrt(direction.x * direction.x + direction.y * direction.y);
+
 	if (length != 0) {
-		direction.x /= length;
-		direction.y /= length;
+		direction /= length;
 	}
 
-	Vector2f movement(direction.x * getSpeed() * deltaTime, direction.y * getSpeed() * deltaTime);
-	move(movement);
+	sprite->move(direction * speed * deltaTime);
+
 }
 
 void Hunter::setStealthMode(bool stealth) {
 	isStealthy = stealth;
+}
+
+Clock& Hunter::getAnimationClock() {
+	return animationClock;
+}
+
+void Hunter::draw(RenderTarget& target, RenderStates states) const {
+	target.draw(*sprite, states);
+}
+
+void Hunter::setHunterPosition(Vector2f position) {
+	sprite->setPosition(position);
 }

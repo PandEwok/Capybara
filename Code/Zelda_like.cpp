@@ -10,6 +10,7 @@
 #include "Map.hpp"
 #include  "Collisions.hpp"
 #include "GUI.hpp"
+#include "Hunter.hpp"
 
 using namespace std;
 
@@ -218,6 +219,9 @@ int main()
                     window.draw(*npc->getSprite());
                     npc->displayName();
                 }
+            }
+            for (shared_ptr<Hunter> enemy : hunterList) {
+                window.draw(*enemy->getSprite());
             }
 
             window.draw(*player.getSprite());

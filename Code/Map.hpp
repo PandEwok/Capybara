@@ -6,6 +6,7 @@
 #include "Tile.hpp"
 #include "Npc.hpp"
 #include "GameUpdate.hpp"
+#include <memory>
 
 class Map {
 protected:

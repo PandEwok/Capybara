@@ -8,6 +8,7 @@ vector<shared_ptr<Npc>> npcList;
 vector<shared_ptr<Sword>> swordad;
 vector<shared_ptr<Axe>> axead;
 vector<shared_ptr<Dagger>> daggerad;
+vector<shared_ptr<Hunter>> hunterList;
 
 Game::Game() {
 	player = Player();
@@ -19,6 +20,7 @@ Game::Game() {
 	swordad = {};
 	axead = {};
 	daggerad = {};
+	hunterList = {};
 	eKey->setTexture(eKeyTexture);
 	eKey->setTextureRect(IntRect(0, 0, eKeyTexture.getSize().y, eKeyTexture.getSize().y));
 	shading.setFillColor(Color(0, 0, 0, 0)); shading.setOrigin(shading.getSize() / 2.f);
@@ -81,6 +83,21 @@ void Game::update() {
 				tile->getClock()->restart();
 				continueAnimation(tile->getSprite());
 			}
+		}
+	}
+	for (shared_ptr<Hunter> hunter : hunterList) {
+		Vector2f direction = player.getPosition() - hunter->getPosition();
+
+		if (abs(direction.x) > abs(direction.y)) {
+			hunter->getSprite()->setTexture(direction.x > 0 ? hunterTextureRight : hunterTextureLeft);
+		}
+		else {
+			hunter->getSprite()->setTexture(direction.y > 0 ? hunterTextureBot : hunterTextureTop);
+		}
+
+		if (hunter->getAnimationClock().getElapsedTime().asSeconds() >= 0.2f) {
+			hunter->getAnimationClock().restart();
+			continueAnimation(hunter->getSprite());
 		}
 	}
 

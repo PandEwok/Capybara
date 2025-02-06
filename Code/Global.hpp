@@ -163,6 +163,11 @@ extern Texture doorKeyTexture;
 extern bool hoverButtonResume;
 extern bool hoverButtonQuit;
 
+//Hunter Textures
+extern Texture hunterTextureBot;
+extern Texture hunterTextureTop;
+extern Texture hunterTextureRight;
+extern Texture hunterTextureLeft;
 
 //Sounds
 extern SoundBuffer pumpcoinCollectBuffer;
