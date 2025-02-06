@@ -111,6 +111,7 @@ extern Texture doorTileLeftTexture;
 extern Texture doorTileRightTexture;
 extern Texture flagTileTexture;
 extern Texture candleTexture;
+extern Texture trapTexture;
 	//house textures
 extern Texture houseFloorTexture;
 extern Texture houseWallTexture;
@@ -125,6 +126,7 @@ extern Texture rubyTexture;
 extern Texture swordTexture;
 extern Texture axeTexture;
 extern Texture daggerTexture;
+extern Texture goldKeyTexture;
 
 //Main Menu Textures
 extern Texture backgroundTexture;

@@ -82,8 +82,9 @@ int main()
                     isGameRunning = false;
                 }
                 if (event.type == Event::MouseButtonPressed) {
-                    if (hoverButtonExit)
+                    if (hoverButtonExit) {
                         window.close();
+                    }
 
                     if (hoverButtonPlay) {
                         isInMenu = false;
@@ -139,6 +140,7 @@ int main()
                 if (shading.getFillColor().a >= 255) {
                     isShadeIncreasing = false;
                     npcList.clear();
+                    marketItemList.clear();
                     if (goingThrough == "Gate") {
                         if (map1.getCurrentMap() == map1.EXTERIOR) {
                             map1.loadDungeon(tileMap, player);
@@ -206,6 +208,11 @@ int main()
                     window.draw(*money->getSprite());
                 }
             }
+            for (shared_ptr<MarketItem> item : marketItemList) {
+                if (item) {
+                    window.draw(*item->getSprite());
+                }
+            }
             for (shared_ptr<Npc> npc : npcList) {
                 if (npc->getSprite()->getPosition().y <= player.getSprite()->getPosition().y) {
                     window.draw(*npc->getSprite());
@@ -231,7 +238,7 @@ int main()
 
             for (int i = 0; i < tileMap.size(); i++) {
                 shared_ptr<Tile> tile = tileMap[i];
-                if (tile->getSprite()->getGlobalBounds().intersects(player.getSprite()->getGlobalBounds())) {
+                if (tile and tile->getSprite()->getGlobalBounds().intersects(player.getSprite()->getGlobalBounds())) {
                     if (tile->getType() == "Gate" and !isGateOpen and hasGateKey) {
                         eKey->setPosition(tile->getSprite()->getPosition() + Vector2f(24, 4));
                         window.draw(*eKey);
