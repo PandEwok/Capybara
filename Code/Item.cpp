@@ -67,3 +67,25 @@ void Dagger::daggerattack() {
 
 	}
 }
+
+MarketItem::MarketItem(int _price) : price(_price), Entity(Vector2f(16,16)) {}
+
+int MarketItem::getPrice() {
+	return price;
+}
+
+void MarketItem::setPrice(int value) {
+	price = value;
+}
+
+void DungeonKey::interact(Player& player)
+{
+	playerMoney -= price;
+	hasGateKey = true;
+}
+
+DungeonKey::DungeonKey(Vector2f position) : MarketItem(20) {
+	sprite->setPosition(position);
+	sprite->setTexture(goldKeyTexture);
+	sprite->setTextureRect(IntRect(0, 0, 16, 16));
+}

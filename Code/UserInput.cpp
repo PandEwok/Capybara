@@ -109,6 +109,24 @@ void userInput() {
                 player.getSprite()->setTexture(playerTextureSideAttack);
             }
         }
+
+        for (int i = 0; i < marketItemList.size(); i++) {
+            shared_ptr<MarketItem> item = marketItemList[i];
+            if (item->getSprite()->getGlobalBounds().intersects(player.getHitBox())) {
+                if (inputMovement.y > 0 and item->getSprite()->getGlobalBounds().contains(player.getSprite()->getPosition() + Vector2f(0, 14))) {
+                    inputMovement = Vector2f(inputMovement.x, 0);
+                }
+                else if (inputMovement.y < 0 and item->getSprite()->getGlobalBounds().contains(player.getSprite()->getPosition() + Vector2f(0, 8))) {
+                    inputMovement = Vector2f(inputMovement.x, 0);
+                }
+                else if (inputMovement.x > 0 and item->getSprite()->getGlobalBounds().contains(player.getSprite()->getPosition() + Vector2f(8, 11))) {
+                    inputMovement = Vector2f(0, inputMovement.y);
+                }
+                else if (inputMovement.x < 0 and item->getSprite()->getGlobalBounds().contains(player.getSprite()->getPosition() + Vector2f(-8, 11))) {
+                    inputMovement = Vector2f(0, inputMovement.y);
+                }
+            }
+        }
         
         for (int i = 0; i < tileMap.size(); i++) {
             shared_ptr<Tile> tile = tileMap[i];
