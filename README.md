@@ -1,5 +1,7 @@
 # The Legend of Almost Hero   
 
+Le dernier push valable est celui de ElMino94 qui ce nomme enemy.
+
 ## 1.<ins>Introduction: </ins>   
 
 
@@ -82,7 +84,7 @@ Projet commencé le jeudi 30 janvier et finit le jeudi 6 février avec présenta
 
 ## 7. <ins>Conclusion et Perspectives: </ins>   
 ### 7.1 résumé des résultat obtenu   
-Jeu jouable et fonctionnel où il manque quelque features prévu
+Jeu jouable et fonctionnel où il manque quelque features prévu.
 
 ### 7.2 Améliorations futures et mise à jour   
 - Correction de bugs
